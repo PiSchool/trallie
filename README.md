@@ -19,3 +19,23 @@
 **Impact**: Transfer learning and natural language input imply impact on legacy and low-resource scenarios, improving discoverability of hidden asset collections, plurality of sources through easier access to search tools, improved trust and privacy.
 
 **Team**: At Pi School, our experience of rapid prototyping in AI, acquired over >100 AI projects, gives us an advantage in exploiting the rapidly moving SOTA.
+
+## Getting Started
+1. Clone the repository 
+```
+git clone https://github.com/PiSchool/trallie.git
+```
+
+2. Install required dependencies 
+```
+pip install -r requirements.txt
+```
+
+3. Change you directory to that of the **trallie** repository. 
+
+4. Run the script main_pipeline.py
+```
+python main_pipeline.py
+```
+
+Visit the project wiki to read the detailed documentation. 
