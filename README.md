@@ -6,7 +6,7 @@
 
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin)](https://www.linkedin.com/school/pischool/)
-[![Stars](https://img.shields.io/github/stars/PiSchool/trallie?style=flat&logo=github)](https://github.com/PiSchool/trallie/stargazers)
+[![Stars](https://img.shields.io/github/stars/PiSchool/trallie?style=flat&logo=github&cacheSeconds=3600)](https://github.com/PiSchool/trallie/stargazers)
 [![Python 3.10](https://img.shields.io/badge/Python-3.10-red?logo=python&logoColor=white)](https://www.python.org/downloads/release/python-3100/)
 
 
