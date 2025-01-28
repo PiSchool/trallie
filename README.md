@@ -38,4 +38,4 @@ pip install -r requirements.txt
 python main_pipeline.py
 ```
 
-Visit the project wiki to read the detailed documentation. 
+Visit the project [wiki](https://github.com/PiSchool/trallie/wiki/Trallie:-Home) to read the detailed documentation. 
