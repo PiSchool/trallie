@@ -1,7 +1,7 @@
 # Trallie - Transfer Learning for Information Extraction
 
 <p align="center">
-  <img src="assets/trallie-logo.jpg" alt="Image description" style="max-width:20%; height:auto;">
+  <img src="assets/trallie.png" alt="Image description" style="max-width:20%; height:auto;">
 </p>
 
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache_2.0-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
