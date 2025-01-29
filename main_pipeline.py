@@ -1,12 +1,12 @@
 from trallie.data_handlers import (create_records_for_schema_generation, 
                                     create_record_for_schema_filling)
 
-from trallie.schema_generation.prompts import (FEW_SHOT_INFERENCE_PROMPT, 
-                                                ZERO_SHOT_INFERENCE_PROMPT) 
+from trallie.prompts import (FEW_SHOT_INFERENCE_PROMPT, 
+                            ZERO_SHOT_INFERENCE_PROMPT,
+                            FEW_SHOT_FILLING_PROMPT, 
+                            ZERO_SHOT_FILLING_PROMPT) 
+ 
 from trallie.schema_generation.schema_generator import discover_schema
-
-from trallie.schema_filling.prompts import (FEW_SHOT_FILLING_PROMPT, 
-                                            ZERO_SHOT_FILLING_PROMPT) 
 from trallie.schema_filling.schema_filler import fill_schema
 
 # Define a set of records for schema inference
