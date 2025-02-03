@@ -6,7 +6,7 @@ from trallie.prompts import (FEW_SHOT_INFERENCE_PROMPT,
                             FEW_SHOT_FILLING_PROMPT, 
                             ZERO_SHOT_FILLING_PROMPT) 
  
-from trallie.schema_generation.schema_generator import discover_schema
+from trallie.schema_generation.schema_generator import discover_schema, discover_schema_openai
 from trallie.schema_filling.schema_filler import fill_schema
 
 # Define a set of records for schema inference
@@ -37,27 +37,32 @@ print("SCHEMA GENERATION IN ACTION ...")
 schema = discover_schema(description, schema_records, FEW_SHOT_INFERENCE_PROMPT)
 print("Inferred schema", schema)
 
-# Extract values from the text based on the schema 
-print("SCHEMA COMPLETION IN ACTION ...")
-for record in records:
-    extraction_record = create_record_for_schema_filling(record)
-    extracted_json = fill_schema(schema, record, ZERO_SHOT_FILLING_PROMPT)
-    print("Extracted attributes:", extracted_json)
-
-
-# Provide a description of the data collection
-description = "A collection of resumes"
-# Create records from the data collection (max records are 5)
-schema_records = create_records_for_schema_generation(pdf_records[:3])
-
-# Feed records to the LLM and discover schema
-print("SCHEMA GENERATION IN ACTION ...")
-schema = discover_schema(description, schema_records, FEW_SHOT_INFERENCE_PROMPT)
+print("SCHEMA GENERATION OPENAI IN ACTION ...")
+schema = discover_schema_openai(description, schema_records, ZERO_SHOT_INFERENCE_PROMPT)
 print("Inferred schema", schema)
 
-# cExtract values from the text based on the schema 
-print("SCHEMA COMPLETION IN ACTION ...")
-for record in pdf_records:
-    extraction_record = create_record_for_schema_filling(record)
-    extracted_json = fill_schema(schema, record, ZERO_SHOT_FILLING_PROMPT)
-    print("Extracted attributes:", extracted_json)
+
+# # Extract values from the text based on the schema 
+# print("SCHEMA COMPLETION IN ACTION ...")
+# for record in records:
+#     extraction_record = create_record_for_schema_filling(record)
+#     extracted_json = fill_schema(schema, record, ZERO_SHOT_FILLING_PROMPT)
+#     print("Extracted attributes:", extracted_json)
+
+
+# # Provide a description of the data collection
+# description = "A collection of resumes"
+# # Create records from the data collection (max records are 5)
+# schema_records = create_records_for_schema_generation(pdf_records[:3])
+
+# # Feed records to the LLM and discover schema
+# print("SCHEMA GENERATION IN ACTION ...")
+# schema = discover_schema(description, schema_records, FEW_SHOT_INFERENCE_PROMPT)
+# print("Inferred schema", schema)
+
+# # cExtract values from the text based on the schema 
+# print("SCHEMA COMPLETION IN ACTION ...")
+# for record in pdf_records:
+#     extraction_record = create_record_for_schema_filling(record)
+#     extracted_json = fill_schema(schema, record, ZERO_SHOT_FILLING_PROMPT)
+#     print("Extracted attributes:", extracted_json)

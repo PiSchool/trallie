@@ -1,11 +1,9 @@
 from trallie.prompts import (FEW_SHOT_INFERENCE_PROMPT, 
                             ZERO_SHOT_INFERENCE_PROMPT,
-                            FEW_SHOT_FILLING_PROMPT, 
-                            ZERO_SHOT_FILLING_PROMPT,
                             SCHEMA_GENERATION_JUDGE_PROMPT) 
  
 from trallie.schema_generation.schema_generator import discover_schema, discover_schema_openai
-from trallie.evaluation.schema_generation.evaluation_helpers import *
+from trallie.evaluation.evaluation_helpers import *
 
 import json
 from tqdm import tqdm
