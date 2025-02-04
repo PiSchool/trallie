@@ -63,9 +63,9 @@ def evaluate_schema_f1(description, group_records, golden_schema):
     return f1_micro, f1_macro
 
 
-def are_synonyms_sbert(word1, word2, model, threshold=0.5):
-    emb1 = model.encode(word1, convert_to_tensor=True)
-    emb2 = model.encode(word2, convert_to_tensor=True)
+def embedding_sim_sbert(string1, string2, model, threshold=0.5):
+    emb1 = model.encode(string1, convert_to_tensor=True)
+    emb2 = model.encode(string2, convert_to_tensor=True)
     similarity = util.pytorch_cos_sim(emb1, emb2).item()
     return similarity, similarity >= threshold
 
@@ -102,7 +102,7 @@ def evaluate_schema_f1_with_llm(description, group_records, golden_schema, thres
         
         for pred_key in predicted_keys:
             for gold_key in golden_keys:
-                similarity, is_synonym = are_synonyms_sbert(pred_key, gold_key, model, threshold)
+                similarity, is_synonym = embedding_sim_sbert(pred_key, gold_key, model, threshold)
                 if is_synonym:
                     matched_keys.add(pred_key)
                     break
