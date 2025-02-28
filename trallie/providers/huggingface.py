@@ -57,12 +57,16 @@ class HuggingFaceProvider(BaseProvider):
 
     @hf_api_call(default_return_value="")
     @lru_cache
-    def do_chat_completion(self, prompt: str, model_name: str) -> str:
+    def do_chat_completion(self, system_prompt: str, user_prompt: str, model_name: str) -> str:
         chat_completion = self.client.chat_completion(
             messages=[
                 {
+                    "role": "system",
+                    "content": system_prompt,
+                },
+                {
                     "role": "user",
-                    "content": prompt,
+                    "content": user_prompt,
                 }
             ],
             model=model_name,
