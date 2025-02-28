@@ -5,14 +5,8 @@ import tempfile
 from trallie.data_handlers import (create_records_for_schema_generation, 
                                     create_record_for_schema_filling)
 
-from trallie.prompts import (FEW_SHOT_INFERENCE_PROMPT, 
-                            ZERO_SHOT_INFERENCE_PROMPT,
-                            FEW_SHOT_FILLING_PROMPT, 
-                            ZERO_SHOT_FILLING_PROMPT) 
-
-from trallie.schema_generation.schema_generator import discover_schema
-
-from trallie.schema_filling.schema_filler import fill_schema
+from trallie.schema_generation.schema_generator import SchemaGenerator
+from trallie.data_extraction.data_extractor import DataExtractor
 
 
 # Streamlit App
@@ -53,8 +47,9 @@ if st.button("Generate Schema"):
     else:
         # Generate Schema
         st.info("Generating schema...")
+        schema_generator = SchemaGenerator(provider="groq", model_name="llama-3.3-70b-versatile")
         schema_records = create_records_for_schema_generation(file_paths[:3])
-        schema = discover_schema(description, schema_records, FEW_SHOT_INFERENCE_PROMPT)
+        schema = schema_generator.discover_schema_few_shot(description, schema_records)
         #st.text(schema)
         #st.success("Schema created successfully!")
         # Schema Editor
@@ -65,9 +60,10 @@ if st.button("Generate Schema"):
         # Extract Values
         st.info("Extracting values based on the schema...")
         extracted_data = []
+        data_extractor = DataExtractor(provider="groq", model_name="llama-3.3-70b-versatile")
         for record in file_paths:
             extraction_record = create_record_for_schema_filling(record)
-            extracted_json = fill_schema(schema, extraction_record, ZERO_SHOT_FILLING_PROMPT)
+            extracted_json = data_extractor.extract_data_few_shot(schema, extraction_record)
             extracted_data.append(extracted_json)
         
         st.write("Extracted Attributes:")
