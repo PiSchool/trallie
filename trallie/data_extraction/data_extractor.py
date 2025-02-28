@@ -1,7 +1,6 @@
 from trallie.providers import get_provider
 from trallie.providers import ProviderInitializationError
-from trallie.prompts import FEW_SHOT_EXTRACTION_SYSTEM_PROMPT, 
-                            ZERO_SHOT_EXTRACTION_SYSTEM_PROMPT
+from trallie.prompts import FEW_SHOT_EXTRACTION_SYSTEM_PROMPT, ZERO_SHOT_EXTRACTION_SYSTEM_PROMPT
 
 class DataExtractor:
     def __init__(self, provider, model_name):
