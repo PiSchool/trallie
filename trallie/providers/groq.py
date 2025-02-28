@@ -43,7 +43,7 @@ class GroqProvider(BaseProvider):
                 "'groq' provider."
             )
         self.client = groq.Groq(
-            api_key=os.environ["GROQ_API_KEY"], timeout=3.0, max_retries=2
+            api_key=os.environ["GROQ_API_KEY"], timeout=30.0, max_retries=2
         )
 
     @groq_api_call(default_return_value=[])

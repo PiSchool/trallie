@@ -16,28 +16,27 @@ def openai_api_call(default_return_value: Any):
             try:
                 return func(self, *args, **kwargs)
             except (
-                openai.Timeout,
-                openai.APIError,
+                openai.APITimeoutError,
                 openai.APIConnectionError,
-                openai.InvalidRequestError,
+                openai.BadRequestError,
                 openai.AuthenticationError,
-                openai.PermissionError,
+                openai.PermissionDeniedError,
                 openai.RateLimitError
             ) as e:
-                if isinstance(e, openai.Timeout):
-                    print("[openai] API request timed out: {e}.")
+                if isinstance(e, openai.APITimeoutError):
+                    print(f"[openai] API request timed out: {e}.")
                 if isinstance(e, openai.APIError):
-                    print("[openai] API returned an API Error: {e}.")
+                    print(f"[openai] API returned an API Error: {e}.")
                 if isinstance(e, openai.APIConnectionError):
-                    print("[openai] API request failed to connect: {e}.")
-                if isinstance(e, openai.InvalidRequestError):
-                    print("[openai] API request was invalid: {e}.")
+                    print(f"[openai] API request failed to connect: {e}.")
+                if isinstance(e, openai.BadRequestError):
+                    print(f"[openai] API request was invalid: {e}.")
                 if isinstance(e, openai.AuthenticationError):
-                    print("[openai] API request was not authorized: {e}.")
-                if isinstance(e, openai.PermissionError):
-                    print("[openai] API request was not permitted: {e}.")
+                    print(f"[openai] API request was not authorized: {e}.")
+                if isinstance(e, openai.PermissionDeniedError):
+                    print(f"[openai] API request was not permitted: {e}.")
                 if isinstance(e, openai.RateLimitError):
-                    print("[openai] API request exceeded rate limit: {e}.")
+                    print(f"[openai] API request exceeded rate limit: {e}.")
                 return default_return_value
 
         return wrapper
@@ -54,7 +53,7 @@ class OpenAIProvider(BaseProvider):
                 "'openai' provider."
             )
         self.client = openai.OpenAI(
-            api_key=os.environ["OPENAI_API_KEY"], timeout=3.0, max_retries=2
+            api_key=os.environ["OPENAI_API_KEY"], timeout=30.0, max_retries=2
         )
 
     @openai_api_call(default_return_value=[])
