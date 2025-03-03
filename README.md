@@ -26,12 +26,12 @@
 git clone https://github.com/PiSchool/trallie.git
 ```
 
-2. Install required dependencies 
+2. Change you directory to that of the **trallie** repository. 
+
+3. Install required dependencies 
 ```
 pip install -r requirements.txt
 ```
-
-3. Change you directory to that of the **trallie** repository. 
 
 4. Run the script main_pipeline.py
 ```
