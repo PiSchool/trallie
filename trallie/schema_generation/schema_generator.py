@@ -4,7 +4,7 @@ from trallie.providers import ProviderInitializationError
 from trallie.prompts import (FEW_SHOT_GENERATION_SYSTEM_PROMPT, 
                             ZERO_SHOT_GENERATION_SYSTEM_PROMPT,
                             TOPIC_MODELLING_PROMPT, 
-                            CLUSTER_LABELLING_PROMPT
+                            CLUSTER_LABELLING_PROMPT,
                             SCHEMA_REFINEMENT_PROMPT)
 
 class SchemaGenerator:
