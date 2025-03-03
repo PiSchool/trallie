@@ -6,3 +6,5 @@ instructor
 pydantic 
 openai 
 anthropic
+PyPDF2
+beautifulsoup4
