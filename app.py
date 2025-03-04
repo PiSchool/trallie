@@ -4,7 +4,7 @@ import tempfile
 
 from trallie.data_handlers import (
     create_records_for_schema_generation,
-    create_record_for_schema_filling,
+    create_record_for_data_extraction,
 )
 
 from trallie.schema_generation.schema_generator import SchemaGenerator
@@ -77,7 +77,7 @@ if st.button("Generate Schema"):
             provider="groq", model_name="llama-3.3-70b-versatile"
         )
         for record in file_paths:
-            extraction_record = create_record_for_schema_filling(record)
+            extraction_record = create_record_for_data_extraction(record)
             extracted_json = data_extractor.extract_data_few_shot(
                 schema, extraction_record
             )
