@@ -1,4 +1,4 @@
-##################### JUDGE PROMPTS ##################### 
+##################### JUDGE PROMPTS #####################
 #### SCHEMA GENERATION PROMPT
 SCHEMA_GENERATION_JUDGE_PROMPT = """
 You are a judge evaluating the similarity evaluating the similarity between a model-generated schema 

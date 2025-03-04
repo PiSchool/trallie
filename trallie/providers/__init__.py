@@ -4,6 +4,7 @@ from trallie.providers.errors import ProviderInitializationError
 _PROVIDERS_REGISTRY = dict()
 _PROVIDERS_REGISTRY_CLASS_NAMES = set()
 
+
 def register_provider(name):
     def register_provider_cls(cls):
         if name in _PROVIDERS_REGISTRY:

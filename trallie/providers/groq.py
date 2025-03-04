@@ -10,6 +10,7 @@ from trallie.providers import (
     register_provider,
 )
 
+
 def groq_api_call(default_return_value: Any):
     def decorator(func):
         def wrapper(self, *args, **kwargs):
@@ -33,6 +34,7 @@ def groq_api_call(default_return_value: Any):
 
     return decorator
 
+
 @register_provider("groq")
 class GroqProvider(BaseProvider):
     def __init__(self) -> None:
@@ -49,15 +51,13 @@ class GroqProvider(BaseProvider):
     @groq_api_call(default_return_value=[])
     @lru_cache
     def list_available_models(self) -> list[str]:
-        return [
-            model.id
-            for model in self.client.models.list().data
-            if model.active
-        ]
+        return [model.id for model in self.client.models.list().data if model.active]
 
     @groq_api_call(default_return_value="")
     @lru_cache
-    def do_chat_completion(self, system_prompt: str, user_prompt: str, model_name: str) -> str:
+    def do_chat_completion(
+        self, system_prompt: str, user_prompt: str, model_name: str
+    ) -> str:
         chat_completion = self.client.chat.completions.create(
             messages=[
                 {
@@ -67,7 +67,7 @@ class GroqProvider(BaseProvider):
                 {
                     "role": "user",
                     "content": user_prompt,
-                }
+                },
             ],
             model=model_name,
         )

@@ -1,14 +1,12 @@
 import os
 import subprocess
 
+
 def install_requirements():
     """
     Install required packages for the script to run.
     """
-    required_packages = [
-        "datasets",
-        "sec-edgar-downloader"
-    ]
+    required_packages = ["datasets", "sec-edgar-downloader"]
     for package in required_packages:
         try:
             subprocess.check_call(["pip", "install", package])
@@ -31,6 +29,7 @@ def save_to_text_files(dataset, output_dir="billsum_data", key="text"):
         with open(file_path, "w") as f:
             f.write(example[key])
 
+
 def create_raw_text_data(dataset_name, num_entries, output_dir, split, key):
     """
     Load a dataset and save it as text files.
@@ -42,11 +41,12 @@ def create_raw_text_data(dataset_name, num_entries, output_dir, split, key):
         key: Key in the dataset dictionary to save.
     """
     from datasets import load_dataset
-    
+
     print(f"Loading dataset: {dataset_name}")
     dataset = load_dataset(dataset_name, split=split)
     dataset = dataset.select(range(num_entries))
     save_to_text_files(dataset, output_dir, key)
+
 
 def create_sec_filing_data(filing_type, company_ticker, output_dir="sec_filings"):
     """
@@ -63,14 +63,33 @@ def create_sec_filing_data(filing_type, company_ticker, output_dir="sec_filings"
     dl = Downloader(output_dir, "my.email@domain.com")
     dl.get(filing_type, company_ticker)
 
+
 def main():
     install_requirements()
 
     # Dataset configurations
     datasets = [
-        {"name": "FiscalNote/billsum", "entries": 10, "output_dir": "./data/raw/billsum_data", "split": "train", "key": "text"},
-        {"name": "darrow-ai/LegalLensNLI", "entries": 10, "output_dir": "./data/raw/legallens_data", "split": "train", "key": "premise"},
-        {"name": "NortheasternUniversity/big_patent", "entries": 10, "output_dir": "./data/raw/big_patent_data", "split": "train", "key": "description"},
+        {
+            "name": "FiscalNote/billsum",
+            "entries": 10,
+            "output_dir": "./data/raw/billsum_data",
+            "split": "train",
+            "key": "text",
+        },
+        {
+            "name": "darrow-ai/LegalLensNLI",
+            "entries": 10,
+            "output_dir": "./data/raw/legallens_data",
+            "split": "train",
+            "key": "premise",
+        },
+        {
+            "name": "NortheasternUniversity/big_patent",
+            "entries": 10,
+            "output_dir": "./data/raw/big_patent_data",
+            "split": "train",
+            "key": "description",
+        },
     ]
 
     # Process each dataset
@@ -80,13 +99,13 @@ def main():
             num_entries=dataset["entries"],
             output_dir=dataset["output_dir"],
             split=dataset["split"],
-            key=dataset["key"]
+            key=dataset["key"],
         )
 
     # SEC filing configurations
     sec_filings = [
         {"filing_type": "8-K", "company_ticker": "AAPL"},
-        {"filing_type": "10-K", "company_ticker": "MSFT"}
+        {"filing_type": "10-K", "company_ticker": "MSFT"},
     ]
 
     # Download SEC filings
@@ -94,8 +113,9 @@ def main():
         create_sec_filing_data(
             filing_type=filing["filing_type"],
             company_ticker=filing["company_ticker"],
-            output_dir="sec_filings"
+            output_dir="sec_filings",
         )
+
 
 if __name__ == "__main__":
     main()

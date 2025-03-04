@@ -10,6 +10,7 @@ from trallie.providers import (
     register_provider,
 )
 
+
 def openai_api_call(default_return_value: Any):
     def decorator(func):
         def wrapper(self, *args, **kwargs):
@@ -21,7 +22,7 @@ def openai_api_call(default_return_value: Any):
                 openai.BadRequestError,
                 openai.AuthenticationError,
                 openai.PermissionDeniedError,
-                openai.RateLimitError
+                openai.RateLimitError,
             ) as e:
                 if isinstance(e, openai.APITimeoutError):
                     print(f"[openai] API request timed out: {e}.")
@@ -43,6 +44,7 @@ def openai_api_call(default_return_value: Any):
 
     return decorator
 
+
 @register_provider("openai")
 class OpenAIProvider(BaseProvider):
     def __init__(self) -> None:
@@ -59,15 +61,13 @@ class OpenAIProvider(BaseProvider):
     @openai_api_call(default_return_value=[])
     @lru_cache
     def list_available_models(self) -> list[str]:
-        return [
-            model.id
-            for model in self.client.models.list().data
-            if model.active
-        ]
+        return [model.id for model in self.client.models.list().data if model.active]
 
     @openai_api_call(default_return_value="")
     @lru_cache
-    def do_chat_completion(self, system_prompt: str, user_prompt: str, model_name: str) -> str:
+    def do_chat_completion(
+        self, system_prompt: str, user_prompt: str, model_name: str
+    ) -> str:
         chat_completion = self.client.chat.completions.create(
             messages=[
                 {
@@ -77,7 +77,7 @@ class OpenAIProvider(BaseProvider):
                 {
                     "role": "user",
                     "content": user_prompt,
-                }
+                },
             ],
             model=model_name,
         )
