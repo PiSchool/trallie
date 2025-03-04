@@ -1,13 +1,13 @@
 import os
 from trallie.data_handlers import (
     create_records_for_schema_generation,
-    create_record_for_schema_filling,
+    create_record_for_data_extraction,
 )
 
 from trallie.schema_generation.schema_generator import SchemaGenerator
 from trallie.data_extraction.data_extractor import DataExtractor
 
-os.environ["GROQ_API_KEY"] = None #ENTER_GROQ_KEY_HERE
+os.environ["GROQ_API_KEY"] = None #ENTER GROQ KEY HERE
 os.environ["OPENAI_API_KEY"] = None #ENTER OPENAI KEY HERE
 
 # Define the path to a set of documents/a data collection for inference
@@ -39,6 +39,6 @@ data_extractor = DataExtractor(
 # Extract values from the text based on the schema
 print("SCHEMA COMPLETION IN ACTION ...")
 for record in records:
-    extraction_record = create_record_for_schema_filling(record)
+    extraction_record = create_record_for_data_extraction(record)
     extracted_json = data_extractor.extract_data_few_shot(schema, extraction_record)
     print("Extracted attributes:", extracted_json)

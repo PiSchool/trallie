@@ -130,7 +130,7 @@ def create_records_for_schema_generation(records, max_records=5):
     return formatted_string
 
 
-def create_record_for_schema_filling(record):
+def create_record_for_data_extraction(record):
     """
     Creating a template to be fed to the data extraction model
 
@@ -140,5 +140,5 @@ def create_record_for_schema_filling(record):
     Returns:
         str: The record formatted into a string as expected by the data extraction model.
     """
-    schema_filling_template = f"Record : {DataHandler(record).get_text()}"
-    return schema_filling_template
+    data_extraction_template = f"Record : {DataHandler(record).get_text()}"
+    return data_extraction_template
