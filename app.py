@@ -15,9 +15,10 @@ os.environ["GROQ_API_KEY"] = None #ENTER GROQ KEY HERE
 os.environ["OPENAI_API_KEY"] = None #ENTER OPENAI KEY HERE
 
 # TODO add dropdown for providers and models 
-# Streamlit App
+logo_image = os.path.join("assets", "logo-pischool-transparent.svg")
+
 st.set_page_config(page_title="Trallie", layout="centered")
-st.image("assets\logo-pischool-transparent.svg", width=200)
+st.image(logo_image, width=200)
 
 # Header
 st.title("Trallie")
