@@ -1,4 +1,3 @@
-from trallie.prompts.eval_prompts import SCHEMA_GENERATION_JUDGE_PROMPT
 from trallie.prompts.data_extraction_prompts import (
     FEW_SHOT_EXTRACTION_SYSTEM_PROMPT,
     ZERO_SHOT_EXTRACTION_SYSTEM_PROMPT,
