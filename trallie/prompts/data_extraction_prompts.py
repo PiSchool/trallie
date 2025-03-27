@@ -12,12 +12,10 @@ the entity structure specified, ensuring accuracy and consistency.
 
 You must provide the extracted data in JSON format based on the schema provided:
 
-[{
+{
     "attribute1":"extracted value corresponding to attribute1",
     "attribute2":"extracted value corresponding to attribute2"
-    },
-    ...
-]
+}
 
 The schema you'll be provided with will include attribute names and descriptions to assist you 
 in identifying the necessary values.
@@ -32,12 +30,8 @@ information from documents. Use these examples to guide your extraction process.
 
     Example 1:
     Schema:
-    {
-        "title": "brief description or name of the document",
-        "author": "name of the person or entity who authored the document",
-        "publication_date": "date when the document was published"
-    }
-
+    ["title", "author", "publication_date"]
+  
     Document 1: 
     "The book titled 'AI Revolution' by John Doe was published on March 10, 2020."
 
@@ -50,11 +44,7 @@ information from documents. Use these examples to guide your extraction process.
 
     Example 2:
     Schema:
-    {
-        "product_name": "name of the product",
-        "price": "cost of the product",
-        "release_date": "date when the product was made available to the public"
-    }
+    ["product_name", "price", "release_date"]
 
     Document 2:
     "The new smartphone Galaxy X is available for $999, released on September 1, 2023."
@@ -70,10 +60,7 @@ information from documents. Use these examples to guide your extraction process.
     Use the schema provided below to organize the extracted information from the document into JSON format.
 
     Schema:
-    {
-        "attribute1": "description of the entity to be extracted",
-        "attribute2": "description of the entity to be extracted"
-    }
+    ["attribute1", "attribute2"]
 
 You must only provide the final JSON output for each document without any intermediate explanations.
 Ensure strict adherence to the structure indicated by the schema.
