@@ -13,7 +13,7 @@ inlegalner_gold_entity_schema = {
     "witness": "person testifying in the case",
     "precedent": "previous case law referenced in the judgment",
     "provision": "specific provision of law cited",
-    "other_person": "any other person mentioned in the judgment"
+    "other_person": "any other person mentioned in the judgment",
 }
 
 # MIT Restaurants NER gold data
@@ -25,7 +25,7 @@ restaurant_data_gold_schema = {
     "price": "cost range of the restaurant",
     "hours": "operating hours of the restaurant",
     "dish": "specific dish served by the restaurant",
-    "cuisine": "type of cuisine offered by the restaurant"
+    "cuisine": "type of cuisine offered by the restaurant",
 }
 
 # MIT Movies NER gold schema
@@ -41,7 +41,7 @@ movie_data_gold_schema = {
     "soundtrack": "music or soundtrack featured in the movie",
     "relationship": "character relationships in the movie",
     "character_name": "name of a character in the movie",
-    "quote": "memorable quote from the movie"
+    "quote": "memorable quote from the movie",
 }
 
 # WNUT-17 NER gold schema
@@ -51,7 +51,7 @@ wnut17_entity_gold_schema = {
     "group": "a collection of individuals or an organization",
     "corporation": "a legally recognized business entity",
     "product": "a manufactured or digital item",
-    "creative-work": "a work of art, literature, film, or other creative content"
+    "creative-work": "a work of art, literature, film, or other creative content",
 }
 
 # CADEC Schema
@@ -60,7 +60,7 @@ medical_entity_schema = {
     "Disease": "a medical condition affecting health",
     "Drug": "a pharmaceutical substance used for treatment",
     "Finding": "a clinical or diagnostic observation",
-    "Symptom": "a physical or mental indication of a condition"
+    "Symptom": "a physical or mental indication of a condition",
 }
 
 # Industry data gold schema
@@ -73,10 +73,10 @@ industry_data_entity_gold_schema = {
     "revenuegoal": "expected revenue",
     "investmentask": "amount of investment required",
     "propertyvalue": "value of the property or asset",
-    "reserves": "amount of proven reserves"
+    "reserves": "amount of proven reserves",
 }
 
-# FDA Data Schema 
+# FDA Data Schema
 medical_device_submission_schema = {
     "product code": "unique identifier for the medical device category",
     "purpose for submission": "reason for submitting the application",
@@ -92,6 +92,5 @@ medical_device_submission_schema = {
     "panel": "FDA advisory panel reviewing the submission",
     "intended use": "primary purpose and function of the device",
     "regulation section": "specific regulatory code governing the device",
-    "510k number": "unique identifier for the 510(k) submission"
+    "510k number": "unique identifier for the 510(k) submission",
 }
-
