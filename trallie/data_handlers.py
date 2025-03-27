@@ -41,9 +41,7 @@ class DataHandler:
         # Use an HTML parser
         try:
             with open(self.document, "r", encoding="utf-8") as file:
-                soup = BeautifulSoup(file, "html.parser")
-            # Extract and return plain text from the HTML
-            return soup.get_text()
+                return file.read()
         except FileNotFoundError:
             return "Error: File not found"
         except Exception as e:
@@ -100,5 +98,3 @@ class DataHandler:
         self.length = len(self.text)
         self.chunk_text()
         return self.text
-
-
