@@ -3,11 +3,6 @@ import streamlit as st
 import pandas as pd
 import tempfile
 
-from trallie.data_handlers import (
-    create_records_for_schema_generation,
-    create_record_for_data_extraction,
-)
-
 from trallie.schema_generation.schema_generator import SchemaGenerator
 from trallie.data_extraction.data_extractor import DataExtractor
 
@@ -35,7 +30,7 @@ description = st.text_input(
 
 # File Upload
 uploaded_files = st.file_uploader(
-    "Upload files", type=["pdf", "json", "txt"], accept_multiple_files=True
+    "Upload files", type=["pdf", "json", "txt", "html", "htm"], accept_multiple_files=True
 )
 
 if uploaded_files:
@@ -64,8 +59,7 @@ if st.button("Generate Schema"):
         schema_generator = SchemaGenerator(
             provider="groq", model_name="llama-3.3-70b-versatile"
         )
-        schema_records = create_records_for_schema_generation(file_paths[:3])
-        schema = schema_generator.discover_schema_few_shot(description, schema_records)
+        schema = schema_generator.discover_schema(description, file_paths)
         # st.text(schema)
         # st.success("Schema created successfully!")
         # Schema Editor
@@ -82,9 +76,8 @@ if st.button("Generate Schema"):
             provider="groq", model_name="llama-3.3-70b-versatile"
         )
         for record in file_paths:
-            extraction_record = create_record_for_data_extraction(record)
-            extracted_json = data_extractor.extract_data_few_shot(
-                schema, extraction_record
+            extracted_json = data_extractor.extract_data(
+                schema, record
             )
             extracted_data.append(extracted_json)
 
