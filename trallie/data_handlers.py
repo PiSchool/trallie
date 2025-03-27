@@ -87,7 +87,7 @@ class DataHandler:
         """
         if self.datatype == "pdf":
             self.text = self.get_text_from_pdf()
-        elif self.datatype == "html":
+        elif self.datatype in {"html", "htm"}:
             self.text = self.get_text_from_html()
         elif self.datatype == "json":
             self.text = self.get_text_from_json()
