@@ -1,22 +1,15 @@
 import os
 import json
 
-from trallie.data_handlers import (
-    create_records_for_schema_generation,
-    create_record_for_data_extraction,
-)
-
 from trallie.schema_generation.schema_generator import SchemaGenerator
 from trallie.data_extraction.data_extractor import DataExtractor
 
 
 def openie(description, records, provider, model_name, dataset_name):
-    # Create records from the data collection (max records are 5)
-    schema_records = create_records_for_schema_generation(records)
     # Initialize the schema generator with a provider and model
     schema_generator = SchemaGenerator(provider=provider, model_name=model_name)
     # Feed records to the LLM and discover schema
-    schema = schema_generator.discover_schema_few_shot(description, schema_records)
+    schema = schema_generator.discover_schema(description, records)
     print("Generated a schema for the records!")
     # Initialize data extractor with a provider and model
     data_extractor = DataExtractor(provider=provider, model_name=model_name)
@@ -25,8 +18,7 @@ def openie(description, records, provider, model_name, dataset_name):
     extracted_jsons = {}
     for record in records:
         record_name = os.path.basename(record)
-        extraction_record = create_record_for_data_extraction(record)
-        extracted_json = data_extractor.extract_data_few_shot(schema, extraction_record)
+        extracted_json = data_extractor.extract_data(schema, record)
         extracted_jsons[record_name] = extracted_json
         print(f"Record: {record}, processed!")
 
@@ -45,10 +37,7 @@ def closedie(records, schema, provider, model_name, dataset_name):
     extracted_jsons = {}
     for record in records:
         record_name = os.path.basename(record)
-        extraction_record = create_record_for_data_extraction(record)
-        extracted_json = data_extractor.extract_data_zero_shot(
-            schema, extraction_record
-        )
+        extracted_json = data_extractor.extract_data(schema, record)
         extracted_jsons[record_name] = extracted_json
         print(f"Record: {record}, processed!")
 
