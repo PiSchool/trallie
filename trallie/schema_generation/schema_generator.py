@@ -21,7 +21,7 @@ class SchemaGenerator:
         )
         self.attribute_counter = Counter()
 
-    def extract_schema(self, description, record, max_retries=3):
+    def extract_schema(self, description, record, max_retries=5):
         """
         Extract schema from a single document
         """
@@ -62,7 +62,7 @@ class SchemaGenerator:
         """
         return [attr for attr, _ in self.attribute_counter.most_common(top_k)]
 
-    def discover_schema(self, description, records, num_records=5):
+    def discover_schema(self, description, records, num_records=10):
         """
         Processes multiple documents for creation of the schema
         """
@@ -73,3 +73,4 @@ class SchemaGenerator:
             self.update_schema_collection(description, record_content)
 
         return self.get_top_k_attributes()
+
