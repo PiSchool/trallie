@@ -14,14 +14,14 @@ class DataExtractor:
         self.provider = provider
         self.model_name = model_name
         self.client = get_provider(self.provider)
-        self.system_prompt = system_prompt or FEW_SHOT_EXTRACTION_SYSTEM_PROMPT
+        self.system_prompt = system_prompt or ZERO_SHOT_EXTRACTION_SYSTEM_PROMPT
 
     def extract_attributes(self, schema, record, max_retries=3):
         """
         Extracts attributes for a given record and schema.
         """
         user_prompt = f"""
-            Following is the attribute schema for extraction: {schema} and the record: {record}
+            Following is the record: {record} and the attribute schema for extraction: {schema}
             Provide the extracted attributes. Avoid any words at the beginning and end.
         """
         for attempt in range(max_retries):
