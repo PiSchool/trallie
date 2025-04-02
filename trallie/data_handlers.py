@@ -70,7 +70,7 @@ class DataHandler:
         except Exception as e:
             return f"Error: An unexpected error occurred: {str(e)}"
 
-    def chunk_text(self, char_limit=20000):
+    def chunk_text(self, char_limit=100000):
         """
         Decorator to chunk longer document if it exceeds the word length.
         """
