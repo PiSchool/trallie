@@ -57,12 +57,9 @@ if st.button("Generate Schema"):
         # Generate Schema
         st.info("Generating schema...")
         schema_generator = SchemaGenerator(
-            provider="groq", model_name="llama-3.3-70b-versatile"
+            provider="openai", model_name="gpt-4o"
         )
         schema = schema_generator.discover_schema(description, file_paths)
-        # st.text(schema)
-        # st.success("Schema created successfully!")
-        # Schema Editor
         st.subheader("Schema *")
         # Display schema in a text area
         st.text_area(
@@ -73,7 +70,7 @@ if st.button("Generate Schema"):
         st.info("Extracting values based on the schema...")
         extracted_data = []
         data_extractor = DataExtractor(
-            provider="groq", model_name="llama-3.3-70b-versatile"
+            provider="openai", model_name="gpt-4o"
         )
         for record in file_paths:
             extracted_json = data_extractor.extract_data(
@@ -83,3 +80,4 @@ if st.button("Generate Schema"):
 
         st.write("Extracted Attributes:")
         st.json(extracted_data)
+        st.success("Data extracted successfully!")   
