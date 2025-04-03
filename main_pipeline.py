@@ -1,8 +1,4 @@
 import os
-from trallie.data_handlers import (
-    create_records_for_schema_generation,
-    create_record_for_data_extraction,
-)
 
 from trallie.schema_generation.schema_generator import SchemaGenerator
 from trallie.data_extraction.data_extractor import DataExtractor
@@ -19,26 +15,18 @@ records = [
 
 # Provide a description of the data collection
 description = "A dataset of Earth observation papers"
-# Create records from the data collection (max records are 5)
-schema_records = create_records_for_schema_generation(records)
 
 # Initialize the schema generator with a provider and model
-schema_generator = SchemaGenerator(
-    provider="groq", model_name="llama-3.3-70b-versatile"
-)
+schema_generator = SchemaGenerator(provider="openai", model_name="gpt-4o")
 # Feed records to the LLM and discover schema
 print("SCHEMA GENERATION IN ACTION ...")
-schema = schema_generator.discover_schema_few_shot(description, schema_records)
+schema = schema_generator.discover_schema(description, records)
 print("Inferred schema", schema)
 
-
-# Initialize data extractor with a provider and model 
-data_extractor = DataExtractor(
-    provider="groq", model_name="llama-3.3-70b-versatile"
-)
+# Initialize data extractor with a provider and model
+data_extractor = DataExtractor(provider="openai", model_name="gpt-4o")
 # Extract values from the text based on the schema
 print("SCHEMA COMPLETION IN ACTION ...")
 for record in records:
-    extraction_record = create_record_for_data_extraction(record)
-    extracted_json = data_extractor.extract_data_few_shot(schema, extraction_record)
+    extracted_json = data_extractor.extract_data(schema, record)
     print("Extracted attributes:", extracted_json)
