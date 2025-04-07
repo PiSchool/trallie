@@ -1,0 +1,27 @@
+[project]
+name = "trallie"
+version = "0.1.1"
+description = "Turning free form text into structured tables"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Vijayasri Iyer", email = "vijayasri.iyer@picampus-school.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "groq",
+    "openai",
+    "huggingface_hub[inference]",
+    "instructor",
+    "pydantic",
+    "PyPDF2",
+    "beautifulsoup4"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["trallie"]

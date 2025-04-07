@@ -1,6 +1,9 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 
+# Pypi creds
+*.pypirc 
+
 *.py[cod]
 *$py.class
 

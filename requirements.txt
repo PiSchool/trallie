@@ -1,11 +1,8 @@
-langchain
 groq
-langchain-groq
-langchain-experimental
+openai 
+huggingface_hub[inference]
 instructor 
 pydantic 
-openai 
-anthropic
 PyPDF2
 beautifulsoup4
 streamlit
