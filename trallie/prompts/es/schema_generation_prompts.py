@@ -42,6 +42,12 @@ FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_ES = """
     “monto” : “monto de la transacción”
     }
 
+    Para responder en JSON válido, sigue las siguientes reglas: 
+        1. Evita las comillas invertidas ``` o ```json al principio y al final de la respuesta. 
+        2. Encierra todas las propiedades en el JSON únicamente con comillas dobles. 
+        3. Evita cualquier contenido adicional al principio y al final de la respuesta. 
+        4. Comienza y termina siempre con llaves.
+
     Ahora, infiere el esquema de otro documento.  
     Solo debes proporcionar un único resultado final en formato JSON sin mostrar pasos intermedios.  
     Responde únicamente con JSON válido. 

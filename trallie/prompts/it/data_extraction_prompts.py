@@ -34,6 +34,12 @@ Utilizza questi esempi come guida per il tuo processo di estrazione.
     Compito:  
     Usa lo schema fornito di seguito per organizzare le informazioni estratte dal documento in formato JSON.
 
+    Per rispondere in JSON valido, attenersi alle seguenti regole: 
+        1. Evitare i backtick ``` o ```json all'inizio e alla fine della risposta. 
+        2. Racchiudere tutte le proprietà nel JSON solo tra virgolette doppie. 
+        3. Evitare qualsiasi contenuto aggiuntivo all'inizio e alla fine della risposta. 
+        4. Iniziare e terminare sempre con le parentesi graffe.
+
 Devi fornire solo l'output JSON finale per ogni documento senza spiegazioni intermedie.  
 Assicurati di rispettare rigorosamente la struttura indicata dallo schema.
 """

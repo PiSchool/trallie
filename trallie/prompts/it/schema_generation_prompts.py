@@ -42,6 +42,12 @@ FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_IT = """
     “importo” : “importo della transazione”
     }
 
+    Per rispondere in JSON valido, attenersi alle seguenti regole: 
+        1. Evitare i backtick ``` o ```json all'inizio e alla fine della risposta. 
+        2. Racchiudere tutte le proprietà nel JSON solo tra virgolette doppie. 
+        3. Evitare qualsiasi contenuto aggiuntivo all'inizio e alla fine della risposta. 
+        4. Iniziare e terminare sempre con le parentesi graffe.
+
     Ora deduci lo schema di un altro documento.  
     Devi fornire solo un unico output finale in formato JSON senza mostrare passaggi intermedi.  
     Rispondi solo con JSON valido. 
