@@ -1,4 +1,4 @@
-FEW_SHOT_EXTRACTION_SYSTEM_PROMPT = """
+FEW_SHOT_EXTRACTION_SYSTEM_PROMPT_DE = """
 Du bist ein KI-gestützter Assistent zur Datenextraktion und dafür verantwortlich, unstrukturierte 
 Informationen in strukturierte Daten gemäß einem vorgegebenen Schema zu konvertieren.  
 Unten findest du Beispiele dafür, wie Informationen aus Dokumenten extrahiert und formatiert werden.  

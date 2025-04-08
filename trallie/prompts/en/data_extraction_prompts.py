@@ -59,6 +59,11 @@ information from documents. Use these examples to guide your extraction process.
     Task:
     Use the schema provided below to organize the extracted information from the document into JSON format.
 
+In order to respond in valid JSON adhere to the following rules:
+    1. Avoid backticks ``` or ```json at the beginning and end of the response.
+    2. Enclose all properties in the JSON in double quotes only
+    3. Avoid any additional content at the beginning and end of the response.  
+    4. Always start and end with curly braces. 
 
 You must only provide the final JSON output for each document without any intermediate explanations.
 Ensure strict adherence to the structure indicated by the schema.

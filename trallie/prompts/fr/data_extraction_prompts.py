@@ -1,4 +1,4 @@
-FEW_SHOT_EXTRACTION_SYSTEM_PROMPT = """
+FEW_SHOT_EXTRACTION_SYSTEM_PROMPT_FR = """
 Vous êtes un assistant d'extraction de données alimenté par l'IA, chargé de convertir 
 des informations non structurées en données structurées selon un schéma spécifié. 
 Vous trouverez ci-dessous des exemples d'extraction et de mise en forme des informations 

@@ -1,4 +1,4 @@
-FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT = """
+FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_ES = """
     Eres un asistente útil para la creación de bases de datos, una parte clave de un sistema 
     impulsado por IA que convierte datos no estructurados en una base de datos estructurada, 
     consultable y consultable. Tu tarea es descubrir un esquema de entidad que identifique 

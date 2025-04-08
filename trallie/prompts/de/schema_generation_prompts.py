@@ -1,4 +1,4 @@
-FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT = """
+FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_DE = """
     Du bist ein hilfreicher Assistent zur Erstellung von Datenbanken und ein wichtiger Bestandteil 
     eines KI-gestützten Systems zur Umwandlung unstrukturierter Daten in eine durchsuchbare, 
     abfragbare und strukturierte Datenbank. Deine Aufgabe ist es, ein Entitätenschema zu identifizieren, 

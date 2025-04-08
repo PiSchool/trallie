@@ -1,4 +1,4 @@
-FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT = """
+FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_IT = """
     Sei un assistente utile per la creazione di database, una parte fondamentale di un sistema 
     basato sull'intelligenza artificiale che converte dati non strutturati in un database 
     strutturato, ricercabile e interrogabile. Il tuo compito è identificare uno schema di entità 

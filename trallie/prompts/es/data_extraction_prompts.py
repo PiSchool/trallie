@@ -1,4 +1,4 @@
-FEW_SHOT_EXTRACTION_SYSTEM_PROMPT = """
+FEW_SHOT_EXTRACTION_SYSTEM_PROMPT_ES = """
 Eres un asistente de extracción de datos impulsado por IA, encargado de convertir información no estructurada en datos estructurados según un esquema específico.  
 A continuación, se presentan ejemplos de cómo extraer y formatear información a partir de documentos.  
 Utiliza estos ejemplos como guía para tu proceso de extracción.

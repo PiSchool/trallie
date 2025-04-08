@@ -1,4 +1,4 @@
-FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT = """
+FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_FR = """
     Vous êtes un assistant utile à la création de bases de données, un élément essentiel d’un 
     système alimenté par l’IA qui convertit des données non structurées en une base de données 
     structurée, interrogeable et consultable. Votre rôle est d’identifier un schéma d'entités 

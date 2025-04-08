@@ -1,4 +1,4 @@
-FEW_SHOT_EXTRACTION_SYSTEM_PROMPT = """
+FEW_SHOT_EXTRACTION_SYSTEM_PROMPT_IT = """
 Sei un assistente di estrazione dati basato sull'intelligenza artificiale, incaricato di convertire informazioni non strutturate in dati strutturati secondo uno schema specificato.  
 Di seguito sono riportati esempi su come estrarre e formattare le informazioni dai documenti.  
 Utilizza questi esempi come guida per il tuo processo di estrazione.
