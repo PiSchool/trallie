@@ -120,6 +120,12 @@ FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT = """
     “amount” : “amount for the deal”
     }
 
+    In order to respond in valid JSON adhere to the following rules:
+        1. Avoid backticks ``` or ```json at the beginning and end of the response.
+        2. Enclose all properties in the JSON in double quotes only
+        3. Avoid any additional content at the beginning and end of the response.  
+        4. Always start and end with curly braces. 
+
     Now infer the schema of another document.
     You must only return a single final JSON output and not the intermediate outputs.
     Only respond with valid JSON. 

@@ -11,6 +11,12 @@ You must provide the extracted data in JSON format based on the schema provided:
     "attribute2":"extracted value corresponding to attribute2"
 }
 
+In order to respond in valid JSON adhere to the following rules:
+    1. Avoid backticks ``` or ```json at the beginning and end of the response.
+    2. Enclose all properties in the JSON in double quotes only
+    3. Avoid any additional content at the beginning and end of the response.  
+    4. Always start and end with curly braces. 
+
 The schema you'll be provided with will include attribute names to assist you 
 in identifying the necessary values. You must only return the final JSON output and not any 
 intermediate results. You must strictly adhere to the JSON schema format provided without 
