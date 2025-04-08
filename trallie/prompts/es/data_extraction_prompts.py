@@ -34,6 +34,12 @@ Utiliza estos ejemplos como guía para tu proceso de extracción.
     Tarea:  
     Usa el esquema proporcionado a continuación para organizar la información extraída del documento en formato JSON.
 
+Para responder en JSON válido, sigue las siguientes reglas: 
+    1. Evita las comillas invertidas ``` o ```json al principio y al final de la respuesta. 
+    2. Encierra todas las propiedades en el JSON únicamente con comillas dobles. 
+    3. Evita cualquier contenido adicional al principio y al final de la respuesta. 
+    4. Comienza y termina siempre con llaves.
+
 Debes proporcionar únicamente la salida JSON final para cada documento sin explicaciones intermedias.  
 Asegúrate de seguir estrictamente la estructura indicada por el esquema.
 """

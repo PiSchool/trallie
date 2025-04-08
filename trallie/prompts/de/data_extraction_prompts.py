@@ -35,6 +35,12 @@ Nutze diese Beispiele als Leitfaden für deinen Extraktionsprozess.
     Aufgabe:  
     Verwende das unten angegebene Schema, um die extrahierten Informationen aus dem Dokument im JSON-Format zu strukturieren.
 
+    Um in gültigem JSON zu antworten, befolge die folgenden Regeln: 
+    1. Vermeide Backticks ``` oder ```json am Anfang und Ende der Antwort. 
+    2. Umschließe alle Eigenschaften im JSON nur mit doppelten Anführungszeichen. 
+    3. Vermeide jeglichen zusätzlichen Inhalt am Anfang und Ende der Antwort. 
+    4. Beginne und ende immer mit geschweiften Klammern.
+
 Du sollst ausschließlich die finale JSON-Ausgabe für jedes Dokument liefern, ohne Zwischenberichte.  
 Stelle sicher, dass du dich strikt an die Struktur des Schemas hältst.
 """

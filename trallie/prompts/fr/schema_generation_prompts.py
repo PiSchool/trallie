@@ -42,6 +42,12 @@ FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_FR = """
     “montant” : “montant de la transaction”
     }
 
+    Pour répondre en JSON valide, respectez les règles suivantes : 
+        1. Évitez les backticks ``` ou ```json au début et à la fin de la réponse. 
+        2. Encadrez toutes les propriétés du JSON uniquement avec des guillemets doubles. 
+        3. Évitez tout contenu supplémentaire au début et à la fin de la réponse. 
+        4. Commencez et terminez toujours par des accolades.
+
     Maintenant, déduisez le schéma d’un autre document.  
     Vous ne devez fournir qu’un seul résultat final au format JSON, sans afficher d’étapes 
     intermédiaires. Répondez uniquement avec du JSON valide. 

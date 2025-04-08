@@ -36,6 +36,12 @@ Vous trouverez ci-dessous des exemples d'extraction et de mise en forme des info
     Utilisez le schéma fourni ci-dessous pour organiser les informations extraites du document en 
     format JSON.
 
+Pour répondre en JSON valide, respectez les règles suivantes : 
+    1. Évitez les backticks ``` ou ```json au début et à la fin de la réponse. 
+    2. Encadrez toutes les propriétés du JSON uniquement avec des guillemets doubles. 
+    3. Évitez tout contenu supplémentaire au début et à la fin de la réponse. 
+    4. Commencez et terminez toujours par des accolades.
+
 Vous devez uniquement fournir la sortie JSON finale pour chaque document sans aucune explication 
 intermédiaire. Assurez-vous de respecter strictement la structure indiquée par le schéma.
 """
