@@ -2,24 +2,24 @@ import json
 from bs4 import BeautifulSoup
 from PyPDF2 import PdfReader
 
+def infer_datatype(func):
+    """
+    Decorator to infer the datatype of the document and set it.
+    """
 
+    def wrapper(self, *args, **kwargs):
+        self.datatype = self.document.split(".")[-1].lower()
+        return func(self, *args, **kwargs)
+
+    return wrapper
+    
 class DataHandler:
-    def __init__(self, document):
+    def __init__(self, document, from_text=False):
         self.document = document
-        self.datatype = None  # Datatype will be set by the decorator
+        self.from_text = from_text
+        self.datatype = None
         self.length = None  # Length will be set by the decorator
         self.text = None  # Contains extracted text
-
-    def infer_datatype(func):
-        """
-        Decorator to infer the datatype of the document and set it.
-        """
-
-        def wrapper(self, *args, **kwargs):
-            self.datatype = self.document.split(".")[-1].lower()
-            return func(self, *args, **kwargs)
-
-        return wrapper
 
     def get_text_from_pdf(self):
         # Use a pdf extractor
@@ -83,16 +83,20 @@ class DataHandler:
         """
         Get text from the document based on its datatype.
         """
-        if self.datatype == "pdf":
-            self.text = self.get_text_from_pdf()
-        elif self.datatype in {"html", "htm"}:
-            self.text = self.get_text_from_html()
-        elif self.datatype == "json":
-            self.text = self.get_text_from_json()
-        elif self.datatype == "txt":
-            self.text = self.get_text_from_txt()
+        if self.from_text:
+            self.datatype = "txt"
+            self.text = self.document
         else:
-            return "Unsupported file type"
+            if self.datatype == "pdf":
+                self.text = self.get_text_from_pdf()
+            elif self.datatype in {"html", "htm"}:
+                self.text = self.get_text_from_html()
+            elif self.datatype == "json":
+                self.text = self.get_text_from_json()
+            elif self.datatype == "txt":
+                self.text = self.get_text_from_txt()
+            else:
+                return "Unsupported file type"
 
         # Chunk text
         self.length = len(self.text)

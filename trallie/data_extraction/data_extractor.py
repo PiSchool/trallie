@@ -40,9 +40,9 @@ class DataExtractor:
                 print(f"Error: {e}")
                 return None
 
-    def extract_data(self, schema, record, max_retries=3):
+    def extract_data(self, schema, record, max_retries=3, from_text=False):
         """
         Processes record and returns extracted attributes.
         """
-        record_text = DataHandler(record).get_text()
+        record_text = DataHandler(record, from_text=from_text).get_text()
         return self.extract_attributes(schema, record_text, max_retries)

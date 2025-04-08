@@ -62,14 +62,14 @@ class SchemaGenerator:
         """
         return [attr for attr, _ in self.attribute_counter.most_common(top_k)]
 
-    def discover_schema(self, description, records, num_records=10):
+    def discover_schema(self, description, records, num_records=10, from_text=False):
         """
         Processes multiple documents for creation of the schema
         """
         num_records = min(num_records, len(records))
 
         for record in records[:num_records]:
-            record_content = DataHandler(record).get_text()
+            record_content = DataHandler(record, from_text=from_text).get_text()
             self.update_schema_collection(description, record_content)
 
         return self.get_top_k_attributes()
