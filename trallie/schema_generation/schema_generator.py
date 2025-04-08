@@ -1,9 +1,11 @@
 from trallie.providers import get_provider
 from trallie.providers import ProviderInitializationError
 from trallie.prompts import (
-    FEW_SHOT_GENERATION_SYSTEM_PROMPT,
-    ZERO_SHOT_GENERATION_SYSTEM_PROMPT,
     FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT,
+    FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_DE,
+    FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_ES,
+    FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_FR,
+    FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_IT
 )
 from trallie.data_handlers import DataHandler
 
@@ -12,14 +14,37 @@ import json
 
 
 class SchemaGenerator:
-    def __init__(self, provider, model_name, system_prompt=None):
+    LANGUAGE_PROMPT_MAP = {
+        "en": FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT,
+        "de": FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_DE,
+        "fr": FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_FR,
+        "es": FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_ES,
+        "it": FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_IT,
+    }
+
+    ALLOWED_NON_EN_MODELS = {"gpt-4o", "llama-3.3-70b-versatile"}
+    ALLOWED_NON_EN_PROVIDERS = {"openai", "groq"}
+
+    def __init__(self, provider, model_name, system_prompt=None, language="en"):
         self.provider = provider
         self.model_name = model_name
         self.client = get_provider(self.provider)
-        self.system_prompt = (
-            system_prompt or FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT
-        )
+        self.language = language
         self.attribute_counter = Counter()
+
+        if self.language == "en":
+            self.system_prompt = system_prompt or self.LANGUAGE_PROMPT_MAP["en"]
+        else:
+            # Enforce allowed providers/models for non-English
+            if self.provider not in self.ALLOWED_NON_EN_PROVIDERS:
+                raise ValueError(f"Provider '{self.provider}' is not supported for language '{self.language}'.")
+
+            if self.model_name not in self.ALLOWED_NON_EN_MODELS:
+                raise ValueError(f"Model '{self.model_name}' is not allowed for non-English extraction.")
+
+            self.system_prompt = system_prompt or self.LANGUAGE_PROMPT_MAP.get(self.language)
+            if not self.system_prompt:
+                raise ValueError(f"No prompt available for language '{self.language}'.")
 
     def extract_schema(self, description, record, max_retries=5):
         """
@@ -37,6 +62,7 @@ class SchemaGenerator:
                     self.system_prompt, user_prompt, self.model_name
                 )
                 # Validate if response is a valid JSON
+                # print(response)
                 schema = json.loads(response)
                 return schema
             except (json.JSONDecodeError, TypeError) as e:
