@@ -1,6 +1,6 @@
 [project]
 name = "trallie"
-version = "0.1.1"
+version = "0.1.2"
 description = "Turning free form text into structured tables"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -17,6 +17,10 @@ dependencies = [
     "PyPDF2",
     "beautifulsoup4"
 ]
+
+[project.optional-dependencies]
+text = ["sentence-transformers"]
+dev = ["pre-commit", "pylint", "black", "isort"]
 
 [build-system]
 requires = ["hatchling"]
