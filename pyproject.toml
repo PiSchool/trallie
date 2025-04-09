@@ -19,7 +19,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-text = ["sentence-transformers"]
+text = ["sentence-transformers", "pandas"]
 dev = ["pre-commit", "pylint", "black", "isort"]
 
 [build-system]
