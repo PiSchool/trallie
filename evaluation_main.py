@@ -18,7 +18,8 @@ for dataset_name, dataset_info in datasets.items():
     records = glob.glob(str(dataset_info["files"]))
     extracted_jsons = openie(dataset_info['description'], records, provider="openai", model_name="gpt-4o", dataset_name=dataset_name)
     result = evaluate_openie_sbert(dataset_info['ground_truth'], f"{dataset_name}_openie_predicted_table.json")
+    print(result)
     schema = get_dataset_schema(dataset_info['ground_truth'])
     extracted_jsons = closedie(records, schema, provider="openai", model_name="gpt-4o", dataset_name=dataset_name)
-    result = evaluate_value_f1(fda_ground_truth, f"{dataset_name}_closedie_predicted_table.json")
-   
+    result = evaluate_value_f1(dataset_info["ground_truth"], f"{dataset_name}_closedie_predicted_table.json")
+    print(result)
