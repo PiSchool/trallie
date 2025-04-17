@@ -80,6 +80,7 @@ class OpenAIProvider(BaseProvider):
                 },
             ],
             model=model_name,
+            temperature=0, 
             seed=4285, 
             response_format={"type": "json_object"}
         )
