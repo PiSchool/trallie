@@ -5,29 +5,29 @@ from trallie.evaluation.evaluation import evaluate_openie, evaluate_closedie
 from trallie.evaluation.evaluation_params import get_evaluation_params, get_dataset_schema
 from trallie.wrappers import openie, closedie
 
-import boto3
-
 from pathlib import Path
 
 os.environ["GROQ_API_KEY"] = None
 os.environ["OPENAI_API_KEY"] = None 
 
-def upload_to_s3(json_file, bucket_name, s3_key):
-    s3 = boto3.client("s3")
-    s3.upload_file(json_file, bucket_name, s3_key)
-    print(f"✅ Uploaded {json_file} to s3://{bucket_name}/{s3_key}")
-
 base_path = Path("data/evaluation/evaporate/data")
 datasets = get_evaluation_params(base_path)
 
-for dataset_name, dataset_info in datasets.items():
-    dataset_info["schema"] = get_dataset_schema(dataset_info["ground_truth"])
-    records = glob.glob(str(dataset_info["files"]))
-    extracted_jsons = openie(dataset_info['description'], records, provider="groq", model_name="llama-3.3-70b-versatile", dataset_name=dataset_name)
-    result = evaluate_openie(dataset_info['ground_truth'], f"{dataset_name}_openie_predicted_table.json")
-    print(result)
-    schema = get_dataset_schema(dataset_info['ground_truth'])
-    extracted_jsons = closedie(records, schema, provider="groq", model_name="llama-3.3-70b-versatile", dataset_name=dataset_name)
-    result = evaluate_closedie(dataset_info["ground_truth"], f"{dataset_name}_closedie_predicted_table.json")
-    print(result)
-    upload_to_s3(json_file=f"{dataset_name}_openie_results.json", bucket_name="trallie-synth-datagen", s3_key=f"results/{dataset_name}_openie_results.json")
+model_names = ["llama-3.3-70b-versatile", "gpt-4o", "llama-3.1-8b-instant", "deepseek-r1-distill-llama-70b"]
+model_providers = ["groq", "openai", "groq", "groq"]
+reasoning_modes = [False, False, False, True]
+
+for dataset_name, dataset_info in datasets.items()[:1]:
+    for provider, model_name, reasoning_mode in zip(model_providers, model_names, reasoning_modes):
+        if any(os.path.exists(f"{model_name}_{dataset_name}_{mode}_predicted_table.json") for mode in ["openie", "closedie"]):
+            continue
+        dataset_info["schema"] = get_dataset_schema(dataset_info["ground_truth"])
+        records = glob.glob(str(dataset_info["files"]))
+        extracted_jsons = openie(dataset_info['description'], records, provider=provider, model_name=model_name, reasoning_mode=reasoning_mode, dataset_name=dataset_name)
+        result = evaluate_openie(dataset_info['ground_truth'], f"{model_name}_{dataset_name}_openie_predicted_table.json")
+        print(result)
+        schema = get_dataset_schema(dataset_info['ground_truth'])
+        extracted_jsons = closedie(records, schema, provider=provider, model_name=model_name, reasoning_mode=reasoning_mode, dataset_name=dataset_name)
+        result = evaluate_closedie(dataset_info["ground_truth"], f"{model_name}_{dataset_name}_closedie_predicted_table.json")
+        print(result)
+    
