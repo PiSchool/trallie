@@ -23,7 +23,7 @@ def openie(description, records, provider, model_name, reasoning_mode, dataset_n
         print(f"Record: {record}, processed!")
 
     print("Writing results to a file")
-    with open(f"{dataset_name}_openie_predicted_table.json", "w") as json_file:
+    with open(f"{model_name}_{dataset_name}_openie_predicted_table.json", "w") as json_file:
         json.dump(extracted_jsons, json_file, indent=4)
 
     print("OpenIE completed!")
@@ -42,7 +42,7 @@ def closedie(records, schema, provider, model_name, reasoning_mode, dataset_name
         print(f"Record: {record}, processed!")
 
     print("Writing results to a file")
-    with open(f"{dataset_name}_closedie_predicted_table.json", "w") as json_file:
+    with open(f"{model_name}_{dataset_name}_closedie_predicted_table.json", "w") as json_file:
         json.dump(extracted_jsons, json_file, indent=4)
 
     print("ClosedIE completed!")
