@@ -77,7 +77,6 @@ class SchemaGenerator:
                     self.system_prompt, user_prompt, self.model_name
                 )
                 # Validate if response is a valid JSON
-                # print(response)
                 if self.reasoning_mode:
                     response = post_process_response(response)
                 schema = json.loads(response)
