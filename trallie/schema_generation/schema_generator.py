@@ -12,6 +12,14 @@ from trallie.data_handlers import DataHandler
 from collections import Counter
 import json
 
+import re
+
+# Post processing for a reasoning model 
+def post_process_response(response: str) -> str:
+    """
+    Removes <think>...</think> content from the response.
+    """
+    return re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
 
 class SchemaGenerator:
     LANGUAGE_PROMPT_MAP = {
@@ -24,13 +32,20 @@ class SchemaGenerator:
 
     ALLOWED_NON_EN_MODELS = {"gpt-4o", "llama-3.3-70b-versatile"}
     ALLOWED_NON_EN_PROVIDERS = {"openai", "groq"}
+    ALLOWED_REASONING_MODELS = {"deepseek-r1-distill-llama-70b"}
 
-    def __init__(self, provider, model_name, system_prompt=None, language="en"):
+    def __init__(self, provider, model_name, system_prompt=None, language="en", reasoning_mode=False):
         self.provider = provider
         self.model_name = model_name
         self.client = get_provider(self.provider)
         self.language = language
+        self.reasoning_mode = reasoning_mode
         self.attribute_counter = Counter()
+
+        if self.reasoning_mode and self.model_name not in self.ALLOWED_REASONING_MODELS:
+            raise ValueError(
+                f"`reasoning_mode=True` is not supported for model '{self.model_name}'. "
+            )
 
         if self.language == "en":
             self.system_prompt = system_prompt or self.LANGUAGE_PROMPT_MAP["en"]
@@ -63,6 +78,8 @@ class SchemaGenerator:
                 )
                 # Validate if response is a valid JSON
                 # print(response)
+                if self.reasoning_mode:
+                    response = post_process_response(response)
                 schema = json.loads(response)
                 return schema
             except (json.JSONDecodeError, TypeError) as e:

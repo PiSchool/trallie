@@ -5,9 +5,9 @@ from trallie.schema_generation.schema_generator import SchemaGenerator
 from trallie.data_extraction.data_extractor import DataExtractor
 
 
-def openie(description, records, provider, model_name, dataset_name):
+def openie(description, records, provider, model_name, reasoning_mode, dataset_name):
     # Initialize the schema generator with a provider and model
-    schema_generator = SchemaGenerator(provider=provider, model_name=model_name)
+    schema_generator = SchemaGenerator(provider=provider, model_name=model_name, reasoning_mode=reasoning_mode)
     # Feed records to the LLM and discover schema
     schema = schema_generator.discover_schema(description, records)
     print("Generated a schema for the records!")
@@ -23,16 +23,16 @@ def openie(description, records, provider, model_name, dataset_name):
         print(f"Record: {record}, processed!")
 
     print("Writing results to a file")
-    with open(f"{dataset_name}_openie_predicted_table.json", "w") as json_file:
+    with open(f"{model_name}_{dataset_name}_openie_predicted_table.json", "w") as json_file:
         json.dump(extracted_jsons, json_file, indent=4)
 
     print("OpenIE completed!")
     return extracted_jsons
 
 
-def closedie(records, schema, provider, model_name, dataset_name):
+def closedie(records, schema, provider, model_name, reasoning_mode, dataset_name):
     # Extract values from the text based on the schema
-    data_extractor = DataExtractor(provider=provider, model_name=model_name)
+    data_extractor = DataExtractor(provider=provider, model_name=model_name, reasoning_mode=reasoning_mode)
     print("Extracting data from every record:")
     extracted_jsons = {}
     for record in records:
@@ -42,7 +42,7 @@ def closedie(records, schema, provider, model_name, dataset_name):
         print(f"Record: {record}, processed!")
 
     print("Writing results to a file")
-    with open(f"{dataset_name}_closedie_predicted_table.json", "w") as json_file:
+    with open(f"{model_name}_{dataset_name}_closedie_predicted_table.json", "w") as json_file:
         json.dump(extracted_jsons, json_file, indent=4)
 
     print("ClosedIE completed!")
