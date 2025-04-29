@@ -88,6 +88,7 @@ FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT = """
     maximum 100 keywords per document. 
     Step 2: Transform the keywords into a set of generic topics to avoid niche attribute 
     names that are specific to a record. 
+    Step 3: Identify a set of 10-20 attributes for the schema.
 
     You must provide the schema in JSON format as below.
 
