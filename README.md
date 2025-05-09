@@ -8,7 +8,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin)](https://www.linkedin.com/school/pischool/)
 [![Stars](https://img.shields.io/github/stars/PiSchool/trallie?style=flat&logo=github&cacheSeconds=3600)](https://github.com/PiSchool/trallie/stargazers)
 [![Python 3.10](https://img.shields.io/badge/Python-3.10-red?logo=python&logoColor=white)](https://www.python.org/downloads/release/python-3100/)
-
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1N3TuH5-IHw9ZQfk4cNflZlCGFbJHTXf6?usp=sharing)
 
 *Trallie (“Transfer learning for information extraction”) boosts Information Extraction (IE) for search among textual asset descriptions by doing away with costly human annotation, instead leveraging LLM capabilities to follow NL guidelines, understand labels, and manipulate NL like it does for code.*
 
@@ -20,22 +20,14 @@
 
 **Team**: At Pi School, our experience of rapid prototyping in AI, acquired over >100 AI projects, gives us an advantage in exploiting the rapidly moving SOTA.
 
-## Getting Started
-1. Clone the repository 
+## Getting Started 
+1. Install the "trallie" package. 
 ```
-git clone https://github.com/PiSchool/trallie.git
+pip install trallie
 ```
-
-2. Change you directory to that of the **trallie** repository. 
-
-3. Install required dependencies 
-```
-pip install -r requirements.txt
-```
-
-4. Run the script main_pipeline.py
+2. Run the demo script from the repository.
 ```
 python main_pipeline.py
 ```
+3. Alternatively, you can use the [Demo Notebook](https://colab.research.google.com/drive/1N3TuH5-IHw9ZQfk4cNflZlCGFbJHTXf6?usp=sharing) on Google Colab. 
 
-Visit the project [wiki](https://github.com/PiSchool/trallie/wiki/Trallie:-Home) to read the detailed documentation. 
