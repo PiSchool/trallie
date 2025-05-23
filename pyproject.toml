@@ -1,6 +1,6 @@
 [project]
 name = "trallie"
-version = "0.1.2"
+version = "0.1.3"
 description = "Turning free form text into structured tables"
 readme = "README.md"
 license = { file = "LICENSE" }
