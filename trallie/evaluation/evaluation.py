@@ -4,16 +4,29 @@ from collections import defaultdict
 from tqdm import tqdm
 from sentence_transformers import SentenceTransformer, util
 
-
-def embedding_sim_sbert(text1, text2, model, threshold=0.5):
-    # Compute S-BERT between two pieces of text
+def embedding_match(text1, text2, model, threshold=0.5, use_exact_match=False):
+    # Return 0 if either text is missing
     if not text1 or not text2:
         return 0.0, False
+
+    # If exact match is enabled, check first
+    if use_exact_match and text1.strip().lower() == text2.strip().lower():
+        return 1.0, True
+
+    # Fall back to S-BERT similarity
     embeddings = model.encode([text1, text2], convert_to_tensor=True)
     score = util.cos_sim(embeddings[0], embeddings[1]).item()
     return score, score >= threshold
 
-def evaluate_closedie(ground_truth_path, predicted_path, value_threshold=0.5):
+# def embedding_sim_sbert(text1, text2, model, threshold=0.5):
+#     # Compute S-BERT between two pieces of text
+#     if not text1 or not text2:
+#         return 0.0, False
+#     embeddings = model.encode([text1, text2], convert_to_tensor=True)
+#     score = util.cos_sim(embeddings[0], embeddings[1]).item()
+#     return score, score >= threshold
+
+def evaluate_closedie(ground_truth_path, predicted_path, value_threshold=0.5, use_exact_match=False):
     # Evaluate performance of ClosedIE task
     model = SentenceTransformer("all-MiniLM-L6-v2")
     with open(ground_truth_path, "r") as f:
@@ -42,8 +55,8 @@ def evaluate_closedie(ground_truth_path, predicted_path, value_threshold=0.5):
                 for idx, pred_value in enumerate(pred_values):
                     if idx in matched_preds:
                         continue
-                    score, match = embedding_sim_sbert(
-                        gt_value, pred_value, model, value_threshold
+                    score, match = embedding_match(
+                        gt_value, pred_value, model, value_threshold, use_exact_match=use_exact_match
                     )
                     if match:
                         entity_metrics[gt_key]["tp"] += 1
@@ -55,7 +68,7 @@ def evaluate_closedie(ground_truth_path, predicted_path, value_threshold=0.5):
             entity_metrics[gt_key]["fp"] += len(pred_values) - len(matched_preds)
     return _compute_f1_metrics(entity_metrics)
 
-def find_best_matching_key(gt_key, pred_keys, model, key_threshold=0.5):
+def find_best_matching_key(gt_key, pred_keys, model, key_threshold=0.8):
     if not pred_keys:
         return None, 0.0
     gt_embedding = model.encode(gt_key, convert_to_tensor=True)
@@ -69,7 +82,7 @@ def find_best_matching_key(gt_key, pred_keys, model, key_threshold=0.5):
         else (None, 0.0)
     )
 
-def evaluate_openie(ground_truth_path, predicted_path, key_threshold=0.5, value_threshold=0.5):
+def evaluate_openie(ground_truth_path, predicted_path, key_threshold=0.5, value_threshold=0.5, use_exact_match=False):
     # Evaluate OpenIE task
     model = SentenceTransformer("all-MiniLM-L6-v2")
     with open(ground_truth_path, "r") as f:
@@ -92,8 +105,8 @@ def evaluate_openie(ground_truth_path, predicted_path, key_threshold=0.5, value_
             )
             if best_pred_key:
                 pred_value = pred_entities[best_pred_key]
-                value_score, value_match = embedding_sim_sbert(
-                    gt_value, pred_value, model, value_threshold
+                value_score, value_match = embedding_match(
+                    gt_value, pred_value, model, value_threshold, use_exact_match=use_exact_match
                 )
                 if value_match:
                     entity_metrics[gt_key]["tp"] += 1
