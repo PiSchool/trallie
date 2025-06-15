@@ -10,8 +10,8 @@ from trallie.prompts import (
 from trallie.data_handlers import DataHandler
 
 import json
-
 import re
+from typing import Dict, Any, Optional
 
 # Post processing for a reasoning model 
 def post_process_response(response: str) -> str:
@@ -92,3 +92,83 @@ class DataExtractor:
         """
         record_text = DataHandler(record, from_text=from_text).get_text()
         return self.extract_attributes(schema, record_text, max_retries)
+
+    def extract_data_large_document(self, 
+                                  schema, 
+                                  record, 
+                                  chunk_size: int = 100000, 
+                                  overlap_size: int = 10000,
+                                  max_retries: int = 3, 
+                                  from_text: bool = False,
+                                  combine_results: bool = True) -> Dict[str, Any]:
+        """
+        Extract data from large documents by processing them in chunks.
+        
+        Args:
+            schema: The schema to extract data according to
+            record: The document path or text to process
+            chunk_size: Size of each chunk in characters
+            overlap_size: Size of overlap between chunks
+            max_retries: Maximum number of retries for each chunk
+            from_text: Whether the record is text or a file path
+            combine_results: Whether to combine results from all chunks
+            
+        Returns:
+            Combined extracted data from all chunks
+        """
+        # Create a data handler for the document
+        data_handler = DataHandler(record, from_text=from_text)
+        
+        # Define the LLM processor function for each chunk
+        def llm_processor(chunk_text: str) -> Dict[str, Any]:
+            return self.extract_attributes(schema, chunk_text, max_retries)
+        
+        # Process the large document using chunking
+        return data_handler.process_large_document(
+            llm_processor=llm_processor,
+            chunk_size=chunk_size,
+            overlap_size=overlap_size,
+            combine_results=combine_results
+        )
+
+    def extract_data_with_chunking(self, 
+                                 schema, 
+                                 record, 
+                                 chunk_size: int = 100000, 
+                                 overlap_size: int = 10000,
+                                 max_retries: int = 3, 
+                                 from_text: bool = False,
+                                 combine_results: bool = True,
+                                 auto_detect_large_docs: bool = True) -> Dict[str, Any]:
+        """
+        Extract data with automatic chunking for large documents.
+        
+        Args:
+            schema: The schema to extract data according to
+            record: The document path or text to process
+            chunk_size: Size of each chunk in characters
+            overlap_size: Size of overlap between chunks
+            max_retries: Maximum number of retries for each chunk
+            from_text: Whether the record is text or a file path
+            combine_results: Whether to combine results from all chunks
+            auto_detect_large_docs: Whether to automatically use chunking for large documents
+            
+        Returns:
+            Extracted data
+        """
+        if auto_detect_large_docs:
+            # Check if the document is large enough to warrant chunking
+            data_handler = DataHandler(record, from_text=from_text)
+            full_text = data_handler.get_text()
+            
+            if full_text and not full_text.startswith("Error:"):
+                if len(full_text) > chunk_size:
+                    print(f"Document is large ({len(full_text)} chars), using chunking...")
+                    return self.extract_data_large_document(
+                        schema, record, chunk_size, overlap_size, max_retries, from_text, combine_results
+                    )
+                else:
+                    print(f"Document is small ({len(full_text)} chars), processing normally...")
+        
+        # Use the original method for smaller documents
+        return self.extract_data(schema, record, max_retries, from_text)
