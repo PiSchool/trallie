@@ -11,8 +11,8 @@ from trallie.data_handlers import DataHandler
 
 from collections import Counter
 import json
-
 import re
+from typing import List, Dict, Any, Optional
 
 # Post processing for a reasoning model 
 def post_process_response(response: str) -> str:
@@ -115,4 +115,106 @@ class SchemaGenerator:
             self.update_schema_collection(description, record_content)
 
         return self.get_top_k_attributes()
+
+    def discover_schema_large_document(self, 
+                                     description: str, 
+                                     record: str, 
+                                     chunk_size: int = 100000, 
+                                     overlap_size: int = 10000,
+                                     max_retries: int = 5, 
+                                     from_text: bool = False,
+                                     top_k: int = 10) -> List[str]:
+        """
+        Discover schema from a large document by processing it in chunks.
+        
+        Args:
+            description: Description of the data collection
+            record: The document path or text to process
+            chunk_size: Size of each chunk in characters
+            overlap_size: Size of overlap between chunks
+            max_retries: Maximum number of retries for each chunk
+            from_text: Whether the record is text or a file path
+            top_k: Number of top attributes to return
+            
+        Returns:
+            List of top-k most frequent attributes
+        """
+        # Create a data handler for the document
+        data_handler = DataHandler(record, from_text=from_text)
+        
+        # Define the LLM processor function for each chunk
+        def llm_processor(chunk_text: str) -> Dict[str, Any]:
+            return self.extract_schema(description, chunk_text, max_retries)
+        
+        # Process the large document using chunking
+        chunk_results = data_handler.process_large_document(
+            llm_processor=llm_processor,
+            chunk_size=chunk_size,
+            overlap_size=overlap_size,
+            combine_results=False  # We want individual results to count frequencies
+        )
+        
+        # Update the attribute counter with results from all chunks
+        if isinstance(chunk_results, dict) and "error" not in chunk_results:
+            # If we got a combined result, process it
+            if chunk_results:
+                attributes = chunk_results.keys() if isinstance(chunk_results, dict) else []
+                self.attribute_counter.update(attributes)
+        else:
+            # Process individual chunk results
+            for result in chunk_results:
+                if result and isinstance(result, dict):
+                    attributes = result.keys()
+                    self.attribute_counter.update(attributes)
+        
+        return self.get_top_k_attributes(top_k)
+
+    def discover_schema_with_chunking(self, 
+                                    description: str, 
+                                    records: List[str], 
+                                    num_records: int = 10, 
+                                    from_text: bool = False,
+                                    chunk_size: int = 100000, 
+                                    overlap_size: int = 10000,
+                                    auto_detect_large_docs: bool = True,
+                                    top_k: int = 10) -> List[str]:
+        """
+        Discover schema with automatic chunking for large documents.
+        
+        Args:
+            description: Description of the data collection
+            records: List of document paths or texts to process
+            num_records: Number of records to process
+            from_text: Whether the records are text or file paths
+            chunk_size: Size of each chunk in characters
+            overlap_size: Size of overlap between chunks
+            auto_detect_large_docs: Whether to automatically use chunking for large documents
+            top_k: Number of top attributes to return
+            
+        Returns:
+            List of top-k most frequent attributes
+        """
+        num_records = min(num_records, len(records))
+        
+        for record in records[:num_records]:
+            if auto_detect_large_docs:
+                # Check if the document is large enough to warrant chunking
+                data_handler = DataHandler(record, from_text=from_text)
+                full_text = data_handler.get_text()
+                
+                if full_text and not full_text.startswith("Error:"):
+                    if len(full_text) > chunk_size:
+                        print(f"Document is large ({len(full_text)} chars), using chunking for schema discovery...")
+                        self.discover_schema_large_document(
+                            description, record, chunk_size, overlap_size, 5, from_text, top_k
+                        )
+                        continue
+                    else:
+                        print(f"Document is small ({len(full_text)} chars), processing normally for schema discovery...")
+            
+            # Use the original method for smaller documents
+            record_content = DataHandler(record, from_text=from_text).get_text()
+            self.update_schema_collection(description, record_content)
+        
+        return self.get_top_k_attributes(top_k)
 
