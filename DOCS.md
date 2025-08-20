@@ -52,8 +52,8 @@ Here's a minimal example to extract information:
 ```python
 import os
 
-from trallie.schema_generation.schema_generator import SchemaGenerator
-from trallie.data_extraction.data_extractor import DataExtractor
+from trallie import SchemaGenerator
+from trallie import DataExtractor
 
 os.environ["GROQ_API_KEY"] = None #ENTER GROQ KEY HERE
 os.environ["OPENAI_API_KEY"] = None #ENTER OPENAI KEY HERE

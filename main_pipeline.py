@@ -1,30 +1,29 @@
 import os
 
-from trallie.schema_generation.schema_generator import SchemaGenerator
-from trallie.data_extraction.data_extractor import DataExtractor
+from trallie import SchemaGenerator
+from trallie import DataExtractor
 
-os.environ["GROQ_API_KEY"] = None #ENTER GROQ KEY HERE
-os.environ["OPENAI_API_KEY"] = None #ENTER OPENAI KEY HERE
+# os.environ["GROQ_API_KEY"] = None #ENTER GROQ KEY HERE
+# os.environ["OPENAI_API_KEY"] = None #ENTER OPENAI KEY HERE
+
 
 # Define the path to a set of documents/a data collection for inference
 records = [
-    "data/use-cases/EO_papers/pdf_0808.3837.pdf",
-    "data/use-cases/EO_papers/pdf_1001.4405.pdf",
-    "data/use-cases/EO_papers/pdf_1002.3408.pdf",
+    "data/evaluation/data/fda_510ks/data/evaporate/fda-ai-pmas/510k/K141114.txt",
 ]
 
 # Provide a description of the data collection
 description = "A dataset of Earth observation papers"
 
 # Initialize the schema generator with a provider and model
-schema_generator = SchemaGenerator(provider="openai", model_name="gpt-4o")
+schema_generator = SchemaGenerator(provider="groq", model_name="llama-3.3-70b-versatile")
 # Feed records to the LLM and discover schema
 print("SCHEMA GENERATION IN ACTION ...")
 schema = schema_generator.discover_schema(description, records)
 print("Inferred schema", schema)
 
 # Initialize data extractor with a provider and model
-data_extractor = DataExtractor(provider="openai", model_name="gpt-4o")
+data_extractor = DataExtractor(provider="groq", model_name="llama-3.3-70b-versatile")
 # Extract values from the text based on the schema
 print("SCHEMA COMPLETION IN ACTION ...")
 for record in records:
