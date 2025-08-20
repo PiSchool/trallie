@@ -1,8 +1,8 @@
 import os
 import json
 
-from trallie.schema_generation.schema_generator import SchemaGenerator
-from trallie.data_extraction.data_extractor import DataExtractor
+from trallie import SchemaGenerator
+from trallie import DataExtractor
 
 
 def openie(description, records, provider, model_name, reasoning_mode, dataset_name):
