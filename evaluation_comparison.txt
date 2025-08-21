@@ -1,0 +1,105 @@
+===============================================================================
+                    EVALUATION APPROACHES COMPARISON
+                         Evaporate vs Trallie
+===============================================================================
+
+This document compares how Evaporate  and Trallie handle information extraction 
+evaluation and matching.
+
+===============================================================================
+                              EVAPORATE APPROACH
+===============================================================================
+
+OVERVIEW:
+- Research system from Hazy Research
+- Two-stage pipeline: Schema Discovery + Function Generation
+- Uses weak supervision and ensemble methods
+- Token-level evaluation (SQuAD-style)
+
+EVALUATION METHODOLOGY:
+
+1. TEXT PREPROCESSING:
+   - Convert everything to lowercase
+   - Remove punctuation and special characters
+   - Split into tokens and rejoin
+   - Normalize whitespace
+
+2. MATCHING STRATEGY: TOKEN-LEVEL SIMILARITY (NOT EXACT MATCH)
+   - Split predictions and gold labels into tokens
+   - Count overlapping tokens between prediction and gold
+   - Calculate precision: (overlapping tokens) / (total predicted tokens)
+   - Calculate recall: (overlapping tokens) / (total gold tokens)
+   - Calculate F1: 2 * (precision * recall) / (precision + recall)
+
+3. EXAMPLE OF THEIR APPROACH:
+   Prediction: "FORA GD43 Blood Glucose Meter"
+   Gold: "FORA GD43 Blood Glucose Monitoring System"
+   
+   Tokens in prediction: ["fora", "gd43", "blood", "glucose", "meter"]
+   Tokens in gold: ["fora", "gd43", "blood", "glucose", "monitoring", "system"]
+   
+   Overlapping tokens: ["fora", "gd43", "blood", "glucose"] (4 tokens)
+   
+   Precision: 4/5 = 0.8
+   Recall: 4/6 = 0.67
+   F1: 2 * (0.8 * 0.67) / (0.8 + 0.67) = 0.73
+
+4. ADVANTAGES OF THEIR APPROACH:
+   - Gives partial credit for overlapping content
+   - Order-independent matching
+   - Handles variations in text naturally
+   - No need for exact field name alignment
+   - More forgiving for OPENIE models
+
+5. DISADVANTAGES OF THEIR APPROACH:
+   - Complex multi-stage pipeline
+   - Resource intensive (multiple LLM calls)
+   - Harder to debug and interpret
+   - Token-level metrics may not reflect business value
+
+===============================================================================
+                                TRALLIE APPROACH
+===============================================================================
+
+OVERVIEW:
+- Single-stage pipeline: Direct LLM extraction
+- Predefined field schemas
+- Field-level evaluation
+
+EVALUATION METHODOLOGY:
+
+1. FIELD NAME MATCHING:
+   - Requires exact field name alignment
+   - Uses predefined schemas
+   - Field names must match ground truth exactly
+
+2. MATCHING STRATEGY: FIELD-LEVEL EXACT MATCHING
+   - Compare predicted field names with ground truth field names
+   - If field names don't match = 0 score
+   - If field names match, then compare values
+   - No partial credit for field name mismatches
+
+3. EXAMPLE OF YOUR APPROACH:
+   Prediction: {"deviceName": "FORA GD43 Blood Glucose Meter"}
+   Ground Truth: {"proprietary and established names": "FORA GD43 Blood Glucose Monitoring System"}
+   
+   Field name comparison: "deviceName" vs "proprietary and established names"
+   Result: NO MATCH = 0.000 score
+   
+   Even though the content is similar, the field names don't match.
+
+
+===============================================================================
+                              KEY DIFFERENCES
+===============================================================================
+
+| ASPECT                   | EVAPORATE                   | TRALLIE                     |
+|--------------------------|-----------------------------|-----------------------------|
+| Matching Strategy        | Token-level similarity      | Field-level exact matching  |
+| Field Name Handling      | No schema constraints       | Predefined schemas required |
+| Content Evaluation       | Partial credit for overlap  | All-or-nothing field match  |
+| Pipeline Complexity      | Multi-stage (complex)       | Single-stage (simple)       |
+| Resource Usage           | High (multiple LLM calls)   | Low (single LLM call)       |
+| OPENIE Handling          | Excellent (content-based)   | Poor (schema-dependent)     |
+| CLOSEDIE Handling        | Good (function-based)       | Excellent (direct control)  |
+
