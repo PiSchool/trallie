@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-"""
-Manual test for SchemaGenerator memory option using Groq (llama-3.3-70b-versatile).
-
-This script performs two sequential schema extractions and asserts that:
-- After the first extraction, last_schema equals the first returned schema
-- After the second extraction, last_schema is overwritten to the second schema
-Only the immediately previous schema is kept and passed as context.
-"""
 
 import os
 import sys
@@ -21,8 +12,8 @@ from trallie.schema_generation.schema_generator import SchemaGenerator
 
 
 def main():
-    # Set the Groq API key: prefer env var if already set, else use provided value
-    os.environ.setdefault("GROQ_API_KEY", "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")
+    # Set the Groq API key
+    os.environ.setdefault("GROQ_API_KEY", "None")
 
     description = "A small mixed dataset of personal bios and product blurbs."
 
