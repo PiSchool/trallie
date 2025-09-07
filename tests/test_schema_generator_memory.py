@@ -13,7 +13,7 @@ from trallie.schema_generation.schema_generator import SchemaGenerator
 
 def main():
     # Set the Groq API key
-    os.environ.setdefault("GROQ_API_KEY", "None")
+    #os.environ.setdefault("GROQ_API_KEY", "None")
 
     description = "A small mixed dataset of personal bios and product blurbs."
 
