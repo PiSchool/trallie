@@ -34,13 +34,16 @@ class SchemaGenerator:
     ALLOWED_NON_EN_PROVIDERS = {"openai", "groq"}
     ALLOWED_REASONING_MODELS = {"deepseek-r1-distill-llama-70b"}
 
-    def __init__(self, provider, model_name, system_prompt=None, language="en", reasoning_mode=False):
+    def __init__(self, provider, model_name, system_prompt=None, language="en", reasoning_mode=False, memory: bool = False):
         self.provider = provider
         self.model_name = model_name
         self.client = get_provider(self.provider)
         self.language = language
         self.reasoning_mode = reasoning_mode
         self.attribute_counter = Counter()
+        self.memory = memory
+        self.last_schema: Optional[Dict[str, Any]] = None
+        self._last_user_prompt: Optional[str] = None
 
         if self.reasoning_mode and self.model_name not in self.ALLOWED_REASONING_MODELS:
             raise ValueError(
@@ -65,12 +68,26 @@ class SchemaGenerator:
         """
         Extract schema from a single document
         """
+        # Build user prompt with optional memory context
+        memory_context = ""
+        if self.memory and self.last_schema:
+            try:
+                previous_schema_str = json.dumps(self.last_schema)
+            except Exception:
+                previous_schema_str = str(self.last_schema)
+            memory_context = f"""
+            Use the following previously inferred schema as additional context. If appropriate, refine or extend it based on the current record. Prior schema (for reference only): {previous_schema_str}
+            """
+
         user_prompt = f"""
             The data collection has the following description: {description}. 
             Following is the record: {record}
+            {memory_context}
             Provide the schema/set of attributes in a JSON format. 
             Avoid any words at the beginning and end.
         """
+        # Store last constructed user prompt for testing/verification
+        self._last_user_prompt = user_prompt
         for attempt in range(max_retries):
             try:
                 response = self.client.do_chat_completion(
@@ -80,6 +97,9 @@ class SchemaGenerator:
                 if self.reasoning_mode:
                     response = post_process_response(response)
                 schema = json.loads(response)
+                # Update memory with the latest schema if enabled
+                if self.memory and isinstance(schema, dict):
+                    self.last_schema = schema
                 return schema
             except (json.JSONDecodeError, TypeError) as e:
                 print(f"Invalid JSON response (attempt {attempt + 1}): {e}")
@@ -217,4 +237,10 @@ class SchemaGenerator:
             self.update_schema_collection(description, record_content)
         
         return self.get_top_k_attributes(top_k)
+
+    def reset_memory(self) -> None:
+        """
+        Clear stored schema memory.
+        """
+        self.last_schema = None
 
