@@ -70,7 +70,7 @@ class SchemaGenerator:
         """
         # Early return if no meaningful content to prevent unnecessary API calls
         if not record or (isinstance(record, str) and record.strip() == ""):
-            return {}
+            raise ValueError("No document content found, please provide a document with meaningful content for schema extraction.")
             
         # Build user prompt with optional memory context
         memory_context = ""
@@ -134,7 +134,7 @@ class SchemaGenerator:
         """
         # Early return if no records provided to prevent unnecessary API calls
         if not records or len(records) == 0:
-            return []
+            raise ValueError("No documents found, please provide at least one document for schema discovery.")
         
         num_records = min(num_records, len(records))
 
@@ -167,6 +167,10 @@ class SchemaGenerator:
         Returns:
             List of top-k most frequent attributes
         """
+        # Early return if no record provided to prevent unnecessary API calls
+        if not record or (isinstance(record, str) and record.strip() == ""):
+            raise ValueError("No document found, please provide a document for large document schema discovery.")
+            
         # Create a data handler for the document
         data_handler = DataHandler(record, from_text=from_text)
         

@@ -65,7 +65,7 @@ class DataExtractor:
         """
         # Early return if no meaningful content to prevent unnecessary API calls
         if not record or (isinstance(record, str) and record.strip() == ""):
-            return {}
+            raise ValueError("No document content found, please provide a document with meaningful content for attribute extraction.")
             
         user_prompt = f"""
             Following is the record: {record} and the attribute schema for extraction: {schema}
@@ -96,13 +96,13 @@ class DataExtractor:
         """
         # Early return if no record provided to prevent unnecessary API calls
         if not record or (isinstance(record, str) and record.strip() == ""):
-            return {}
+            raise ValueError("No document found, please provide a document for data extraction.")
         
         record_text = DataHandler(record, from_text=from_text).get_text()
         
         # Additional check after text extraction
         if not record_text or record_text.strip() == "":
-            return {}
+            raise ValueError("No document content found, please provide a document with meaningful content for data extraction.")
             
         return self.extract_attributes(schema, record_text, max_retries)
 
@@ -131,7 +131,7 @@ class DataExtractor:
         """
         # Early return if no record provided to prevent unnecessary API calls
         if not record or (isinstance(record, str) and record.strip() == ""):
-            return {}
+            raise ValueError("No document found, please provide a document for large document data extraction.")
             
         # Create a data handler for the document
         data_handler = DataHandler(record, from_text=from_text)
