@@ -63,6 +63,10 @@ class DataExtractor:
         """
         Extracts attributes for a given record and schema.
         """
+        # Early return if no meaningful content to prevent unnecessary API calls
+        if not record or (isinstance(record, str) and record.strip() == ""):
+            return {}
+            
         user_prompt = f"""
             Following is the record: {record} and the attribute schema for extraction: {schema}
             Provide the extracted attributes. Avoid any words at the beginning and end.
@@ -90,7 +94,16 @@ class DataExtractor:
         """
         Processes record and returns extracted attributes.
         """
+        # Early return if no record provided to prevent unnecessary API calls
+        if not record or (isinstance(record, str) and record.strip() == ""):
+            return {}
+        
         record_text = DataHandler(record, from_text=from_text).get_text()
+        
+        # Additional check after text extraction
+        if not record_text or record_text.strip() == "":
+            return {}
+            
         return self.extract_attributes(schema, record_text, max_retries)
 
     def extract_data_large_document(self, 
@@ -116,6 +129,10 @@ class DataExtractor:
         Returns:
             Combined extracted data from all chunks
         """
+        # Early return if no record provided to prevent unnecessary API calls
+        if not record or (isinstance(record, str) and record.strip() == ""):
+            return {}
+            
         # Create a data handler for the document
         data_handler = DataHandler(record, from_text=from_text)
         
@@ -156,10 +173,18 @@ class DataExtractor:
         Returns:
             Extracted data
         """
+        # Early return if no record provided to prevent unnecessary API calls
+        if not record or (isinstance(record, str) and record.strip() == ""):
+            return {}
+            
         if auto_detect_large_docs:
             # Check if the document is large enough to warrant chunking
             data_handler = DataHandler(record, from_text=from_text)
             full_text = data_handler.get_text()
+            
+            # Additional check after text extraction
+            if not full_text or full_text.strip() == "":
+                return {}
             
             if full_text and not full_text.startswith("Error:"):
                 if len(full_text) > chunk_size:

@@ -68,6 +68,10 @@ class SchemaGenerator:
         """
         Extract schema from a single document
         """
+        # Early return if no meaningful content to prevent unnecessary API calls
+        if not record or (isinstance(record, str) and record.strip() == ""):
+            return {}
+            
         # Build user prompt with optional memory context
         memory_context = ""
         if self.memory and self.last_schema:
@@ -128,6 +132,10 @@ class SchemaGenerator:
         """
         Processes multiple documents for creation of the schema
         """
+        # Early return if no records provided to prevent unnecessary API calls
+        if not records or len(records) == 0:
+            return []
+        
         num_records = min(num_records, len(records))
 
         for record in records[:num_records]:
