@@ -220,13 +220,17 @@ class DataHandler:
     
     def combine_chunk_results(self, 
                             chunk_results: List[Dict[str, Any]], 
-                            custom_prompt: Optional[str] = None) -> Dict[str, Any]:
+                            custom_prompt: Optional[str] = None,
+                            provider: Optional[str] = None,
+                            model_name: Optional[str] = None) -> Dict[str, Any]:
         """
         Combine results from multiple chunks using an LLM to make a final decision.
         
         Args:
             chunk_results: List of results from individual chunks
             custom_prompt: Custom prompt for combining results
+            provider: Provider to use for consolidation (defaults to openai if not provided)
+            model_name: Model to use for consolidation (defaults to gpt-4o if not provided)
             
         Returns:
             Combined result
@@ -276,14 +280,18 @@ class DataHandler:
         formatted_results = json.dumps(collected_results, indent=2)
         final_prompt = prompt.format(results=formatted_results)
         
+        # Use provided provider or default to openai
+        consolidation_provider = provider or "openai"
+        consolidation_model = model_name or "gpt-4o"
+        
         try:
             # Get the LLM to make final decisions
             from trallie.providers import get_provider
-            provider = get_provider("openai")  # Using OpenAI for final decision
-            response = provider.do_chat_completion(
+            llm_provider = get_provider(consolidation_provider)
+            response = llm_provider.do_chat_completion(
                 system_prompt="You are an expert at analyzing and consolidating technical information.",
                 user_prompt=final_prompt,
-                model_name="gpt-4o"
+                model_name=consolidation_model
             )
             
             # Parse the response
@@ -292,24 +300,58 @@ class DataHandler:
             
         except Exception as e:
             print(f"Error in final LLM consolidation: {e}")
-            # Fallback to simple merging if LLM consolidation fails
-            final_results = {}
-            for key, values in collected_results.items():
-                # Remove duplicates while preserving order
-                seen = set()
-                unique_values = []
-                for value in values:
-                    if value not in seen:
-                        seen.add(value)
-                        unique_values.append(value)
-                
-                # If only one value, simplify
-                if len(unique_values) == 1:
-                    final_results[key] = unique_values[0]
-                else:
-                    final_results[key] = unique_values
+            # Fallback to intelligent merging if LLM consolidation fails
+            return self._smart_merge_chunk_results(collected_results)
+    
+    def _smart_merge_chunk_results(self, collected_results: Dict[str, List[Any]]) -> Dict[str, Any]:
+        """
+        Intelligently merge chunk results without LLM.
+        Filters out empty values and selects the best value for each field.
+        """
+        final_results = {}
+        
+        # Values to filter out as meaningless
+        meaningless_values = {'', 'None', 'Not explicitly stated', 'not specified', 'Unknown', 'N/A', 'n/a'}
+        
+        for key, values in collected_results.items():
+            # Filter out empty and meaningless values
+            meaningful_values = [
+                v for v in values 
+                if v and str(v).strip() and str(v).strip() not in meaningless_values
+            ]
             
-            return final_results
+            if not meaningful_values:
+                # If all values are empty, keep the first non-empty or empty string
+                if values:
+                    final_results[key] = values[0] if values[0] else ""
+                continue
+            
+            # Remove duplicates while preserving order
+            seen = set()
+            unique_values = []
+            for value in meaningful_values:
+                value_str = str(value).strip()
+                if value_str not in seen:
+                    seen.add(value_str)
+                    unique_values.append(value)
+            
+            if not unique_values:
+                continue
+            
+            # If only one meaningful value, use it directly
+            if len(unique_values) == 1:
+                final_results[key] = unique_values[0]
+            else:
+                # Multiple values - choose the best one
+                # Strategy: prefer longest value (most detailed), or most specific
+                best_value = max(unique_values, key=lambda v: (
+                    len(str(v)),  # Prefer longer (more detailed)
+                    -str(v).count(','),  # Prefer less comma-separated (more specific)
+                    str(v).count(';') == 0  # Prefer without semicolons (simpler)
+                ))
+                final_results[key] = best_value
+        
+        return final_results
 
     def process_large_document(self, 
                              llm_processor: Callable[[str], Dict[str, Any]], 

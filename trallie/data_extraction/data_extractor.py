@@ -8,6 +8,7 @@ from trallie.prompts import (
     FEW_SHOT_EXTRACTION_SYSTEM_PROMPT_IT
 )
 from trallie.data_handlers import DataHandler
+from trallie.data_extraction.smart_chunker import SmartChunker
 
 import json
 import re
@@ -197,3 +198,93 @@ class DataExtractor:
         
         # Use the original method for smaller documents
         return self.extract_data(schema, record, max_retries, from_text)
+
+    def extract_data_smart_chunking(self, 
+                                   schema, 
+                                   record, 
+                                   chunk_size: int = 50000,  # Smaller chunks for smart chunking
+                                   overlap_size: int = 5000,
+                                   max_retries: int = 3, 
+                                   from_text: bool = False,
+                                   combine_results: bool = True,
+                                   auto_detect_large_docs: bool = True,
+                                   use_smart_chunking: bool = True) -> Dict[str, Any]:
+        """
+        Extract data using regex-based smart chunking with intelligent boundary detection.
+        
+        Args:
+            schema: The schema to extract data according to
+            record: The document path or text to process
+            chunk_size: Size of each chunk in characters (default smaller for smart chunking)
+            overlap_size: Size of overlap between chunks
+            max_retries: Maximum number of retries for each chunk
+            from_text: Whether the record is text or a file path
+            combine_results: Whether to combine results from all chunks
+            auto_detect_large_docs: Whether to automatically use chunking for large documents
+            use_smart_chunking: Whether to use regex-based smart chunking (vs character-based)
+            
+        Returns:
+            Extracted data
+        """
+        # Early return if no record provided
+        if not record or (isinstance(record, str) and record.strip() == ""):
+            return {}
+        
+        # Get the document text
+        data_handler = DataHandler(record, from_text=from_text)
+        full_text = data_handler.get_text()
+        
+        if not full_text or full_text.strip() == "" or full_text.startswith("Error:"):
+            return {}
+        
+        # Check if chunking is needed
+        if auto_detect_large_docs and len(full_text) <= chunk_size:
+            print(f"Document is small ({len(full_text)} chars), processing normally...")
+            return self.extract_data(schema, record, max_retries, from_text)
+        
+        print(f"Document is large ({len(full_text)} chars), using smart chunking...")
+        
+        if use_smart_chunking:
+            # Use smart chunker
+            smart_chunker = SmartChunker()
+            chunks = smart_chunker.smart_chunk(
+                text=full_text,
+                max_chunk_size=chunk_size,
+                overlap_size=overlap_size,
+                strategy=None  # Auto-detect strategy
+            )
+            print(f"Smart chunking created {len(chunks)} chunks")
+        else:
+            # Use traditional chunking
+            chunks = data_handler.create_overlapping_chunks(
+                text=full_text,
+                chunk_size=chunk_size,
+                overlap_size=overlap_size
+            )
+            print(f"Traditional chunking created {len(chunks)} chunks")
+        
+        # Process each chunk
+        chunk_results = []
+        for i, chunk in enumerate(chunks):
+            try:
+                print(f"Processing smart chunk {i+1}/{len(chunks)} (length: {len(chunk)} chars)")
+                result = self.extract_attributes(schema, chunk, max_retries)
+                if result:
+                    chunk_results.append(result)
+            except Exception as e:
+                print(f"Error processing chunk {i+1}: {e}")
+                continue
+        
+        if not chunk_results:
+            return {}
+        
+        # Combine results if needed
+        if len(chunk_results) == 1 or not combine_results:
+            return chunk_results[0]
+        
+        # Use DataHandler's combine method with same provider/model
+        return data_handler.combine_chunk_results(
+            chunk_results, 
+            provider=self.provider,
+            model_name=self.model_name
+        )

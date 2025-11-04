@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 Test Complete Trallie Functionality
-Tests both improvements (no API calls for empty docs) and real API functionality.
 """
 
 import os
@@ -72,9 +71,9 @@ def test_complete_functionality():
         print(f"Expected: {expected_result}")
         
         if result == expected_result:
-            print("✅ PASS - No API calls made, immediate response")
+            print("PASS - No API calls made, immediate response")
         else:
-            print(f"❌ FAIL - Unexpected result: {result}")
+            print(f"FAIL - Unexpected result: {result}")
     
     print("\n=== PART 2: TESTING REAL API FUNCTIONALITY (Valid Documents) ===")
     
@@ -96,12 +95,12 @@ def test_complete_functionality():
         print(f"Result Length: {len(schema_result) if isinstance(schema_result, list) else 'N/A'}")
         
         if isinstance(schema_result, list) and len(schema_result) > 0:
-            print("✅ PASS - Real API call successful, schema discovered")
+            print("PASS - Real API call successful, schema discovered")
         else:
-            print("❌ FAIL - Expected non-empty schema")
+            print("FAIL - Expected non-empty schema")
             
     except Exception as e:
-        print(f"❌ ERROR: {e}")
+        print(f"ERROR: {e}")
     
     print(f"\n--- DataExtractor with Valid Document ---")
     print(f"Document: {valid_document[:100]}...")
@@ -118,15 +117,15 @@ def test_complete_functionality():
         print(f"Result Length: {len(extraction_result) if isinstance(extraction_result, dict) else 'N/A'}")
         
         if isinstance(extraction_result, dict) and len(extraction_result) > 0:
-            print("✅ PASS - Real API call successful, data extracted")
+            print("PASS - Real API call successful, data extracted")
             print("Extracted Fields:")
             for key, value in extraction_result.items():
                 print(f"  {key}: {value}")
         else:
-            print("❌ FAIL - Expected non-empty extraction")
+            print("FAIL - Expected non-empty extraction")
             
     except Exception as e:
-        print(f"❌ ERROR: {e}")
+        print(f"ERROR: {e}")
     
     print("\n=== PART 3: TESTING MEMORY SYSTEM ===")
     
@@ -145,26 +144,26 @@ def test_complete_functionality():
         print(f"After Processing: {generator.last_schema}")
         
         if generator.last_schema is not None:
-            print("✅ PASS - Memory system working correctly")
+            print("PASS - Memory system working correctly")
         else:
-            print("❌ FAIL - Memory not updated")
+            print("FAIL - Memory not updated")
             
     except Exception as e:
-        print(f"❌ ERROR: {e}")
+        print(f"ERROR: {e}")
     
     print("\n=== SUMMARY ===")
-    print("✅ Improvements Working:")
+    print("Improvements Working:")
     print("   • No API calls for empty documents")
     print("   • Immediate responses for edge cases")
     print("   • Consistent behavior across methods")
     print("")
-    print("✅ Real API Functionality Working:")
+    print("Real API Functionality Working:")
     print("   • Valid documents processed correctly")
     print("   • Schema discovery working")
     print("   • Data extraction working")
     print("   • Memory system working")
     print("")
-    print("🎯 Overall Status: ✅ COMPLETE FUNCTIONALITY VERIFIED")
+    print("Overall Status: COMPLETE FUNCTIONALITY VERIFIED")
     
     print("\n" + "="*80)
     print("COMPLETE FUNCTIONALITY TESTING COMPLETED")

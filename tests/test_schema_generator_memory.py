@@ -100,7 +100,7 @@ def test_empty_documents_scenarios():
         assert isinstance(empty_attrs, list), "discover_schema should return a list even with empty documents"
         assert len(empty_attrs) == 0, "Empty document list should return empty attribute list"
     except ValueError as e:
-        print(f"✅ Correctly raised ValueError for empty documents: {e}")
+        print(f"Correctly raised ValueError for empty documents: {e}")
     
     # Test discover_schema with None records
     try:
@@ -118,7 +118,7 @@ def test_empty_documents_scenarios():
         print(f"Empty string record result: {empty_string_attrs}")
         assert isinstance(empty_string_attrs, list), "Empty string record should return a list"
     except ValueError as e:
-        print(f"✅ Correctly raised ValueError for empty string: {e}")
+        print(f"Correctly raised ValueError for empty string: {e}")
     
     # Test 2: DataExtractor with empty document scenarios
     print("\n=== Test 2: DataExtractor with empty document scenarios ===")
@@ -144,7 +144,7 @@ def test_empty_documents_scenarios():
         assert empty_result is None or isinstance(empty_result, dict), "Empty string should return None or dict"
         # The result might be None or empty dict depending on implementation
     except ValueError as e:
-        print(f"✅ Correctly raised ValueError for empty string: {e}")
+        print(f"Correctly raised ValueError for empty string: {e}")
     
     # Test extract_data with None record
     try:
@@ -267,7 +267,7 @@ def test_error_handling_and_edge_cases():
         print(f"Empty schema result: {empty_schema}")
         # Should handle gracefully
     except ValueError as e:
-        print(f"✅ Correctly raised ValueError for empty schema: {e}")
+        print(f"Correctly raised ValueError for empty schema: {e}")
     
     # Test 3: Large document handling
     print("\n=== Test 3: Large document handling ===")

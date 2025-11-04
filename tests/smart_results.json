@@ -1,0 +1,12 @@
+{
+  "purpose for submission": "To expand the use of previously cleared assay reagents for Factor V Leiden; Coagulation Factor VIII Deficient Plasma; Coagulation Factor IX Deficient Plasma; Lupus Anticoagulant with LA 1 Screening Reagent; Lupus Anticoagulant with LA 2 Confirmation Reagent and Lupus Anticoagulant with LA 1 / LA 2 Ratio to the Sysmex Automated Blood Coagulation Analyzer CS-5100",
+  "measurand": "Prothrombin Time (PT), Activated Partial Thromboplastin Time (APTT), Fibrinogen, Coagulation Factor V, Coagulation Factor VII, Coagulation Factor VIII, Coagulation Factor IX, Lupus Anticoagulant, Factor V Leiden, Protein C, Antithrombin, D-dimer",
+  "type of test": "Quantitative clot-based applications, Coagulation",
+  "classification": "In Vitro Diagnostic, Class II",
+  "product code": "JPA, GGW, GJT, GIR",
+  "panel": "Coagulation Factor VIII, IX, XI and XII Deficient Plasmas, LA 1 Screening Reagent, LA 2 Confirmation Reagent, and LA Ratio, Hematology (81)",
+  "intended use": "For in vitro diagnostic use on the Sysmex CS-5100, including the specific correction of Lupus Anticoagulants",
+  "510k number": "K172333",
+  "applicant": "Siemens Healthcare Diagnostics Product GmbH",
+  "predicate device name": "Sysmex CA-1500"
+}
