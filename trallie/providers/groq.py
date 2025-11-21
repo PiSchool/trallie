@@ -1,6 +1,6 @@
 import os
 from functools import lru_cache
-from typing import Any
+from typing import Any, Dict, List, Optional
 
 import groq
 
@@ -37,6 +37,8 @@ def groq_api_call(default_return_value: Any):
 
 @register_provider("groq")
 class GroqProvider(BaseProvider):
+    _usage_log: List[Dict[str, Optional[int]]] = []
+
     def __init__(self) -> None:
         super().__init__()
         if "GROQ_API_KEY" not in os.environ:
@@ -47,6 +49,14 @@ class GroqProvider(BaseProvider):
         self.client = groq.Groq(
             api_key=os.environ["GROQ_API_KEY"], timeout=30.0, max_retries=2
         )
+
+    @classmethod
+    def reset_usage_log(cls) -> None:
+        cls._usage_log = []
+
+    @classmethod
+    def get_usage_log(cls) -> List[Dict[str, Optional[int]]]:
+        return list(cls._usage_log)
 
     @groq_api_call(default_return_value=[])
     @lru_cache
@@ -74,4 +84,13 @@ class GroqProvider(BaseProvider):
             seed=4285, 
             response_format={"type": "json_object"}
         )
+        # Track usage 
+        usage = getattr(chat_completion, "usage", None)
+        usage_dict: Dict[str, Optional[int]] = {
+            "prompt_tokens": getattr(usage, "prompt_tokens", None) if usage else None,
+            "completion_tokens": getattr(usage, "completion_tokens", None) if usage else None,
+            "total_tokens": getattr(usage, "total_tokens", None) if usage else None,
+            "model": model_name,
+        }
+        self.__class__._usage_log.append(usage_dict)
         return chat_completion.choices[0].message.content

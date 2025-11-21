@@ -1,0 +1,111 @@
+================================================================================
+RUN DATASET OPENIE SAMPLE - QUICK SUMMARY
+================================================================================
+
+WHAT IT DOES:
+-------------
+This script runs Open Information Extraction (OpenIE) on datasets using LLMs.
+It discovers schemas from documents and extracts structured data, with detailed
+metrics tracking for tokens, time, cost, and quality.
+
+SUPPORTED PROVIDERS & MODELS:
+------------------------------
+OpenAI:  gpt-4o-mini (default), gpt-4o, gpt-4-turbo, gpt-4
+Groq:    llama-3.3-70b-versatile (default), llama-3.1-70b-versatile,
+         llama-3.1-8b-instant, mixtral-8x7b-32768, deepseek-r1-distill-llama-70b
+
+QUICK START:
+-----------
+1. Set API key:
+   Windows:  set OPENAI_API_KEY=your-key
+   Linux/Mac: export OPENAI_API_KEY=your-key
+
+2. List available models:
+   python Evaluation/run_dataset_openie_sample.py --list_models
+
+3. Run on 5% of FDA dataset:
+   python Evaluation/run_dataset_openie_sample.py fda_510ks --sample_percentage 0.05
+
+4. Use Groq (free tier):
+   python Evaluation/run_dataset_openie_sample.py fda_510ks --provider groq --sample_percentage 0.05
+
+BASIC USAGE:
+-----------
+python Evaluation/run_dataset_openie_sample.py <dataset_name> [options]
+
+Required:
+  dataset_name          Name of dataset (e.g., fda_510ks, swde_movie_allmovie)
+
+Options:
+  --sample_percentage   Percentage to sample (0.05 = 5%, 0.1 = 10%, default: 0.1)
+  --seed               Random seed for reproducibility (default: 42)
+  --provider           Provider: openai or groq (default: openai)
+  --model              Model name (uses provider default if not specified)
+  --reasoning_mode     Enable reasoning mode (for supported models)
+  --list_models        List all available models and exit
+
+EXAMPLES:
+---------
+# Default: OpenAI gpt-4o-mini, 10% sample
+python Evaluation/run_dataset_openie_sample.py fda_510ks
+
+# 5% sample with specific seed
+python Evaluation/run_dataset_openie_sample.py fda_510ks --sample_percentage 0.05 --seed 42
+
+# Use Groq with default model
+python Evaluation/run_dataset_openie_sample.py fda_510ks --provider groq
+
+# Use specific model
+python Evaluation/run_dataset_openie_sample.py fda_510ks --provider openai --model gpt-4o
+
+# Use reasoning mode (Groq only)
+python Evaluation/run_dataset_openie_sample.py fda_510ks --provider groq --model deepseek-r1-distill-llama-70b --reasoning_mode
+
+HOW IT WORKS:
+-------------
+1. LOADS DATASET
+   - Finds documents in evaporate/data/{dataset_name}/
+   - Extracts docs.tar.gz if needed
+   - Samples documents based on percentage and seed
+
+2. SCHEMA GENERATION (runs twice: with and without memory)
+   - No-Memory: Processes all docs to discover schema
+   - Memory: Refines schema across documents sequentially
+   - Uses chunking for large documents (>100K characters)
+
+3. DATA EXTRACTION
+   - Extracts data from each document using discovered schema
+   - Handles large documents via chunking
+   - Combines results from multiple chunks
+
+4. METRICS COLLECTION
+   - Tracks tokens, time, cost for each API call
+   - Aggregates totals for schema and extraction phases
+   - Calculates chunking statistics (long vs short docs)
+   - Records per-call details
+
+5. EVALUATION
+   - Compares predictions with ground truth (table.json)
+   - Calculates F1, Precision, Recall (exact and partial match)
+
+OUTPUT FILES:
+------------
+Results saved to: results/{dataset_name}/{provider}_{model}_openie_{memory|nomemory}/
+
+Files generated:
+  - schema.json              Discovered attributes
+  - predictions.json         Extracted data per document
+  - summary.json            Comprehensive metrics (tokens, time, cost, chunking stats)
+  - evaluation.json         Exact match evaluation (F1, precision, recall)
+  - evaluation_partial.json Partial match evaluation
+
+KEY METRICS IN SUMMARY.JSON:
+----------------------------
+- Time: schema_time_seconds, extraction_time_seconds, total_time_seconds
+- Tokens: prompt_tokens, completion_tokens, total_tokens (per phase and total)
+- Cost: input_cost_usd, output_cost_usd, total_cost_usd (per phase and total)
+- Per-call metrics: Detailed breakdown of each API call
+- Chunking stats: Long/short document counts, chunked docs, averages
+- Evaluation: F1 scores, precision, recall (exact and partial match)
+
+

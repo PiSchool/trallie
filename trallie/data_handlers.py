@@ -43,7 +43,7 @@ class DataHandler:
     def get_text_from_html(self):
         # Use an HTML parser
         try:
-            with open(self.document, "r", encoding="utf-8") as file:
+            with open(self.document, "r", encoding="utf-8", errors="ignore") as file:
                 return file.read()
         except FileNotFoundError:
             return "Error: File not found"
@@ -66,8 +66,12 @@ class DataHandler:
 
     def get_text_from_txt(self):
         try:
-            with open(self.document, "r") as file:
-                return file.read()
+            try:
+                with open(self.document, "r", encoding="utf-8") as file:
+                    return file.read()
+            except UnicodeDecodeError:
+                with open(self.document, "r", encoding="latin-1", errors="ignore") as file:
+                    return file.read()
         except FileNotFoundError:
             return "Error: File not found"
         except Exception as e:
