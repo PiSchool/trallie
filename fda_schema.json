@@ -1,0 +1,10 @@
+{
+  "device_name": "Name of the medical device",
+  "applicant": "Company or organization submitting the application",
+  "submission_purpose": "Purpose of the 510(k) submission",
+  "measurand": "What the device measures or tests",
+  "intended_use": "Intended use of the device",
+  "classification": "FDA classification of the device",
+  "regulatory_info": "Regulatory information and product codes"
+}
+

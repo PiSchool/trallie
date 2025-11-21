@@ -1,0 +1,100 @@
+{
+  "K141114-checkpoint.txt": {
+    "device_name": [
+      "BioPlex 2200 25-OH Vitamin D Kit",
+      "BioPlex 2200",
+      "BioPlex 2200 25-OH Vitamin D"
+    ],
+    "applicant": [
+      "Bio-Rad Laboratories",
+      ""
+    ],
+    "submission_purpose": [
+      "New Device",
+      ""
+    ],
+    "measurand": [
+      "25-hydroxyvitamin D [25(OH) Vitamin D]",
+      "25-hydroxyvitamin D in human serum",
+      "25-hydroxyvitamin D"
+    ],
+    "intended_use": [
+      "For the quantitative determination of 25-hydroxyvitamin D in human serum.",
+      "quantitative determination of 25-hydroxyvitamin D in human serum",
+      "Measuring range from 6.5 to 125 ng/mL"
+    ],
+    "classification": [
+      "II, 862.1825 Vitamin D Test System, Chemistry (75)",
+      ""
+    ],
+    "regulatory_info": [
+      "Product Code: II, Classification: 862.1825 Vitamin D Test System, Regulation Section: Chemistry (75)",
+      ""
+    ]
+  },
+  "K142965-checkpoint.txt": {
+    "device_name": [
+      "VirtuosoTM System for IHC PR (1E2) Using the VENTANA iScan HT",
+      "Virtuoso System for IHC PR (1E2)",
+      ""
+    ],
+    "applicant": [
+      "Ventana Medical Systems, Inc.",
+      ""
+    ],
+    "submission_purpose": [
+      "New device",
+      "For prescription use only",
+      "510(k) submission"
+    ],
+    "measurand": [
+      "progesterone receptor (PR) protein in formalin-fixed, paraffin-embedded normal and neoplastic tissue",
+      "Progesterone receptor (PR) protein in formalin-fixed, paraffin-embedded normal and neoplastic tissue",
+      "PR Clinical Status Agreement Inter-Reader"
+    ],
+    "intended_use": [
+      "The VirtuosoTM System for IHC PR (1E2) using the VENTANA iScan HT is for digital read application. This particular Virtuoso system is intended for use as an aid to the pathologist in the qualitative detection of progesterone receptor (PR) protein in formalin-fixed, paraffin-embedded normal and neoplastic tissue.",
+      "As an aid to the pathologist in the detection and semi-quantitative measurement of progesterone receptor (PR) protein in breast cancer patients for whom endocrine treatment is being considered",
+      ""
+    ],
+    "classification": [
+      "Class II",
+      ""
+    ],
+    "regulatory_info": [
+      "21 CFR \u00a7864.1860, Immunohistochemistry reagents and kits; Product code: OEO - Automated Digital Image Manual Interpretation Microscope",
+      "510(k) number: k111869",
+      "21 CFR Part 809.10"
+    ]
+  },
+  "K141689-checkpoint.txt": {
+    "device_name": "FastPack High Sensitivity C-Reactive Protein Immunoassay",
+    "applicant": [
+      "Qualigen, Inc.",
+      "Qualigen",
+      ""
+    ],
+    "submission_purpose": [
+      "New assay",
+      "For in-vitro diagnostic use to monitor the precision and accuracy of the High-Sensitivity C-Reactive Protein Immunoassay",
+      ""
+    ],
+    "measurand": [
+      "C-reactive protein (CRP)",
+      "C-Reactive Protein (CRP)"
+    ],
+    "intended_use": [
+      "For evaluation of conditions thought to be associated with inflammation, in otherwise healthy individuals.",
+      "For in-vitro diagnostic use in calibrating C-Reactive Protein Immunoassay",
+      "To measure CRP levels in human serum and plasma samples"
+    ],
+    "classification": [
+      "Class II",
+      ""
+    ],
+    "regulatory_info": [
+      "21 CFR 866.5270 \u2013 C-reactive protein immunological test system",
+      ""
+    ]
+  }
+}

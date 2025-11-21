@@ -1,0 +1,171 @@
+
+EVALUATION MODES
+----------------
+
+OpenIE (Schema Discovery):
+  - Discovers schema automatically from documents
+  - Schema generation is sequential, extraction is parallel
+
+ClosedIE (Predefined Schema):
+  - provide the schema upfront
+  - FULLY PARALLEL - all documents processed simultaneously
+
+
+QUICK START
+-----------
+
+1. ClosedIE with Groq (RECOMMENDED - Fully Parallel):
+   
+   # Create a schema file
+   cat > my_schema.json << 'EOF'
+   {
+     "device_name": "Name of the medical device",
+     "applicant": "Company or organization submitting",
+     "submission_date": "Date of submission",
+     "approval_status": "Approval or clearance status"
+   }
+   EOF
+   
+   export GROQ_API_KEY="your-groq-api-key"
+   
+   python batched_eval/run_evaluation.py \
+     --dataset fda_510ks \
+     --provider groq \
+     --model llama-3.3-70b-versatile \
+     --batch-size 10 \
+     --schema my_schema.json
+   
+   # All 10 documents will be extracted in parallel!
+
+
+2. OpenIE with Groq (Schema Discovery):
+   
+   export GROQ_API_KEY="your-groq-api-key"
+   
+   python batched_eval/run_evaluation.py \
+     --dataset fda_510ks \
+     --provider groq \
+     --model llama-3.3-70b-versatile \
+     --batch-size 10 \
+     --num-docs 5
+
+
+2. With OpenAI:
+   
+   export OPENAI_API_KEY="your-openai-api-key"
+   
+   python batched_eval/run_evaluation.py \
+     --dataset fda_510ks \
+     --provider openai \
+     --model gpt-4o-mini \
+     --batch-size 20 \
+     --num-docs 5
+
+
+3. With Ollama (Local):
+   
+   # Start Ollama server
+   ollama serve > /tmp/ollama.log 2>&1 &
+   
+   # Pull a model
+   ollama pull llama3.1:8b
+   
+   # Run evaluation
+   python batched_eval/run_evaluation.py \
+     --dataset fda_510ks \
+     --provider ollama \
+     --model llama3.1:8b \
+     --batch-size 2 \
+     --num-docs 5
+
+
+COMMAND-LINE ARGUMENTS
+----------------------
+
+--dataset [REQUIRED]
+    Dataset name (e.g., fda_510ks, swde_movie_allmovie)
+    Available datasets in: evaporate/data/
+
+--provider [DEFAULT: groq]
+    LLM provider: groq, openai, or ollama
+
+--model [DEFAULT: llama-3.3-70b-versatile]
+    Model name
+    - Groq: llama-3.3-70b-versatile, llama-3.1-70b-versatile, llama-3.1-8b-instant
+    - OpenAI: gpt-4o-mini, gpt-4o
+    - Ollama: llama3.1:8b, llama3:70b, qwen2.5:7b
+
+--batch-size [DEFAULT: 10]
+    Number of parallel workers for extraction
+    - Groq: 10-20
+    - OpenAI: 20-50
+    - Ollama: 2-5
+
+--num-docs [DEFAULT: all]
+    Limit number of documents to process
+
+--schema [OPTIONAL]
+    Path to JSON file with predefined schema (enables ClosedIE mode)
+    Skips schema discovery - all documents processed in parallel
+    
+--schema-json [OPTIONAL]
+    JSON string with predefined schema (alternative to --schema file)
+    Example: --schema-json '{"name":"...", "date":"..."}'
+
+--memory
+    Enable schema memory mode (only for OpenIE, optional)
+
+--output-dir [DEFAULT: simple_results]
+    Output directory for results
+
+
+EXAMPLES
+--------
+
+# ClosedIE: Extract with predefined schema (FULLY PARALLEL)
+python batched_eval/run_evaluation.py \
+  --dataset fda_510ks \
+  --provider groq \
+  --model llama-3.3-70b-versatile \
+  --schema my_schema.json \
+  --batch-size 20
+
+# ClosedIE: Inline JSON schema
+python batched_eval/run_evaluation.py \
+  --dataset fda_510ks \
+  --provider groq \
+  --model llama-3.3-70b-versatile \
+  --schema-json '{"device_name":"Name","applicant":"Company"}' \
+  --batch-size 20
+
+# ClosedIE: Process 100 documents simultaneously
+python batched_eval/run_evaluation.py \
+  --dataset fda_510ks \
+  --provider groq \
+  --model llama-3.3-70b-versatile \
+  --schema my_schema.json \
+  --batch-size 50 \
+  --num-docs 100
+
+# OpenIE: Test with 3 documents (discover schema)
+python batched_eval/run_evaluation.py \
+  --dataset fda_510ks \
+  --provider groq \
+  --model llama-3.3-70b-versatile \
+  --num-docs 3
+
+# OpenIE: With memory mode enabled
+python batched_eval/run_evaluation.py \
+  --dataset fda_510ks \
+  --provider groq \
+  --model llama-3.3-70b-versatile \
+  --memory
+
+# OpenIE: Different dataset
+python batched_eval/run_evaluation.py \
+  --dataset swde_movie_allmovie \
+  --provider groq \
+  --model llama-3.3-70b-versatile \
+  --batch-size 15
+
+

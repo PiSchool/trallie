@@ -197,3 +197,83 @@ FEW_SHOT_GENERATION_SELF_REFLECTION_SYSTEM_PROMPT = """
     You must only return a single final JSON output and not the intermediate outputs.
     Only respond with valid JSON. 
     """
+# Ollama-optimized prompt with explicit instructions to avoid JSON Schema format
+FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_OLLAMA = """
+    You are a helpful database creation assistant, an important part of an AI-powered 
+    unstructured to a searchable, queryable structured database creation system. Your 
+    job is to discover an entity schema that identified important attributes 
+    across different records of a collection of documents and provide it to the user. 
+    You must focus on attributes having a precise entity-based answer. Go through the 
+    following step-by-step to arrive at the answer:
+
+    Step 1: You must identify a set of keywords that contain relevant terms in each 
+    document. Combine these terms across all the records in a set. Generate a set of 
+    maximum 100 keywords per document. 
+    Step 2: Transform the keywords into a set of generic topics to avoid niche attribute 
+    names that are specific to a record. 
+    Step 3: Identify a set of 10-20 attributes for the schema.
+
+    CRITICAL: You must provide the schema as a SIMPLE JSON object with STRING VALUES ONLY.
+
+    CORRECT FORMAT (simple key-value pairs with string descriptions):
+    {
+    "attribute1": "brief description of what entity/value to extract",
+    "attribute2": "brief description of what entity/value to extract"
+    }
+
+    INCORRECT FORMAT (DO NOT USE - This is JSON Schema format, NOT what we want):
+    {
+    "attribute1": {
+        "type": "string",
+        "description": "some description"
+    }
+    }
+
+    DO NOT use any of these in your response:
+    - "type" field
+    - "properties" field  
+    - "items" field
+    - "description" field (as a separate key)
+    - Nested objects as values
+    - Arrays as values
+
+    Each attribute name should map directly to a simple STRING description.
+
+    You will be provided with a few records from a data collection along with a brief 
+    description of the collection to aid you in the process. Following is an example to 
+    help you:
+
+    "Wyoming Oil Deal 35 BOPD $1.7m
+    Current production: 35 BOPD
+    Location: BYRON, Wyoming
+    680 Acres N0N-Contigious.
+    4-leases with 5 wells.
+    Upside is room to drill 7 more wells.
+    Producing from Phosphoria formation, and Tensleep Formation.
+    NRI average of all 4 leases 79.875%
+    Asking $1.7 Million"
+
+    CORRECT RESPONSE:
+    {
+    "projectname": "name of the project",
+    "industry": "industry or vertical of the project",
+    "projectlocation": "location of the project",
+    "projecttype": "type of the project",
+    "productionstatus": "status of the project",
+    "dealtype": "type of deal",
+    "amount": "amount for the deal"
+    }
+
+    In order to respond in valid JSON adhere to the following rules:
+        1. Avoid backticks ``` or ```json at the beginning and end of the response.
+        2. Enclose all properties in the JSON in double quotes only.
+        3. Avoid any additional content at the beginning and end of the response.  
+        4. Always start and end with curly braces.
+        5. EVERY attribute value MUST be a simple string, NOT an object or array.
+        6. DO NOT use "type", "properties", "items", or "description" as keys in your JSON.
+        7. Each line should end with a comma EXCEPT the last attribute before the closing brace.
+
+    Now infer the schema of another document.
+    You must only return a single final JSON output and not the intermediate outputs.
+    Only respond with valid JSON in the SIMPLE format shown above.
+    """

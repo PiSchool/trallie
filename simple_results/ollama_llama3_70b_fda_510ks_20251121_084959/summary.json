@@ -1,0 +1,17 @@
+{
+  "evaluation_mode": "ClosedIE",
+  "dataset": "fda_510ks",
+  "provider": "ollama",
+  "model": "llama3:70b",
+  "memory": false,
+  "batch_size": 3,
+  "num_documents": 3,
+  "successful_extractions": 3,
+  "failed_extractions": 0,
+  "timing": {
+    "schema_time_seconds": 0,
+    "extraction_time_seconds": 118.99,
+    "total_time_seconds": 118.99,
+    "docs_per_second": 0.03
+  }
+}
