@@ -21,13 +21,17 @@
 
 ## 🚀 Features
 
-1. Supports for several document types like **PDF, HTML and TXT as well as raw text**.  
+1. Support for several document types like **PDF, HTML, and TXT as well as raw text**.  
 
 2. Support for multiple LLM providers : **OpenAI, Groq, HuggingFace Endpoints and Ollama**. Supports regular + reasoning models!
 
 3. Modular framework: Extract data from your documents according to a **pre-defined format or auto-infer schema** from documents.
 
 4. Supports inputs and outputs in **5 languages : English (EN), Italian (IT), French (FR), German (DE) and Spanish (ES)**.
+
+5. **Memory support**: Refine schemas across multiple documents for improved consistency.
+
+6. **Large document handling**: Automatic chunking for documents exceeding model context limits.
 
 
 ## 📦 Installation
@@ -69,14 +73,14 @@ records = [
 description = "A dataset of Earth observation papers"
 
 # Initialize the schema generator with a provider and model
-schema_generator = SchemaGenerator(provider="openai", model_name="gpt-4o")
+schema_generator = SchemaGenerator(provider="openai", model_name="gpt-4o", language="en")
 # Feed records to the LLM and discover schema
 print("SCHEMA GENERATION IN ACTION ...")
 schema = schema_generator.discover_schema(description, records)
 print("Inferred schema", schema)
 
 # Initialize data extractor with a provider and model
-data_extractor = DataExtractor(provider="openai", model_name="gpt-4o")
+data_extractor = DataExtractor(provider="openai", model_name="gpt-4o", language="en")
 # Extract values from the text based on the schema
 print("SCHEMA COMPLETION IN ACTION ...")
 for record in records:
@@ -87,7 +91,7 @@ for record in records:
 ### Output (example)
 
 ```json
-{"location": ["Paris, France"], "name": "John Doe", "age": 24}
+{"title": "Remote Sensing Applications", "authors": ["Smith, J.", "Doe, A."], "publication_year": 2023, "keywords": ["satellite imagery", "land use"]}
 ```
 
 ---
@@ -96,48 +100,35 @@ for record in records:
 
 ### Schema Generation
 
+The `SchemaGenerator` class automatically infers the structure and attributes from your document collection. It analyses multiple documents to identify common patterns and creates a schema that captures the key information fields. You can enable memory to refine the schema across documents for better consistency.
+
 ### Data Extraction 
 
-Trallie handles everything through its `Extractor` interface, which:
+The `DataExtractor` class extracts structured data from documents based on a provided schema. It processes documents through the selected LLM provider, formats prompts appropriately, and returns normalized JSON output with the extracted attributes.
 
-- Receives input text and rules
-- Formats prompts
-- Sends them to the selected LLM backend
-- Normalizes the results into structured output
+Trallie handles everything through its `SchemaGenerator` and `DataExtractor` classes, which:
+
+- Receive input text and schema definitions
+- Format prompts for the selected LLM backend
+- Send requests to the provider API
+- Normalize the results into structured JSON output
 
 
 ## ⚙️ Configuration
 
 You can customize Trallie using:
 
-- Python function parameters
+- Python function parameters (provider, model_name, language, memory, reasoning_mode)
 - Prompt templates
-- Model selection (OpenAI or others)
-- Language selection 
+- Model selection (OpenAI, Groq, HuggingFace, or Ollama)
+- Language selection (EN, IT, FR, DE, ES)
 
 Add a `.env` file for API configuration:
 
 ```
 OPENAI_API_KEY=your_key_here
+GROQ_API_KEY=your_key_here
 ```
-
-<!-- ## 🧩 Extending Trallie
-
-Ways to extend the framework:
-
-- Customize prompt templates
-- Add new extractors or normalizers
-- Integrate with your NLP or ETL pipelines
-
--->
-
-<!-- ## 🛠️ Troubleshooting
-
-- **Invalid Schema**: Ensure your rules match expected output formats.
-- **Poor Results**: Adjust your prompts or verify model configuration.
-- **Rate Limits**: Use batching or rate-limiting with external APIs.
-
--->
 
 ## 📄 License
 

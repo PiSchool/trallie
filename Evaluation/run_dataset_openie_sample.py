@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""General solution to run OpenIE (memory and no-memory) on any dataset with sampling."""
+"""Script to run OpenIE (memory and no-memory) on any dataset with sampling."""
 
 import argparse
 import json
