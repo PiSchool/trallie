@@ -1,0 +1,21 @@
+{
+  "dataset": "swde_movie_rottentomatoes",
+  "source_table_relative": "evaporate/data/swde_movie_rottentomatoes/table.json",
+  "num_documents": 2000,
+  "attribute_names": [
+    "box office",
+    "cast",
+    "directed by",
+    "distributor",
+    "genre",
+    "in theaters",
+    "rated",
+    "running time",
+    "synopsis",
+    "title",
+    "topic_entity_name",
+    "us box office",
+    "written by"
+  ],
+  "note": "attribute_names is the union of keys across all rows in source table.json (gold schema)."
+}

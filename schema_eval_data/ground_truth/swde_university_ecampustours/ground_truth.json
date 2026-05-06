@@ -1,0 +1,23 @@
+{
+  "dataset": "swde_university_ecampustours",
+  "source_table_relative": "evaporate/data/swde_university_ecampustours/table.json",
+  "num_documents": 1063,
+  "attribute_names": [
+    "Phone",
+    "affiliation",
+    "calendar system",
+    "city/state/zip",
+    "degrees include",
+    "enrollment",
+    "highest degree offered",
+    "institution",
+    "phone",
+    "private school",
+    "student body",
+    "topic_entity_name",
+    "tuition",
+    "website",
+    "year established"
+  ],
+  "note": "attribute_names is the union of keys across all rows in source table.json (gold schema)."
+}

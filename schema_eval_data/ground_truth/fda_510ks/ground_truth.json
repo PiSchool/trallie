@@ -1,0 +1,24 @@
+{
+  "dataset": "fda_510ks",
+  "source_table_relative": "evaporate/data/fda_510ks/table.json",
+  "num_documents": 100,
+  "attribute_names": [
+    "510k number",
+    "applicant",
+    "classification",
+    "conclusion",
+    "indications for use",
+    "intended use",
+    "measurand",
+    "panel",
+    "predicate 510k number",
+    "predicate device name",
+    "product code",
+    "proposed labeling",
+    "proprietary and established names",
+    "purpose for submission",
+    "regulation section",
+    "type of test"
+  ],
+  "note": "attribute_names is the union of keys across all rows in source table.json (gold schema)."
+}

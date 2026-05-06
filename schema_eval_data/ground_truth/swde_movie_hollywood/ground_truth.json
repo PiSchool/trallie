@@ -1,0 +1,8 @@
+{
+  "dataset": "swde_movie_hollywood",
+  "source_table_relative": null,
+  "num_documents": null,
+  "attribute_names": [],
+  "status": "missing_source_table",
+  "note": "No evaporate/data/swde_movie_hollywood/table.json in this workspace. Add the Evaporate dataset file or re-run scripts/build_schema_eval_data.py after it exists."
+}

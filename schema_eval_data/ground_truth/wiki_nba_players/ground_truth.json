@@ -1,0 +1,27 @@
+{
+  "dataset": "wiki_nba_players",
+  "source_table_relative": "evaporate/data/wiki_nba_players/table.json",
+  "num_documents": 100,
+  "attribute_names": [
+    "assists",
+    "born",
+    "coaching career",
+    "college",
+    "description",
+    "died",
+    "high school",
+    "league",
+    "listed height",
+    "listed weight",
+    "nationality",
+    "nba draft",
+    "number",
+    "player",
+    "playing career",
+    "points",
+    "position",
+    "rebounds",
+    "selected by"
+  ],
+  "note": "attribute_names is the union of keys across all rows in source table.json (gold schema)."
+}

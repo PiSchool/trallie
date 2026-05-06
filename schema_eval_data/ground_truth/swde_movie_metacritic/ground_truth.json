@@ -1,0 +1,28 @@
+{
+  "dataset": "swde_movie_metacritic",
+  "source_table_relative": "evaporate/data/swde_movie_metacritic/table.json",
+  "num_documents": 2000,
+  "attribute_names": [
+    "director",
+    "duration",
+    "genre(s)",
+    "metascore",
+    "mixed critic reviews",
+    "mixed user reviews",
+    "negative critic reviews",
+    "negative user reviews",
+    "positive critic reviews",
+    "positive user reviews",
+    "rating",
+    "release date",
+    "reviewed by",
+    "runtime",
+    "score distribution",
+    "starring",
+    "studio",
+    "summary",
+    "topic_entity_name",
+    "user score"
+  ],
+  "note": "attribute_names is the union of keys across all rows in source table.json (gold schema)."
+}

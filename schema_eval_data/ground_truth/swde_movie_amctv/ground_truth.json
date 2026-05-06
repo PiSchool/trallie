@@ -1,0 +1,27 @@
+{
+  "dataset": "swde_movie_amctv",
+  "source_table_relative": "evaporate/data/swde_movie_amctv/table.json",
+  "num_documents": 2000,
+  "attribute_names": [
+    "...ranks in these movie lists",
+    "alternate titles",
+    "category",
+    "country",
+    "director",
+    "filmed in",
+    "genre/type",
+    "key cast",
+    "keywords",
+    "language",
+    "mpaa rating",
+    "produced by",
+    "release",
+    "run time",
+    "set in",
+    "similar movies",
+    "themes",
+    "title",
+    "year"
+  ],
+  "note": "attribute_names is the union of keys across all rows in source table.json (gold schema)."
+}

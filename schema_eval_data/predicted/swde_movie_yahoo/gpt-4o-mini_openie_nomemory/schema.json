@@ -1,0 +1,12 @@
+[
+  "title",
+  "cast",
+  "description",
+  "director",
+  "producers",
+  "genres",
+  "mpaaRating",
+  "runningTime",
+  "boxOffice",
+  "releaseYear"
+]

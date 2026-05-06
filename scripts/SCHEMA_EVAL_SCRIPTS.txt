@@ -1,0 +1,55 @@
+Schema evaluation helpers (added for schema_eval_data + LLM judges)
+===================================================================
+
+Prereq: repo root, PowerShell. Set API key only for judge scripts:
+  $env:OPENAI_API_KEY="your-key"
+
+-------------------------------------------------------------------
+build_schema_eval_data.py
+-------------------------------------------------------------------
+What: Copies predicted schema.json from results (1)/results into
+      schema_eval_data/predicted/<dataset>/<run>/ and builds
+      schema_eval_data/ground_truth/<dataset>/ground_truth.json
+      (attribute_names from evaporate/.../table.json). Stubs missing tables.
+
+Run:
+  cd C:\Users\hp\Downloads\trallie
+  python scripts\build_schema_eval_data.py
+
+-------------------------------------------------------------------
+evaluate_schema_overlap.py
+-------------------------------------------------------------------
+What: Prints precision/recall/F1 on normalized *exact* name overlap
+      between each predicted schema and matching ground_truth.json.
+
+Run:
+  python scripts\evaluate_schema_overlap.py
+
+-------------------------------------------------------------------
+judge_schema_fda.py
+-------------------------------------------------------------------
+What: LLM (gpt-4o-mini) scores predicted vs gold attribute lists.
+      Two calls: (1) schemas only (2) schemas + one doc excerpt from
+      docs.tar.gz. Saves JSON under schema_eval_data/judge_outputs/...
+
+Run (FDA default):
+  python scripts\judge_schema_fda.py --run gpt4omini_openie_nomemory --dataset fda_510ks
+
+Optional:
+  --doc-id "K143467.txt"   pick reference doc basename
+  --out my_run.json
+  --dataset <name>         other Evaporate dataset (see script choices)
+
+-------------------------------------------------------------------
+judge_schema_preference_blind.py
+-------------------------------------------------------------------
+What: Blind A/B: run schema vs labeled reference list, random order.
+      Two calls: (1) names only (2) names + reference doc. Model returns
+      dimension_scores + final_scores for A and B, then preferred.
+      Artifact maps A/B back to run_schema vs labeled_reference_fields.
+
+Run:
+  python scripts\judge_schema_preference_blind.py --run gpt4omini_openie_nomemory --dataset fda_510ks
+
+Optional:
+  --doc-id "K143467.txt"  --seed 42  --out pref.json  --char-limit 6000

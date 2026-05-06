@@ -1,0 +1,261 @@
+{
+  "dataset": "fda_510ks",
+  "model": "gpt-4o-mini",
+  "run": "gpt4omini_openie_nomemory",
+  "pred_schema_path": "schema_eval_data\\predicted\\fda_510ks\\gpt4omini_openie_nomemory\\schema.json",
+  "gold_schema_path": "schema_eval_data\\ground_truth\\fda_510ks\\ground_truth.json",
+  "evaporate_table_path": "evaporate\\data\\fda_510ks\\table.json",
+  "evaporate_docs_tar": "evaporate\\data\\fda_510ks\\docs.tar.gz",
+  "reference_doc_id": "K143467.txt",
+  "judge_prompt": "You are a senior expert in structured information extraction and schema evaluation. You have\ndeep familiarity with heterogeneous document collections, including regulatory filings\n(FDA 510(k) submissions), email corpora (Enron), sports encyclopedias (NBA player bios),\nmovie databases (IMDb, Rotten Tomatoes, Metacritic, AllMovie, AMC, Hollywood.com,\niHeartMovies, Yahoo Movies), and university directories (CollegeProwler, eCampusTours,\nEmbark, MatchCollege, US News).\n\nYou evaluate whether a MODEL-GENERATED flat schema (a list of field names) aligns with a\nGROUND-TRUTH flat schema derived from labeled extractions in the Evaporate benchmark\n(Arora et al., VLDB 2023). The benchmark spans 16 real-world settings; each setting has its\nown domain vocabulary, so your evaluation must be grounded in the declared dataset_name.\n\nThe user message is JSON with:\n  - dataset_name        (string, e.g. \"fda_510ks\", \"wiki_nba_players\", \"swde_movie_imdb\",\n                         \"swde_university_usnews\", \"enron\")\n  - predicted_schema    (list of strings)\n  - ground_truth_schema (list of strings)\n  - reference_document  (optional — plain text from one document; may begin with a single-line\n                         header \"[reference_document_id: <basename>]\" before the excerpt)\n\n════════════════════════════════════════════════════════════════════════\nDOMAIN VOCABULARY GUIDE  (use to inform semantic alignment and appropriateness)\n════════════════════════════════════════════════════════════════════════\nfda_510ks          → device trade name, applicant, K-number, device classification,\n                     product code, predicate device name/code, indications for use,\n                     substantial equivalence, submission type, decision date, contact\nenron              → sender, recipients, date, subject, cc, bcc, body, attachments,\n                     thread id, folder, organization\nwiki_nba_players   → player name, position, draft year, team, college, nationality,\n                     height, weight, points per game, rebounds, assists, career stats\nswde_movie_*       → title, director, genre, rating (MPAA), runtime, release date,\n                     cast, producer, studio, user score, critic score, synopsis\nswde_university_*  → university name, location, tuition, enrollment, acceptance rate,\n                     SAT/ACT scores, ranking, housing, financial aid, majors\n\nIf dataset_name is absent or unrecognized, infer domain from field names in both schemas\nand state the inference in domain_notes.\n\n════════════════════════════════════════════════════════════════════════\nTASK\n════════════════════════════════════════════════════════════════════════\nGrade predicted_schema against ground_truth_schema. Produce explicit field alignments,\nthen score seven dimensions on a continuous scale 0.0 (poor) → 1.0 (excellent), plus a\nfinal_score on 0.0–1.0.\n\n════════════════════════════════════════════════════════════════════════\nMATCHING PROTOCOL  (apply before scoring)\n════════════════════════════════════════════════════════════════════════\n1. Align predicted fields to gold fields using exact names, clear synonyms, or obvious\n   abbreviations (e.g., \"trade name\" ↔ \"device trade name\", \"pts_per_game\" ↔ \"points per\n   game\"). Minor punctuation/casing/underscore differences do not matter.\n2. One-to-one: each predicted field maps to at most one gold field; each gold field to at\n   most one predicted field. On ties, choose the single best semantic pair; leave the rest\n   unmatched.\n3. link_type for each aligned pair:\n     \"exact\"   – same concept, trivially equivalent names\n     \"synonym\" – same concept, clearly different but unambiguous names\n     \"partial\" – related but imperfect (overlapping scope or one is a subset)\n     \"none\"    – no meaningful relation (use only when marking extra_pred or missing_gold)\n4. missing_gold   → every gold field with no aligned predicted field.\n5. extra_pred     → every predicted field with no aligned gold field.\n6. duplicate_pred_groups → lists of predicted names that are near-duplicates or redundant\n   within the predicted schema (e.g., both \"movie title\" and \"film name\" present). Use []\n   if none.\n\n════════════════════════════════════════════════════════════════════════\nNUMBERED EVALUATION CRITERIA\n════════════════════════════════════════════════════════════════════════\n1. gold_coverage_recall\n   Fraction of gold fields covered by an aligned predicted field.\n   • exact/synonym alignment counts fully.\n   • partial alignment counts as 0.5 of a covered field.\n   • Anchor: 1.0 ≈ virtually all gold concepts present; 0.3 ≈ most gold concepts missing.\n\n2. pred_precision\n   Fraction of predicted fields that map to a genuine gold concept (not extra_pred, not\n   vacuous). Penalize vague catch-alls (\"details\", \"info\", \"other\", \"misc\").\n   • Anchor: 1.0 ≈ every predicted slot earns its place; 0.2 ≈ mostly hallucinated labels.\n\n3. semantic_alignment\n   Among linked pairs (exact/synonym/partial), how well do predicted names reflect the\n   same meaning as gold names — not just string overlap? Penalize overly generic labels\n   even when the link_type is \"synonym\".\n   • Anchor: 1.0 ≈ crisp, domain-appropriate wording throughout;\n             0.3 ≈ many weak, vague, or misleading links.\n\n4. granularity_match\n   Does the predicted schema avoid improper merging or splitting?\n   • Penalize: one predicted field bundling multiple distinct gold concepts (merge error),\n     or one gold concept fragmented across multiple predicted fields (split error).\n   • Explain specific merge/split issues in granularity_notes.\n   • Anchor: 1.0 ≈ every predicted field maps cleanly to one gold concept and vice versa.\n\n5. domain_appropriateness\n   Do predicted names look like attributes a data analyst or domain expert would use on\n   real documents from dataset_name?\n   • If reference_document is present, ground your judgment in topics that actually appear\n     (reason at schema level; do not quote the document).\n   • If reference_document is absent, infer from dataset_name + field names and note the\n     limitation in domain_notes.\n   • For fda_510ks: apply strict 510(k) regulatory vocabulary.\n   • For swde_movie_* / swde_university_*: apply SWDE web-extraction conventions.\n   • For wiki_nba_players / enron: apply encyclopedia / email conventions respectively.\n   • Anchor: 1.0 ≈ every predicted field looks native to the domain;\n             0.3 ≈ generic or wrong-domain labels throughout.\n\n6. redundancy_quality\n   1.0 if predicted fields are mutually distinct in purpose. Penalize proportionally to\n   the size and number of duplicate_pred_groups.\n   • Anchor: 1.0 ≈ no redundancy; 0.4 ≈ several pairs of near-duplicate predicted fields.\n\n7. naming_consistency\n   Are predicted field names internally consistent in style (casing, delimiter, verbosity)?\n   Mixed styles (snake_case alongside Title Case alongside abbreviations) reduce clarity\n   for downstream use.\n   • Anchor: 1.0 ≈ uniform naming style; 0.5 ≈ noticeable style variation;\n             0.2 ≈ chaotic, unsystematic names.\n\n════════════════════════════════════════════════════════════════════════\nFINAL SCORE\n════════════════════════════════════════════════════════════════════════\nfinal_score is your overall judgment. It must be CONSISTENT with the seven dimension scores\n(do not output 0.9 if recall and precision are both below 0.5).\nWhen reference_document is absent, apply a modest conservative cap to domain_appropriateness\nand final_score and state this in domain_notes.\n\n════════════════════════════════════════════════════════════════════════\nCALIBRATION ANCHORS  (illustrative; do not copy into output)\n════════════════════════════════════════════════════════════════════════\n• Predicted renames most gold fields clearly → high gold_coverage_recall and pred_precision.\n• Predicted adds \"misc_info\" and \"text_blob\" → pred_precision and semantic_alignment drop.\n• One predicted \"device_info\" maps to three gold fields mentally → granularity_match drops.\n• Dataset is swde_movie_imdb; predicted schema omits rating and cast → domain_appropriateness\n  drops when reference_document confirms those appear in docs.\n• All predicted fields use snake_case → naming_consistency near 1.0.\n• \"movie_title\" and \"film_title\" both in predicted → duplicate_pred_groups non-empty,\n  redundancy_quality drops.\n\n════════════════════════════════════════════════════════════════════════\nOUTPUT FORMAT\n════════════════════════════════════════════════════════════════════════\nReturn ONLY valid JSON — no markdown fences, no preamble, no commentary after.\nUse the exact field name strings from the user JSON inside mappings, missing_gold,\nextra_pred, and duplicate_pred_groups.\n\nRequired JSON shape:\n{\n  \"dataset_name_used\": \"<echo dataset_name back, or state inferred domain>\",\n  \"mappings\": [\n    {\n      \"predicted_field\": \"<string from predicted_schema or null>\",\n      \"gold_field\": \"<string from ground_truth_schema or null>\",\n      \"link_type\": \"exact | synonym | partial | none\",\n      \"alignment_note\": \"<short string>\"\n    }\n  ],\n  \"missing_gold\": [],\n  \"extra_pred\": [],\n  \"duplicate_pred_groups\": [],\n  \"granularity_notes\": \"\",\n  \"domain_notes\": \"\",\n  \"dimension_scores\": {\n    \"gold_coverage_recall\": 0.0,\n    \"pred_precision\": 0.0,\n    \"semantic_alignment\": 0.0,\n    \"granularity_match\": 0.0,\n    \"domain_appropriateness\": 0.0,\n    \"redundancy_quality\": 0.0,\n    \"naming_consistency\": 0.0\n  },\n  \"rationale_brief\": \"\",\n  \"final_score\": 0.0\n}",
+  "call_1": {
+    "input": {
+      "dataset_name": "fda_510ks",
+      "predicted_schema": [
+        "applicant",
+        "submission_number",
+        "intended_use",
+        "measurand",
+        "device_name",
+        "performance_characteristics",
+        "test_type",
+        "classification",
+        "product_code",
+        "regulation_section"
+      ],
+      "ground_truth_schema": [
+        "510k number",
+        "applicant",
+        "classification",
+        "conclusion",
+        "indications for use",
+        "intended use",
+        "measurand",
+        "panel",
+        "predicate 510k number",
+        "predicate device name",
+        "product code",
+        "proposed labeling",
+        "proprietary and established names",
+        "purpose for submission",
+        "regulation section",
+        "type of test"
+      ]
+    },
+    "output": {
+      "dataset_name_used": "fda_510ks",
+      "mappings": [
+        {
+          "predicted_field": "applicant",
+          "gold_field": "applicant",
+          "link_type": "exact",
+          "alignment_note": "Exact match"
+        },
+        {
+          "predicted_field": "intended_use",
+          "gold_field": "intended use",
+          "link_type": "exact",
+          "alignment_note": "Exact match"
+        },
+        {
+          "predicted_field": "measurand",
+          "gold_field": "measurand",
+          "link_type": "exact",
+          "alignment_note": "Exact match"
+        },
+        {
+          "predicted_field": "device_name",
+          "gold_field": "predicate device name",
+          "link_type": "partial",
+          "alignment_note": "Related but not a direct match"
+        },
+        {
+          "predicted_field": "performance_characteristics",
+          "gold_field": "conclusion",
+          "link_type": "none",
+          "alignment_note": "No meaningful relation"
+        },
+        {
+          "predicted_field": "test_type",
+          "gold_field": "type of test",
+          "link_type": "synonym",
+          "alignment_note": "Similar concepts"
+        },
+        {
+          "predicted_field": "classification",
+          "gold_field": "classification",
+          "link_type": "exact",
+          "alignment_note": "Exact match"
+        },
+        {
+          "predicted_field": "product_code",
+          "gold_field": "product code",
+          "link_type": "exact",
+          "alignment_note": "Exact match"
+        },
+        {
+          "predicted_field": "regulation_section",
+          "gold_field": "regulation section",
+          "link_type": "exact",
+          "alignment_note": "Exact match"
+        }
+      ],
+      "missing_gold": [
+        "510k number",
+        "conclusion",
+        "panel",
+        "predicate 510k number",
+        "proposed labeling",
+        "proprietary and established names",
+        "purpose for submission"
+      ],
+      "extra_pred": [
+        "submission_number",
+        "performance_characteristics"
+      ],
+      "duplicate_pred_groups": [],
+      "granularity_notes": "",
+      "domain_notes": "",
+      "dimension_scores": {
+        "gold_coverage_recall": 0.5,
+        "pred_precision": 0.8,
+        "semantic_alignment": 0.7,
+        "granularity_match": 0.9,
+        "domain_appropriateness": 1.0,
+        "redundancy_quality": 1.0,
+        "naming_consistency": 1.0
+      },
+      "rationale_brief": "The predicted schema covers many of the gold fields, with some exact matches and a few partial alignments. However, several gold fields are missing, and there are extra predicted fields that do not correspond to gold fields.",
+      "final_score": 0.7
+    }
+  },
+  "call_2": {
+    "input": {
+      "dataset_name": "fda_510ks",
+      "predicted_schema": [
+        "applicant",
+        "submission_number",
+        "intended_use",
+        "measurand",
+        "device_name",
+        "performance_characteristics",
+        "test_type",
+        "classification",
+        "product_code",
+        "regulation_section"
+      ],
+      "ground_truth_schema": [
+        "510k number",
+        "applicant",
+        "classification",
+        "conclusion",
+        "indications for use",
+        "intended use",
+        "measurand",
+        "panel",
+        "predicate 510k number",
+        "predicate device name",
+        "product code",
+        "proposed labeling",
+        "proprietary and established names",
+        "purpose for submission",
+        "regulation section",
+        "type of test"
+      ],
+      "reference_document": "[reference_document_id: K143467.txt]\n\n1 \n510(k) SUBSTANTIAL EQUIVALENCE DETERMINATION  \nDECISION SUMMARY \nASSAY AND INSTRUMENT COMBINATION TEMPLATE \nA. 510(k) Number: \nk143467 \nB. Purpose for Submission:  \nNew device  \nC. Measurand:    \nCapillary whole blood glucose from the fingertip, palm, forearm, and upper arm \nD. Type of Test:  \nQuantitative amperometric assay, glucose dehydrogenase (GDH-FAD) \nE. Applicant:   \nTaiDoc Technology Corporation \nF. Proprietary and Established Names:   \nFORA GD43 Blood Glucose Monitoring System \nG. Regulatory Information:   \n1. Regulation section: \n21 CFR 862.1345, Glucose test system  \n2. Classification:  \nClass II \n \n3. Product code:  \nNBW, System, Test, Blood Glucose, Over the Counter \nLFR, Glucose Dehydrogenase, Glucose \n \n4. Panel: \nClinical Chemistry (75) \nH. Intended Use: \n1. Intended use(s):   \nSee Indications for Use below. \n2. Indications(s) for use:   \nThe FORA GD43 Blood Glucose Monitoring System is intended to be used for the \nquantitative measurement of glucose (sugar) in fresh capillary whole blood from the \n \n \n2 \nfingertip and alternative sites (palm, forearm and upper arm).This blood glucose \nmonitoring system is intended to be used by a single person and should not be shared. \nAlternative site testing (AST) should only be done during steady-state times (when \nglucose is not changing rapidly). \nThe FORA GD43 Blood Glucose Monitoring System is intended for self-testing \noutside the body (in vitro diagnostic use) by people with diabetes at home as an aid to \nmonitor the effectiveness of diabetes control. This system should not be used for the \ndiagnosis of or screening for diabetes, nor for use on neonates.  \nThe FORA GD43 Test Strips are for use with the FORA GD43 Blood Glucose \nMeters to quantitatively measure glucose (sugar) in fresh capillary whole blood from \nthe fingertip and alternative sites (palm, forearm and upper arm).  \n3. Special conditions for use statement(s): \n· For in vitro diagnostic use only  \n· Not for use in diagnosis or screening of diabetes mellitus \n· Not for neonatal use \n· Not for use on patients who are dehydrated, hypotensive, in shock, or for \nindividuals in hyperglycemic-hyperosmolar state, with or without ketosis. \n· Not for use in critically ill patients \n· Alternative site testing (AST) should only be done during steady-state times \n(when glucose is not changing rapidly) \n· Alternative site testing results should not be used to calibrate continuous glucose \nmonitors (CGMs) \n· Alternative site testing results should not be used in insulin dosing calculations \n \n4. Special instrument requirements: \nFORA GD43 Blood Glucose Meter  \nI. Device Description: \nThe FORA GD43 Blood Glucose Monitoring System consists of the FORA GD43 Blood \nGlucose Meter, Owner’s Manual, Protective Wallet, Quick Start User Guide, Daily Log \nBook, Warranty Card and 2 x 1.5 V AAA alkaline batteries.  The FORA GD43 Test \nStrips are for use with the FORA GD43 Blood Glucose Meters to quantitatively measure \nglucose (sugar) in fresh capillary whole blood from the fingertip and alternative sites \n(palm, forearm and upper arm).  The FORA GD43 Test Strips need to be purchased \nseparately. \nThe control solutions to be used with the FORA GD43 System are the FORA Control \nSolutions, cleared in k093724. Three levels are available: Level 1, Level 2, and Level 3.  \nLevel 1 is included in some kit configurations and all levels can be purchased separately.  \nThe Clever Chek Health Care System Software is an optional software accessory for use \nwith the FORA GD43 Blood Glucose Monitoring System, which provides enhanced data \nmanagement capabilities. \n \n \n3 \nJ. Substantial Equivalence Information:   \n1. Predicate device name(s):    \nFORA GD40 Blood Glucose Monitoring System \n2. Predicate 510(k) number(s):  \nk101509 \n \n3. Comparison with predicate:   \nSimilarities \nPredicate \nFORA GD40 Blood Glucose \nMonitoring System \n(k101509) \nCandidate \nFORA GD43 Blood Glucose \nMonitoring System \n(k143467) \nIndications for \nUse/Intended Use \nTo quantitatively measure \nglucose (sugar) in whole \nblood, as an aid in monitoring \nthe effectiveness of glucose \ncontrol. \nSame \nEnzyme \nGlucose Dehydrogenase \n(GDH-FAD) \nSame \nTest Method \nAmperometric detection \nSame \nMeasuring Range \n20-600 mg/dL \nSame \nReaction time \n5 sec \nSame \nMemory Capacity \n1000 data points \nSame \nDimensions \n110.0 L/57.0 W/25.0 H (mm) \nSame \nWeight \n71g without battery \nSame \nDifferences \nPredicate \nFORA GD40 Blood Glucose \nMonitoring System (k101509) \nCandidate \nFORA GD43 Blood Glucose \nMonitoring System \n(k143467) \nSample type \nCapillary whole blood from \nfinger \nCapillary whole blood from \nfingertip, palm, forearm, and \nupper arm \nElectrode \ncarbon \ngold \nSample volume \n1.1uL \n0.5uL \nHematocrit range \n20-60% \n20-70% \nTest Strip stability \nOpened - 3 months \nUnopened - 18 months \nOpened - 24 months \nUnopened - 24 months \nOperating conditions \n50°F - 104°F (10°C - 40°C) \n46.4°F - 113°F (8°C - 45°C) \n \nK. Standard/ Guidance Document Referenced (if applicable):  \n· ISO 14971: Medical Devices - Application of risk management to medical devices \n \n \n4 \n· IEC 62304: Medical device software - Software lifecycle processes \n· IEC 61010-1, Safety requirements for electrical equipment for measurement, control, \nand laboratory use - Part 1: General requirements \n· IEC 61010-2, Safety requirements for electrical equipment for measurement, control, \nand laboratory use – Part 2-101: Particular requirements for in vitro diagnostic (IVD) \nmedical equipment \n· IEC 61326-1, Electrical equipment for measurement, control and laboratory use - \nEMC requirements - Part 1: General requirements \n· IEC 61326-2-6, Electrical equipment for measurement, control and laboratory use - \nEMC requirements - Part 2-6: Particular requirements – In vitro diagnostic (IVD) \nmedical equipment \n· IEC 60601-1-2, Medical electrical equipment - part 1-2: general requirements for \nbasic safety and essential performance - collateral standard: electromagnetic \ncompatibility - requirem\n...[truncated]..."
+    },
+    "output": {
+      "dataset_name_used": "fda_510ks",
+      "mappings": [
+        {
+          "predicted_field": "applicant",
+          "gold_field": "applicant",
+          "link_type": "exact",
+          "alignment_note": "Exact match for applicant."
+        },
+        {
+          "predicted_field": "intended_use",
+          "gold_field": "intended use",
+          "link_type": "exact",
+          "alignment_note": "Exact match for intended use."
+        },
+        {
+          "predicted_field": "measurand",
+          "gold_field": "measurand",
+          "link_type": "exact",
+          "alignment_note": "Exact match for measurand."
+        },
+        {
+          "predicted_field": "device_name",
+          "gold_field": "proprietary and established names",
+          "link_type": "partial",
+          "alignment_note": "Device name is a subset of proprietary names."
+        },
+        {
+          "predicted_field": "classification",
+          "gold_field": "classification",
+          "link_type": "exact",
+          "alignment_note": "Exact match for classification."
+        },
+        {
+          "predicted_field": "product_code",
+          "gold_field": "product code",
+          "link_type": "exact",
+          "alignment_note": "Exact match for product code."
+        },
+        {
+          "predicted_field": "regulation_section",
+          "gold_field": "regulation section",
+          "link_type": "exact",
+          "alignment_note": "Exact match for regulation section."
+        },
+        {
+          "predicted_field": "submission_number",
+          "gold_field": null,
+          "link_type": "none",
+          "alignment_note": "No corresponding gold field."
+        },
+        {
+          "predicted_field": "performance_characteristics",
+          "gold_field": null,
+          "link_type": "none",
+          "alignment_note": "No corresponding gold field."
+        },
+        {
+          "predicted_field": "test_type",
+          "gold_field": "type of test",
+          "link_type": "synonym",
+          "alignment_note": "Test type is a synonym for type of test."
+        }
+      ],
+      "missing_gold": [
+        "510k number",
+        "conclusion",
+        "indications for use",
+        "panel",
+        "predicate 510k number",
+        "predicate device name",
+        "proposed labeling",
+        "purpose for submission"
+      ],
+      "extra_pred": [
+        "submission_number",
+        "performance_characteristics"
+      ],
+      "duplicate_pred_groups": [],
+      "granularity_notes": "",
+      "domain_notes": "",
+      "dimension_scores": {
+        "gold_coverage_recall": 0.5,
+        "pred_precision": 0.67,
+        "semantic_alignment": 0.83,
+        "granularity_match": 1.0,
+        "domain_appropriateness": 1.0,
+        "redundancy_quality": 1.0,
+        "naming_consistency": 1.0
+      },
+      "rationale_brief": "The predicted schema covers several key fields from the ground truth schema, with some exact matches and a few partial alignments. However, it misses several important gold fields and includes some extra fields that do not correspond to any gold fields.",
+      "final_score": 0.67
+    }
+  }
+}

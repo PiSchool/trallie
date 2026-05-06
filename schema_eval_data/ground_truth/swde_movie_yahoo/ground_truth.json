@@ -1,0 +1,21 @@
+{
+  "dataset": "swde_movie_yahoo",
+  "source_table_relative": "evaporate/data/swde_movie_yahoo/table.json",
+  "num_documents": 2000,
+  "attribute_names": [
+    "directed by",
+    "distributors",
+    "genres",
+    "mpaa rating",
+    "produced by",
+    "release date",
+    "running time",
+    "starring",
+    "the critics",
+    "title",
+    "topic_entity_name",
+    "u.s. box office",
+    "yahoo! users"
+  ],
+  "note": "attribute_names is the union of keys across all rows in source table.json (gold schema)."
+}

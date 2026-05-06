@@ -1,0 +1,12 @@
+[
+  "schoolname",
+  "location",
+  "phone",
+  "website",
+  "schooltype",
+  "enrollment",
+  "studentfacultyratio",
+  "regularapplicationdeadline",
+  "costinstatetuition",
+  "costoutstatetuition"
+]
