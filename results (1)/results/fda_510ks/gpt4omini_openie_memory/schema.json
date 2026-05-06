@@ -1,0 +1,12 @@
+[
+  "submission_number",
+  "device_name",
+  "applicant",
+  "device_type",
+  "measurand",
+  "intended_use",
+  "regulatory_classification",
+  "predicate_device",
+  "performance_characteristics",
+  "product_code"
+]

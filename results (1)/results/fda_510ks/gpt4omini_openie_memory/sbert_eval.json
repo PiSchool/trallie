@@ -1,0 +1,24 @@
+{
+  "entity_f1_scores": {
+    "purpose for submission": 0,
+    "measurand": 0.9500000000000001,
+    "type of test": 0,
+    "classification": 0.88,
+    "product code": 0.58,
+    "panel": 0,
+    "intended use": 0.64,
+    "indications for use": 0,
+    "predicate device name": 0.99,
+    "proposed labeling": 0,
+    "conclusion": 0,
+    "510k number": 0,
+    "applicant": 1.0,
+    "predicate 510k number": 0.03,
+    "proprietary and established names": 0,
+    "regulation section": 0.01
+  },
+  "macro_f1": 0.3175,
+  "micro_f1": 0.4064,
+  "micro_precision": 0.5644444444444444,
+  "micro_recall": 0.3175
+}

@@ -1,0 +1,27 @@
+{
+  "entity_f1_scores": {
+    "category": 1.0,
+    "country": 0,
+    "director": 0.995,
+    "filmed in": 0,
+    "genre/type": 1.0,
+    "key cast": 0.97,
+    "keywords": 0,
+    "language": 0,
+    "mpaa rating": 0,
+    "produced by": 0,
+    "run time": 1.0,
+    "themes": 0,
+    "year": 1.0,
+    "alternate titles": 0.075,
+    "...ranks in these movie lists": 0,
+    "release": 0.46,
+    "set in": 0,
+    "title": 0.925,
+    "similar movies": 0
+  },
+  "macro_f1": 0.3907894736842105,
+  "micro_f1": 0.5303571428571429,
+  "micro_precision": 0.825,
+  "micro_recall": 0.3907894736842105
+}

@@ -1,0 +1,47 @@
+{
+  "dataset": "swde_movie_rottentomatoes",
+  "model": "gpt-4o-mini",
+  "provider": "openai",
+  "memory": true,
+  "num_records": 200,
+  "sample_percentage": 0.1,
+  "seed": 42,
+  "schema_time_seconds": 2648.44,
+  "extraction_time_seconds": 2297.73,
+  "total_time_seconds": 4946.2,
+  "schema_usage": {
+    "requests": 200,
+    "prompt_tokens": 9447749,
+    "completion_tokens": 47400,
+    "total_tokens": 9495149
+  },
+  "extraction_usage": {
+    "requests": 200,
+    "prompt_tokens": 9333396,
+    "completion_tokens": 68490,
+    "total_tokens": 9401886
+  },
+  "total_usage": {
+    "requests": 400,
+    "prompt_tokens": 18781145,
+    "completion_tokens": 115890,
+    "total_tokens": 18897035
+  },
+  "schema_cost": {
+    "input_cost_usd": 1.417162,
+    "output_cost_usd": 0.02844,
+    "total_cost_usd": 1.445602
+  },
+  "extraction_cost": {
+    "input_cost_usd": 1.400009,
+    "output_cost_usd": 0.041094,
+    "total_cost_usd": 1.441103
+  },
+  "cost": {
+    "input_cost_usd": 2.817172,
+    "output_cost_usd": 0.069534,
+    "total_cost_usd": 2.886706
+  },
+  "total_documents": 2001,
+  "sampled_documents": 200
+}

@@ -1,0 +1,23 @@
+{
+  "entity_f1_scores": {
+    "highest degree offered": 0,
+    "degrees include": 0,
+    "affiliation": 0,
+    "calendar system": 1.0,
+    "enrollment": 0.9905660377358491,
+    "institution": 0,
+    "private school": 0,
+    "student body": 0,
+    "tuition": 1.0,
+    "year established": 0,
+    "city/state/zip": 0.009433962264150943,
+    "website": 1.0,
+    "phone": 0.07547169811320754,
+    "topic_entity_name": 0,
+    "Phone": 1.0
+  },
+  "macro_f1": 0.3383647798742138,
+  "micro_f1": 0.44134536505332234,
+  "micro_precision": 0.6344339622641509,
+  "micro_recall": 0.3383647798742138
+}

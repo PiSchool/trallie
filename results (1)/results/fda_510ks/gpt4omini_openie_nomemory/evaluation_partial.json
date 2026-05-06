@@ -1,0 +1,14 @@
+{
+  "total_fields": 1600,
+  "matched_fields": 288,
+  "partial_matches": 4,
+  "precision": 0.18,
+  "recall": 0.18,
+  "f1_score": 0.18,
+  "accuracy": 0.18,
+  "field_accuracy": {
+    "measurand": 0.9290835065835066,
+    "classification": 0.9139545454545451,
+    "applicant": 0.99
+  }
+}

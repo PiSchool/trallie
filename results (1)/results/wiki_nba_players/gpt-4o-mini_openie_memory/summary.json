@@ -1,0 +1,47 @@
+{
+  "dataset": "wiki_nba_players",
+  "model": "gpt-4o-mini",
+  "provider": "openai",
+  "memory": true,
+  "num_records": 1,
+  "sample_percentage": 0.1,
+  "seed": 42,
+  "schema_time_seconds": 20.99,
+  "extraction_time_seconds": 3.07,
+  "total_time_seconds": 24.07,
+  "schema_usage": {
+    "requests": 1,
+    "prompt_tokens": 2458,
+    "completion_tokens": 243,
+    "total_tokens": 2701
+  },
+  "extraction_usage": {
+    "requests": 1,
+    "prompt_tokens": 2132,
+    "completion_tokens": 61,
+    "total_tokens": 2193
+  },
+  "total_usage": {
+    "requests": 2,
+    "prompt_tokens": 4590,
+    "completion_tokens": 304,
+    "total_tokens": 4894
+  },
+  "schema_cost": {
+    "input_cost_usd": 0.000369,
+    "output_cost_usd": 0.000146,
+    "total_cost_usd": 0.000514
+  },
+  "extraction_cost": {
+    "input_cost_usd": 0.00032,
+    "output_cost_usd": 3.7e-05,
+    "total_cost_usd": 0.000356
+  },
+  "cost": {
+    "input_cost_usd": 0.000688,
+    "output_cost_usd": 0.000182,
+    "total_cost_usd": 0.000871
+  },
+  "total_documents": 2,
+  "sampled_documents": 1
+}

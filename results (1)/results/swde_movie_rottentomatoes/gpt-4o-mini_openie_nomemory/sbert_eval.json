@@ -1,0 +1,21 @@
+{
+  "entity_f1_scores": {
+    "cast": 0.745,
+    "directed by": 1.0,
+    "distributor": 0,
+    "genre": 0.995,
+    "in theaters": 0,
+    "rated": 1.0,
+    "running time": 0.99,
+    "synopsis": 0.985,
+    "topic_entity_name": 0,
+    "us box office": 0,
+    "written by": 0,
+    "box office": 0,
+    "title": 1.0
+  },
+  "macro_f1": 0.5165384615384616,
+  "micro_f1": 0.6715,
+  "micro_precision": 0.9592857142857143,
+  "micro_recall": 0.5165384615384615
+}

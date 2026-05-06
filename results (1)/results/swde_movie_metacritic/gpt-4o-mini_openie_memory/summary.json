@@ -1,0 +1,47 @@
+{
+  "dataset": "swde_movie_metacritic",
+  "model": "gpt-4o-mini",
+  "provider": "openai",
+  "memory": true,
+  "num_records": 200,
+  "sample_percentage": 0.1,
+  "seed": 42,
+  "schema_time_seconds": 1790.47,
+  "extraction_time_seconds": 1022.2,
+  "total_time_seconds": 2812.71,
+  "schema_usage": {
+    "requests": 200,
+    "prompt_tokens": 3922443,
+    "completion_tokens": 40199,
+    "total_tokens": 3962642
+  },
+  "extraction_usage": {
+    "requests": 200,
+    "prompt_tokens": 3813673,
+    "completion_tokens": 31678,
+    "total_tokens": 3845351
+  },
+  "total_usage": {
+    "requests": 400,
+    "prompt_tokens": 7736116,
+    "completion_tokens": 71877,
+    "total_tokens": 7807993
+  },
+  "schema_cost": {
+    "input_cost_usd": 0.588366,
+    "output_cost_usd": 0.024119,
+    "total_cost_usd": 0.612486
+  },
+  "extraction_cost": {
+    "input_cost_usd": 0.572051,
+    "output_cost_usd": 0.019007,
+    "total_cost_usd": 0.591058
+  },
+  "cost": {
+    "input_cost_usd": 1.160417,
+    "output_cost_usd": 0.043126,
+    "total_cost_usd": 1.203544
+  },
+  "total_documents": 2009,
+  "sampled_documents": 200
+}

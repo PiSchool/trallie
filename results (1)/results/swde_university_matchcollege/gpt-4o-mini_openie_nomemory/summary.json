@@ -1,0 +1,47 @@
+{
+  "dataset": "swde_university_matchcollege",
+  "model": "gpt-4o-mini",
+  "provider": "openai",
+  "memory": false,
+  "num_records": 200,
+  "sample_percentage": 0.1,
+  "seed": 42,
+  "schema_time_seconds": 1998.92,
+  "extraction_time_seconds": 827.53,
+  "total_time_seconds": 2826.47,
+  "schema_usage": {
+    "requests": 200,
+    "prompt_tokens": 3256121,
+    "completion_tokens": 44531,
+    "total_tokens": 3300652
+  },
+  "extraction_usage": {
+    "requests": 200,
+    "prompt_tokens": 3191321,
+    "completion_tokens": 25486,
+    "total_tokens": 3216807
+  },
+  "total_usage": {
+    "requests": 400,
+    "prompt_tokens": 6447442,
+    "completion_tokens": 70017,
+    "total_tokens": 6517459
+  },
+  "schema_cost": {
+    "input_cost_usd": 0.488418,
+    "output_cost_usd": 0.026719,
+    "total_cost_usd": 0.515137
+  },
+  "extraction_cost": {
+    "input_cost_usd": 0.478698,
+    "output_cost_usd": 0.015292,
+    "total_cost_usd": 0.49399
+  },
+  "cost": {
+    "input_cost_usd": 0.967116,
+    "output_cost_usd": 0.04201,
+    "total_cost_usd": 1.009126
+  },
+  "total_documents": 2001,
+  "sampled_documents": 200
+}

@@ -1,0 +1,12 @@
+[
+  "movietitle",
+  "releaseyear",
+  "genre",
+  "director",
+  "writer",
+  "cast",
+  "synopsis",
+  "rating",
+  "audience_score",
+  "critic_score"
+]

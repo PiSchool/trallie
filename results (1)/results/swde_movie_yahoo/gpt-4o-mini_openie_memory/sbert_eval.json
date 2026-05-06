@@ -1,0 +1,21 @@
+{
+  "entity_f1_scores": {
+    "directed by": 0,
+    "produced by": 0,
+    "starring": 0.9573934837092732,
+    "distributors": 0,
+    "genres": 0.9774436090225564,
+    "mpaa rating": 0,
+    "release date": 0,
+    "running time": 0,
+    "yahoo! users": 0,
+    "topic_entity_name": 0,
+    "u.s. box office": 0,
+    "the critics": 0,
+    "title": 0.9974937343358395
+  },
+  "macro_f1": 0.2255639097744361,
+  "micro_f1": 0.3659680950891461,
+  "micro_precision": 0.9798994974874372,
+  "micro_recall": 0.225
+}

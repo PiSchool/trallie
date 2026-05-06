@@ -1,0 +1,47 @@
+{
+  "dataset": "swde_movie_imdb",
+  "model": "gpt-4o-mini",
+  "provider": "openai",
+  "memory": true,
+  "num_records": 200,
+  "sample_percentage": 0.1,
+  "seed": 42,
+  "schema_time_seconds": 3403.58,
+  "extraction_time_seconds": 1215.03,
+  "total_time_seconds": 4618.62,
+  "schema_usage": {
+    "requests": 200,
+    "prompt_tokens": 6422719,
+    "completion_tokens": 51109,
+    "total_tokens": 6473828
+  },
+  "extraction_usage": {
+    "requests": 200,
+    "prompt_tokens": 6303922,
+    "completion_tokens": 30836,
+    "total_tokens": 6334758
+  },
+  "total_usage": {
+    "requests": 400,
+    "prompt_tokens": 12726641,
+    "completion_tokens": 81945,
+    "total_tokens": 12808586
+  },
+  "schema_cost": {
+    "input_cost_usd": 0.963408,
+    "output_cost_usd": 0.030665,
+    "total_cost_usd": 0.994073
+  },
+  "extraction_cost": {
+    "input_cost_usd": 0.945588,
+    "output_cost_usd": 0.018502,
+    "total_cost_usd": 0.96409
+  },
+  "cost": {
+    "input_cost_usd": 1.908996,
+    "output_cost_usd": 0.049167,
+    "total_cost_usd": 1.958163
+  },
+  "total_documents": 2005,
+  "sampled_documents": 200
+}

@@ -1,0 +1,47 @@
+{
+  "dataset": "swde_movie_amctv",
+  "model": "gpt-4o-mini",
+  "provider": "openai",
+  "memory": true,
+  "num_records": 200,
+  "sample_percentage": 0.1,
+  "seed": 42,
+  "schema_time_seconds": 1308.97,
+  "extraction_time_seconds": 718.44,
+  "total_time_seconds": 2027.45,
+  "schema_usage": {
+    "requests": 200,
+    "prompt_tokens": 1566105,
+    "completion_tokens": 43920,
+    "total_tokens": 1610025
+  },
+  "extraction_usage": {
+    "requests": 200,
+    "prompt_tokens": 1455173,
+    "completion_tokens": 24321,
+    "total_tokens": 1479494
+  },
+  "total_usage": {
+    "requests": 400,
+    "prompt_tokens": 3021278,
+    "completion_tokens": 68241,
+    "total_tokens": 3089519
+  },
+  "schema_cost": {
+    "input_cost_usd": 0.234916,
+    "output_cost_usd": 0.026352,
+    "total_cost_usd": 0.261268
+  },
+  "extraction_cost": {
+    "input_cost_usd": 0.218276,
+    "output_cost_usd": 0.014593,
+    "total_cost_usd": 0.232869
+  },
+  "cost": {
+    "input_cost_usd": 0.453192,
+    "output_cost_usd": 0.040945,
+    "total_cost_usd": 0.494136
+  },
+  "total_documents": 2001,
+  "sampled_documents": 200
+}

@@ -1,0 +1,31 @@
+{
+  "entity_f1_scores": {
+    "academic calendar": 1.0,
+    "admission difficulty": 1.0,
+    "comparable schools": 0,
+    "control": 1.0,
+    "books and supplies": 0,
+    "in-state tuition": 0.005,
+    "out-of-state tuition": 0.015,
+    "room and board": 0,
+    "ft undergraduates": 0,
+    "location": 1.0,
+    "religious affiliation": 1.0,
+    "school contact": 0.225,
+    "phone": 0,
+    "street address": 0,
+    "website": 1.0,
+    "setting": 1.0,
+    "full-time": 0.935,
+    "part-time": 0,
+    "total female": 0,
+    "total male": 0,
+    "topic_entity_name": 0,
+    "room & board": 0,
+    "tuition": 0.74
+  },
+  "macro_f1": 0.3878260869565217,
+  "micro_f1": 0.5097142857142857,
+  "micro_precision": 0.7433333333333333,
+  "micro_recall": 0.38782608695652177
+}

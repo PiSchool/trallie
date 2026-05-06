@@ -1,0 +1,21 @@
+{
+  "entity_f1_scores": {
+    "directed by": 0.9624060150375939,
+    "produced by": 0.93734335839599,
+    "starring": 0.9573934837092732,
+    "distributors": 0,
+    "genres": 0.9774436090225564,
+    "mpaa rating": 0,
+    "release date": 0.7575757575757575,
+    "running time": 0.93734335839599,
+    "yahoo! users": 0,
+    "topic_entity_name": 0,
+    "u.s. box office": 0.7568922305764411,
+    "the critics": 0,
+    "title": 0.9974937343358395
+  },
+  "macro_f1": 0.5602993497730341,
+  "micro_f1": 0.6618049225159526,
+  "micro_precision": 0.8120805369127517,
+  "micro_recall": 0.5584615384615385
+}

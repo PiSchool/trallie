@@ -1,0 +1,47 @@
+{
+  "dataset": "swde_movie_hollywood",
+  "model": "gpt-4o-mini",
+  "provider": "openai",
+  "memory": false,
+  "num_records": 200,
+  "sample_percentage": 0.1,
+  "seed": 42,
+  "schema_time_seconds": 1601.28,
+  "extraction_time_seconds": 1593.39,
+  "total_time_seconds": 3194.72,
+  "schema_usage": {
+    "requests": 200,
+    "prompt_tokens": 4749528,
+    "completion_tokens": 26661,
+    "total_tokens": 4776189
+  },
+  "extraction_usage": {
+    "requests": 200,
+    "prompt_tokens": 4683728,
+    "completion_tokens": 59922,
+    "total_tokens": 4743650
+  },
+  "total_usage": {
+    "requests": 400,
+    "prompt_tokens": 9433256,
+    "completion_tokens": 86583,
+    "total_tokens": 9519839
+  },
+  "schema_cost": {
+    "input_cost_usd": 0.712429,
+    "output_cost_usd": 0.015997,
+    "total_cost_usd": 0.728426
+  },
+  "extraction_cost": {
+    "input_cost_usd": 0.702559,
+    "output_cost_usd": 0.035953,
+    "total_cost_usd": 0.738512
+  },
+  "cost": {
+    "input_cost_usd": 1.414988,
+    "output_cost_usd": 0.05195,
+    "total_cost_usd": 1.466938
+  },
+  "total_documents": 2001,
+  "sampled_documents": 200
+}

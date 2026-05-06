@@ -1,0 +1,47 @@
+{
+  "dataset": "swde_university_ecampustours",
+  "model": "gpt-4o-mini",
+  "provider": "openai",
+  "memory": true,
+  "num_records": 106,
+  "sample_percentage": 0.1,
+  "seed": 42,
+  "schema_time_seconds": 580.79,
+  "extraction_time_seconds": 312.76,
+  "total_time_seconds": 893.59,
+  "schema_usage": {
+    "requests": 106,
+    "prompt_tokens": 639067,
+    "completion_tokens": 21306,
+    "total_tokens": 660373
+  },
+  "extraction_usage": {
+    "requests": 106,
+    "prompt_tokens": 581406,
+    "completion_tokens": 10696,
+    "total_tokens": 592102
+  },
+  "total_usage": {
+    "requests": 212,
+    "prompt_tokens": 1220473,
+    "completion_tokens": 32002,
+    "total_tokens": 1252475
+  },
+  "schema_cost": {
+    "input_cost_usd": 0.09586,
+    "output_cost_usd": 0.012784,
+    "total_cost_usd": 0.108644
+  },
+  "extraction_cost": {
+    "input_cost_usd": 0.087211,
+    "output_cost_usd": 0.006418,
+    "total_cost_usd": 0.093628
+  },
+  "cost": {
+    "input_cost_usd": 0.183071,
+    "output_cost_usd": 0.019201,
+    "total_cost_usd": 0.202272
+  },
+  "total_documents": 1064,
+  "sampled_documents": 106
+}

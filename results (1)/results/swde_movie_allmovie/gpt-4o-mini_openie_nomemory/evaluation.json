@@ -1,0 +1,18 @@
+{
+  "total_fields": 118000,
+  "matched_fields": 866,
+  "partial_matches": 0,
+  "precision": 0.007338983050847458,
+  "recall": 0.007338983050847458,
+  "f1_score": 0.007338983050847458,
+  "accuracy": 0.007338983050847458,
+  "field_accuracy": {
+    "director": 1.0,
+    "genres": 0.8793969849246231,
+    "keywords": 0.11557788944723618,
+    "themes": 0.678391959798995,
+    "tones": 0.678391959798995,
+    "year": 1.0,
+    "title": 0.0
+  }
+}

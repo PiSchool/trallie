@@ -1,0 +1,20 @@
+{
+  "entity_f1_scores": {
+    "directed by": 1.0,
+    "genres": 0.9949748743718593,
+    "language": 0.9849246231155779,
+    "length": 0.9698492462311558,
+    "mpaa rating": 0,
+    "released": 0.7638190954773869,
+    "written by": 0,
+    "topic_entity_name": 0,
+    "starring": 0,
+    "director": 0.9949748743718593,
+    "description": 0.9045226130653267,
+    "rank": 0
+  },
+  "macro_f1": 0.5510887772194305,
+  "micro_f1": 0.6961121396455964,
+  "micro_precision": 0.9447236180904522,
+  "micro_recall": 0.5510887772194305
+}

@@ -1,0 +1,28 @@
+{
+  "dataset": "fda_510ks",
+  "model": "gpt-4o-mini",
+  "provider": "openai",
+  "memory": true,
+  "num_records": 100,
+  "schema_time_seconds": 663.2475572999101,
+  "extraction_time_seconds": 934.0745940001216,
+  "total_time_seconds": 1597.3221513000317,
+  "schema_usage": {
+    "requests": 100,
+    "prompt_tokens": 1132483,
+    "completion_tokens": 29178,
+    "total_tokens": 1161661
+  },
+  "extraction_usage": {
+    "requests": 100,
+    "prompt_tokens": 1070617,
+    "completion_tokens": 26415,
+    "total_tokens": 1097032
+  },
+  "total_usage": {
+    "requests": 200,
+    "prompt_tokens": 2203100,
+    "completion_tokens": 55593,
+    "total_tokens": 2258693
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "entity_f1_scores": {
+    "mixed critic reviews": 0,
+    "negative critic reviews": 0,
+    "positive critic reviews": 0,
+    "director": 0.9949494949494949,
+    "genre(s)": 0.9595959595959597,
+    "metascore": 0.9949494949494949,
+    "rating": 0.9646464646464646,
+    "release date": 0,
+    "reviewed by": 0,
+    "runtime": 0.9898989898989898,
+    "starring": 0,
+    "studio": 0.9898989898989898,
+    "summary": 0.35353535353535354,
+    "mixed user reviews": 0,
+    "negative user reviews": 0,
+    "positive user reviews": 0,
+    "user score": 0,
+    "topic_entity_name": 0,
+    "duration": 0,
+    "score distribution": 0
+  },
+  "macro_f1": 0.31237373737373736,
+  "micro_f1": 0.44528437724982006,
+  "micro_precision": 0.7848984771573604,
+  "micro_recall": 0.3108040201005025
+}
