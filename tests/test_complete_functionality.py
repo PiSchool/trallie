@@ -7,6 +7,7 @@ Tests both improvements (no API calls for empty docs) and real API functionality
 import os
 import sys
 from pathlib import Path
+import pytest
 
 # Ensure local package (repo root) is used
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -50,32 +51,25 @@ def test_complete_functionality():
     
     print("\n=== PART 1: TESTING IMPROVEMENTS (No API Calls for Empty Docs) ===")
     
-    # Test empty document scenarios
-    empty_tests = [
-        ("Empty Document List", [], []),
-        ("Empty String Document", [""], []),
-        ("Whitespace Document", ["   "], []),
-        ("DataExtractor Empty String", "", {}),
-        ("DataExtractor Whitespace", "   ", {})
+    # SchemaGenerator: empty inputs are usage errors and raise before any API call
+    schema_error_tests = [
+        ("Empty Document List", [], "No documents found"),
+        ("Empty String Document", [""], "No document content found"),
+        ("Whitespace Document", ["   "], "No document content found"),
     ]
-    
-    for test_name, input_data, expected_result in empty_tests:
+    for test_name, input_data, message in schema_error_tests:
         print(f"\n--- {test_name} ---")
-        
-        if "DataExtractor" in test_name:
-            result = extractor.extract_data(test_schema, input_data, max_retries=3, from_text=True)
-        else:
-            result = generator.discover_schema("Test description", input_data, num_records=10, from_text=True)
-        
-        print(f"Input: {input_data}")
-        print(f"Result: {result}")
-        print(f"Expected: {expected_result}")
-        
-        if result == expected_result:
-            print("✅ PASS - No API calls made, immediate response")
-        else:
-            print(f"❌ FAIL - Unexpected result: {result}")
-    
+        with pytest.raises(ValueError, match=message):
+            generator.discover_schema("Test description", input_data, num_records=10, from_text=True)
+        print("✅ PASS - Raises ValueError, no API calls made")
+
+    # DataExtractor: empty documents also raise before any API call
+    for test_name, input_data in [("DataExtractor Empty String", ""), ("DataExtractor Whitespace", "   ")]:
+        print(f"\n--- {test_name} ---")
+        with pytest.raises(ValueError, match="No document found"):
+            extractor.extract_data(test_schema, input_data, max_retries=3, from_text=True)
+        print("✅ PASS - Raises ValueError, no API calls made")
+
     print("\n=== PART 2: TESTING REAL API FUNCTIONALITY (Valid Documents) ===")
     
     # Test with valid documents
