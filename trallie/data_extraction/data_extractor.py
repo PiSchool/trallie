@@ -58,6 +58,10 @@ class DataExtractor:
 
         `schema` can be a list of attribute names or a {name: description} dict.
         """
+        # Early return if no meaningful content to prevent unnecessary API calls
+        if not record or (isinstance(record, str) and record.strip() == ""):
+            raise ValueError("No document content found, please provide a document with meaningful content for attribute extraction.")
+            
         user_prompt = f"""
             Following is the record: {record} and the attribute schema for extraction: {format_schema(schema)}
             Provide the extracted attributes. Avoid any words at the beginning and end.
@@ -82,7 +86,16 @@ class DataExtractor:
         """
         Processes record and returns extracted attributes.
         """
+        # Early return if no record provided to prevent unnecessary API calls
+        if not record or (isinstance(record, str) and record.strip() == ""):
+            raise ValueError("No document found, please provide a document for data extraction.")
+        
         record_text = DataHandler(record, from_text=from_text).get_text()
+        
+        # Additional check after text extraction
+        if not record_text or record_text.strip() == "":
+            raise ValueError("No document content found, please provide a document with meaningful content for data extraction.")
+            
         return self.extract_attributes(schema, record_text, max_retries)
 
     def extract_data_large_document(self, 
@@ -108,6 +121,10 @@ class DataExtractor:
         Returns:
             Combined extracted data from all chunks
         """
+        # Early return if no record provided to prevent unnecessary API calls
+        if not record or (isinstance(record, str) and record.strip() == ""):
+            raise ValueError("No document found, please provide a document for large document data extraction.")
+            
         # Create a data handler for the document
         data_handler = DataHandler(record, from_text=from_text)
         
@@ -148,11 +165,19 @@ class DataExtractor:
         Returns:
             Extracted data
         """
+        # Early return if no record provided to prevent unnecessary API calls
+        if not record or (isinstance(record, str) and record.strip() == ""):
+            return {}
+            
         if auto_detect_large_docs:
             # Check if the document is large enough to warrant chunking
             data_handler = DataHandler(record, from_text=from_text)
             full_text = data_handler.get_text()
             
+            # Additional check after text extraction
+            if not full_text or full_text.strip() == "":
+                return {}
+
             if full_text:
                 if len(full_text) > chunk_size:
                     print(f"Document is large ({len(full_text)} chars), using chunking...")
