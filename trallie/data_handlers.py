@@ -1,9 +1,13 @@
 import json
 import re
 from bs4 import BeautifulSoup
-from PyPDF2 import PdfReader
 from typing import List, Dict, Any, Optional, Callable
 import math
+
+
+class DataHandlerError(ValueError):
+    """Raised when a document cannot be read or its type is unsupported."""
+
 
 def infer_datatype(func):
     """
@@ -11,7 +15,8 @@ def infer_datatype(func):
     """
 
     def wrapper(self, *args, **kwargs):
-        self.datatype = self.document.split(".")[-1].lower()
+        if not self.from_text:
+            self.datatype = self.document.split(".")[-1].lower()
         return func(self, *args, **kwargs)
 
     return wrapper
@@ -25,106 +30,62 @@ class DataHandler:
         self.text = None  # Contains extracted text
 
     def get_text_from_pdf(self):
-        # Use a pdf extractor
-        try:
-            # Open and read the PDF file
-            reader = PdfReader(self.document)
-            text = ""
-            # Iterate through all pages and extract text
-            for page in reader.pages:
-                text += page.extract_text()
-            return text.strip() if text else "Error: No text found in the PDF"
-        except FileNotFoundError:
-            return "Error: File not found"
-        except Exception as e:
-            return f"Error: An unexpected error occurred: {str(e)}"
-        return "Extracted text from PDF"
+        from PyPDF2 import PdfReader
+
+        reader = PdfReader(self.document)
+        text = "".join(page.extract_text() or "" for page in reader.pages).strip()
+        if not text:
+            raise DataHandlerError(f"No text found in the PDF: {self.document}")
+        return text
 
     def get_text_from_html(self):
-        # Use an HTML parser
-        try:
-            with open(self.document, "r", encoding="utf-8") as file:
-                return file.read()
-        except FileNotFoundError:
-            return "Error: File not found"
-        except Exception as e:
-            return f"Error: An unexpected error occurred: {str(e)}"
-        return "Extracted text from HTML"
+        with open(self.document, "r", encoding="utf-8", errors="replace") as file:
+            soup = BeautifulSoup(file.read(), "html.parser")
+        # Drop markup, scripts and styles: raw HTML multiplies token cost
+        for tag in soup(["script", "style", "noscript"]):
+            tag.decompose()
+        lines = (line.strip() for line in soup.get_text(separator="\n").splitlines())
+        return "\n".join(line for line in lines if line)
 
     def get_text_from_json(self):
-        # Extract text from JSON
-        try:
-            with open(self.document, "r", encoding="utf-8") as file:
-                data = json.load(file)
-            # Convert the JSON object to a pretty-printed string for readability
-            return json.dumps(data, indent=4)
-        except FileNotFoundError:
-            return "Error: File not found"
-        except json.JSONDecodeError:
-            return "Error: Invalid JSON format"
-        return "Extracted text from JSON"
+        with open(self.document, "r", encoding="utf-8") as file:
+            data = json.load(file)
+        # Convert the JSON object to a pretty-printed string for readability
+        return json.dumps(data, indent=4)
 
     def get_text_from_txt(self):
-        try:
-            with open(self.document, "r") as file:
-                return file.read()
-        except FileNotFoundError:
-            return "Error: File not found"
-        except Exception as e:
-            return f"Error: An unexpected error occurred: {str(e)}"
-        
-    #def chunk_text(self, char_limit=100000):
-    #     """
-    #     Decorator to chunk longer document if it exceeds the word length.
-    #     """
-    #     if self.length > char_limit:
-    #         self.text = self.text[:char_limit]
-    #     return self.text
-
-    # @infer_datatype
-    # def get_text(self):
-    #     """
-    #     Get text from the document based on its datatype.
-    #     """
-    #     if self.from_text:
-    #         self.datatype = "txt"
-    #         self.text = self.document
-    #     else:
-    #         if self.datatype == "pdf":
-    #             self.text = self.get_text_from_pdf()
-    #         elif self.datatype in {"html", "htm"}:
-    #             self.text = self.get_text_from_html()
-    #         elif self.datatype == "json":
-    #             self.text = self.get_text_from_json()
-    #         elif self.datatype == "txt":
-    #             self.text = self.get_text_from_txt()
-    #         else:
-    #             return "Unsupported file type"
-
-    #     # Chunk text
-    #     self.length = len(self.text)
-    #     self.chunk_text()
-    #     return self.text
+        with open(self.document, "r", encoding="utf-8", errors="replace") as file:
+            return file.read()
 
     @infer_datatype
     def get_text(self):
         """
         Get text from the document based on its datatype.
+
+        Raises DataHandlerError if the file is missing, unreadable or of an
+        unsupported type, instead of returning an error string that would be
+        sent to the LLM as if it were the document.
         """
         if self.from_text:
             self.datatype = "txt"
             self.text = self.document
         else:
-            if self.datatype == "pdf":
-                self.text = self.get_text_from_pdf()
-            elif self.datatype in {"html", "htm"}:
-                self.text = self.get_text_from_html()
-            elif self.datatype == "json":
-                self.text = self.get_text_from_json()
-            elif self.datatype == "txt":
-                self.text = self.get_text_from_txt()
-            else:
-                return "Unsupported file type"
+            readers = {
+                "pdf": self.get_text_from_pdf,
+                "html": self.get_text_from_html,
+                "htm": self.get_text_from_html,
+                "json": self.get_text_from_json,
+                "txt": self.get_text_from_txt,
+                "md": self.get_text_from_txt,
+            }
+            if self.datatype not in readers:
+                raise DataHandlerError(f"Unsupported file type '.{self.datatype}': {self.document}")
+            try:
+                self.text = readers[self.datatype]()
+            except DataHandlerError:
+                raise
+            except Exception as e:
+                raise DataHandlerError(f"Could not read {self.document}: {e}") from e
 
         self.length = len(self.text)
         return self.text
@@ -331,8 +292,8 @@ class DataHandler:
         # Get the full text
         full_text = self.get_text()
         
-        if not full_text or full_text.startswith("Error:"):
-            return {"error": full_text}
+        if not full_text:
+            return {}
         
         # Create chunks
         chunks = self.create_overlapping_chunks(full_text, chunk_size, overlap_size)

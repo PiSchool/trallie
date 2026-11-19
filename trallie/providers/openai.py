@@ -55,7 +55,7 @@ class OpenAIProvider(BaseProvider):
                 "'openai' provider."
             )
         self.client = openai.OpenAI(
-            api_key=os.environ["OPENAI_API_KEY"], timeout=30.0, max_retries=2
+            api_key=os.environ["OPENAI_API_KEY"], timeout=120.0, max_retries=2
         )
 
     @openai_api_call(default_return_value=[])
@@ -64,7 +64,6 @@ class OpenAIProvider(BaseProvider):
         return [model.id for model in self.client.models.list().data if model.active]
 
     @openai_api_call(default_return_value="")
-    @lru_cache
     def do_chat_completion(
         self, system_prompt: str, user_prompt: str, model_name: str
     ) -> str:

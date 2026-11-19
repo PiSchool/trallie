@@ -37,7 +37,6 @@ class OllamaProvider(BaseProvider):
         return [model["name"] for model in models]
 
     @ollama_api_call(default_return_value="")
-    @lru_cache
     def do_chat_completion(
         self, system_prompt: str, user_prompt: str, model_name: str
     ) -> str:

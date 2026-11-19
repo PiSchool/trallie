@@ -1,0 +1,22 @@
+{
+    "runtime": "duration of the film (e.g., 2 hr 7 mins)",
+    "cinematographer": "name(s) of the cinematographer(s)",
+    "synopsis": "brief summary of the film's plot",
+    "director": "name(s) of the director(s)",
+    "release year": "year the film was first released theatrically",
+    "cast": "list of principal cast members (actor and character)",
+    "genre": "primary genre or genres of the film",
+    "title": "name of the movie",
+    "writers": "list of writer names (screenwriters, play authors, etc.)",
+    "rating": "MPAA content rating (e.g., PG, R)",
+    "producers": "list of producer names",
+    "production companies": "companies that produced the film",
+    "distribution companies": "companies that distributed the film",
+    "music composer": "name(s) of the composer(s) of the score",
+    "theatrical release date": "official release date of the movie",
+    "release date": "full theatrical release date (month/day/year)",
+    "distribution company": "company that distributed the film",
+    "production company": "company that produced the film",
+    "composer": "person credited for music score",
+    "status": "production status (e.g., In-Development)"
+}

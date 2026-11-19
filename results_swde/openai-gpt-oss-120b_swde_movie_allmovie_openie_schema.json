@@ -1,0 +1,22 @@
+{
+    "year": "release year of the movie",
+    "mpaa rating": "MPAA content rating",
+    "keywords": "list of descriptive keywords",
+    "director": "name of the director",
+    "title": "name of the movie",
+    "genres": "genre categories assigned to the movie",
+    "amg work id": "unique identifier in the AMG database",
+    "run time": "duration of the movie in minutes",
+    "themes": "major thematic elements",
+    "countries": "countries associated with the movie",
+    "tones": "overall tonal descriptors",
+    "produced by": "production companies involved",
+    "types": "sub\u2011genre or type classifications",
+    "moods": "emotional mood descriptors",
+    "plot synopsis": "brief summary of the movie plot",
+    "work rating": "overall rating classification of the work",
+    "flags": "content warnings or special flags",
+    "set in": "primary filming or story location",
+    "box office": "gross box office revenue",
+    "mpaa reasons": "reasons for the MPAA rating"
+}

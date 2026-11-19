@@ -56,7 +56,6 @@ class HuggingFaceProvider(BaseProvider):
         return self.client.list_deployed_models()["text-generation"]
 
     @hf_api_call(default_return_value="")
-    @lru_cache
     def do_chat_completion(
         self, system_prompt: str, user_prompt: str, model_name: str
     ) -> str:

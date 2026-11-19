@@ -1,0 +1,22 @@
+{
+    "summary": "short synopsis of the film",
+    "runtime": "runtime in minutes",
+    "metascore": "Metacritic metascore value (out of 100)",
+    "director": "director of the film",
+    "studio": "production studio",
+    "rating": "MPAA rating",
+    "user score": "average user rating (out of 10)",
+    "release date": "date the movie was released",
+    "title": "name of the movie",
+    "starring": "lead actors listed",
+    "metascore description": "qualitative description of the metascore (e.g., universal acclaim)",
+    "user score description": "qualitative description of the user score",
+    "number of critic reviews": "count of critic reviews used for the metascore",
+    "number of user ratings": "count of user ratings",
+    "your score": "individual logged\u2011in user score",
+    "genres": "list of genre categories",
+    "genre(s)": "list of genres",
+    "user score distribution positive": "count of positive user reviews",
+    "user score distribution mixed": "count of mixed user reviews",
+    "metascore count": "number of critic reviews used for metascore"
+}

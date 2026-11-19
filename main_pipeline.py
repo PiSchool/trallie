@@ -3,7 +3,7 @@ import os
 from trallie import SchemaGenerator
 from trallie import DataExtractor
 
-# os.environ["GROQ_API_KEY"] = None #ENTER GROQ KEY HERE
+# Set GROQ_API_KEY in your environment before running.
 # os.environ["OPENAI_API_KEY"] = None #ENTER OPENAI KEY HERE
 
 
@@ -16,7 +16,7 @@ records = [
 description = "A dataset of Earth observation papers"
 
 # Initialize the schema generator with a provider and model
-schema_generator = SchemaGenerator(provider="groq", model_name="llama-3.3-70b-versatile")
+schema_generator = SchemaGenerator(provider="groq", model_name="llama-3.3-70b-versatile", memory=True)
 # Feed records to the LLM and discover schema
 print("SCHEMA GENERATION IN ACTION ...")
 schema = schema_generator.discover_schema(description, records)
@@ -29,3 +29,4 @@ print("SCHEMA COMPLETION IN ACTION ...")
 for record in records:
     extracted_json = data_extractor.extract_data(schema, record)
     print("Extracted attributes:", extracted_json)
+

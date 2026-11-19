@@ -1,0 +1,22 @@
+{
+    "year": "year of release",
+    "runtime": "duration of the film (minutes)",
+    "title": "movie title",
+    "budget": "production budget (estimated)",
+    "stars": "principal cast members listed",
+    "mpaa rating": "motion picture rating (e.g., R, PG-13)",
+    "director": "name(s) of the director(s)",
+    "genres": "list of genre categories",
+    "opening weekend gross": "box office earnings for opening weekend",
+    "total gross": "overall box office gross",
+    "release date": "official release date (country if provided)",
+    "number of votes": "count of user votes for the IMDb rating",
+    "country": "primary country of production",
+    "filming locations": "primary locations where the film was shot",
+    "production companies": "companies credited with production",
+    "user rating": "average user rating (e.g., 8.7/10)",
+    "language": "original language of the film",
+    "writers": "name(s) of the writer(s) credited",
+    "awards": "total wins and nominations",
+    "tagline": "official movie tagline"
+}

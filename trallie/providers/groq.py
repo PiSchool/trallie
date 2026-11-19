@@ -45,7 +45,7 @@ class GroqProvider(BaseProvider):
                 "'groq' provider."
             )
         self.client = groq.Groq(
-            api_key=os.environ["GROQ_API_KEY"], timeout=30.0, max_retries=2
+            api_key=os.environ["GROQ_API_KEY"], timeout=120.0, max_retries=2
         )
 
     @groq_api_call(default_return_value=[])
@@ -54,7 +54,6 @@ class GroqProvider(BaseProvider):
         return [model.id for model in self.client.models.list().data if model.active]
 
     @groq_api_call(default_return_value="")
-    @lru_cache
     def do_chat_completion(
         self, system_prompt: str, user_prompt: str, model_name: str
     ) -> str:
@@ -72,6 +71,9 @@ class GroqProvider(BaseProvider):
             model=model_name,
             temperature=0, 
             seed=4285, 
-            response_format={"type": "json_object"}
+            response_format={"type": "json_object"},
+            # Reasoning models (e.g. gpt-oss) spend output tokens on reasoning; Groq's
+            # default cap is too small for full-document extraction and fails JSON validation
+            max_completion_tokens=8192,
         )
         return chat_completion.choices[0].message.content

@@ -1,0 +1,30 @@
+% Suggested text for the limitations section.
+% CIs from: python benchmarking/swde_bootstrap.py --results-dir results_swde --n 200
+
+\paragraph{Comparability with EVAPORATE.}
+EVAPORATE results are taken from \citet{arora2023evaporate}, since their LLM
+(text-davinci-003) has been retired; differences therefore reflect both method and model.
+We score \textsc{Trallie} with EVAPORATE's released evaluation code.
+On SWDE, for cost reasons, we use the first 100 pages of each website rather than all
+pages. Bootstrap intervals over pages (200 samples; \citealp{efron1993bootstrap}) are
+within $\pm$0.4 of each mean, but assume these pages are representative and ignore
+variation from the choice of pages used for schema discovery.
+EVAPORATE's list of alternative attribute names for SWDE is not public, so our strict
+name matching may understate \textsc{Trallie}'s OpenIE scores.
+
+\paragraph{Prompt development.}
+\textsc{Trallie}'s prompts were revised on FDA 510(k), so those results may be
+optimistic. SWDE was held out; there, ClosedIE gains persist, but OpenIE trails
+EVAPORATE-Code+ because discovered attribute names paraphrase website labels.
+
+\paragraph{Scope of the system.}
+\textsc{Trallie} makes one LLM call per document, so unlike EVAPORATE-Code+, which
+synthesizes extraction code once per collection, its cost grows linearly with
+collection size. The discovered schema keeps only the most frequent attributes among a
+small sample of documents (10 in our experiments), so long-tail attributes are missed
+and schema quality depends on how representative that sample is. \textsc{Trallie}
+extracts flat attribute--value records; it does not model relations, temporal
+information or nested structure such as tables. Documents are converted to plain text
+before extraction, which loses layout in multi-column PDFs and script-heavy HTML.
+Outputs are checked only for well-formed JSON, not for value types or formats, so
+high-stakes uses still require human review.

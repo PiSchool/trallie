@@ -1,0 +1,22 @@
+{
+    "opeid college code": "unique OPEID identifier for the institution",
+    "overall graduation rate": "percentage of entering students who graduate",
+    "total student enrollment": "overall number of enrolled students",
+    "address": "street address, city, state and ZIP code",
+    "graduate enrollment": "number of graduate students enrolled",
+    "calendar system": "academic calendar format (e.g., semester)",
+    "undergraduate enrollment": "number of undergraduate students enrolled",
+    "president": "name of the university president",
+    "percent of students receiving financial aid": "percentage of students who receive any financial aid",
+    "highest degree offered": "highest academic degree the university awards",
+    "university name": "full name of the university",
+    "type": "Public, 4-Year or Above",
+    "website": "primary URL of the university",
+    "general phone": "main contact telephone number",
+    "institution type": "public or private classification and level (e.g., 4\u2011Year or Above)",
+    "local area": "size classification of the surrounding community",
+    "full time retention rate": "87%",
+    "phone": "main contact telephone number",
+    "college alias": "alternative names or abbreviations for the university",
+    "professional enrollment": "number of professional program students enrolled"
+}

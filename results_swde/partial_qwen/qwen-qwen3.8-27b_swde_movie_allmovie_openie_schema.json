@@ -1,0 +1,22 @@
+{
+    "flags": "Content flags indicating specific elements like nudity or adult situations",
+    "mpaa rating": "The Motion Picture Association of America rating",
+    "category": "The category of the work, e.g., Feature",
+    "run time": "The duration of the movie in minutes",
+    "director": "The name of the director",
+    "moods": "The prevailing mood of the film",
+    "year": "The release year of the movie",
+    "types": "Specific sub-genres or film types",
+    "keywords": "Key terms describing the plot or content",
+    "color type": "The color format of the movie",
+    "countries": "The countries associated with the production or release",
+    "genres": "The primary genres of the movie",
+    "tones": "The emotional tone of the film",
+    "themes": "Major thematic elements of the story",
+    "produced by": "The production companies involved",
+    "amg work id": "The unique AllMovie Global Work ID",
+    "plot synopsis": "A summary of the movie's plot",
+    "movie title": "The title of the movie",
+    "set in": "The geographical location where the story is set",
+    "mpaa reasons": "The specific reasons for the MPAA rating"
+}

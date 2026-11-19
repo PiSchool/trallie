@@ -1,0 +1,22 @@
+{
+    "product code": "FDA product code(s) assigned to the device",
+    "510(k) number": "unique identifier of the submission",
+    "classification": "regulatory classification (e.g., II)",
+    "special conditions for use": "any special conditions or restrictions noted",
+    "purpose for submission": "purpose category (e.g., new device)",
+    "applicant": "company submitting the 510(k)",
+    "intended use": "summary of the device's intended clinical use",
+    "type of test": "type or methodology of the assay",
+    "measurand": "analyte measured by the device",
+    "regulation section": "regulation section code",
+    "predicate 510(k) number": "510(k) number of the predicate device",
+    "predicate device name": "name of the device used for substantial equivalence",
+    "panel": "clinical chemistry panel classification",
+    "indication for use": "specific clinical indication description",
+    "indications for use": "specific indications described for the device",
+    "limit of detection": "LOD value in mg/L",
+    "proprietary name": "commercial name of the device",
+    "measuring range": "analytical measuring range reported (ng/mL)",
+    "proprietary names": "list of proprietary and established product names",
+    "special instrument requirements": "required analyzer or instrument"
+}

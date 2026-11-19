@@ -1,0 +1,3 @@
+# Optional deps for scripts in this folder (not required for core trallie).
+numind>=0.2.0
+gliner>=0.2.0

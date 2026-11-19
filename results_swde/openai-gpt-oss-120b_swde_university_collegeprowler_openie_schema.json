@@ -1,0 +1,22 @@
+{
+    "control": "ownership type (e.g., private for-profit)",
+    "religious affiliation": "religious affiliation of the school",
+    "setting": "type of setting (e.g., large city)",
+    "academic calendar": "type of academic calendar (e.g., continuous)",
+    "tuition": "tuition cost (if known)",
+    "website": "school website URL",
+    "admission difficulty": "admission selectivity rating",
+    "full time undergraduates": "number of full-time undergraduate students",
+    "school name": "name of the school",
+    "phone number": "contact phone number for the school",
+    "part time undergraduates": "number of part-time undergraduate students",
+    "total female students": "total number of female students",
+    "total male students": "total number of male students",
+    "average federal grant aid": "average amount of federal grant aid received per student",
+    "address": "street address of the college",
+    "location": "city and state of the school",
+    "state": "state where the university is located",
+    "city": "city where the university is located",
+    "tags": "list of descriptive tags (e.g., tuition range, student body size)",
+    "percent students receiving federal grant": "percentage of students who received federal grant aid"
+}

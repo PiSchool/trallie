@@ -6,3 +6,4 @@ pydantic
 PyPDF2
 beautifulsoup4
 streamlit
+sentence-transformers

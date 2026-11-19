@@ -1,0 +1,22 @@
+{
+    "highest degree offered": "highest academic degree granted",
+    "year established": "year the institution was founded",
+    "calendar system": "type of academic calendar",
+    "address": "street address of the university",
+    "affiliation": "public or private affiliation status",
+    "tuition": "annual tuition cost",
+    "enrollment": "total student enrollment",
+    "website": "official website URL",
+    "student body": "gender composition of the student body",
+    "state": "state where the university is located",
+    "phone number": "contact phone number",
+    "city": "city where the university is located",
+    "fax number": "contact fax number",
+    "phone": "contact phone number",
+    "fax": "contact fax number",
+    "zip code": "postal code of the university",
+    "school name": "name of the university",
+    "private school": "indicator if the institution is private",
+    "campus facility": "description of campus facilities",
+    "student body gender": "gender composition of the student body"
+}

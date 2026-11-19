@@ -21,7 +21,7 @@ class EvaporateStyleBenchmarker:
     """
     
     def __init__(self, eval_results_dir: str = "trallie-eval-result", 
-                 ground_truth_dir: str = "data/evaporate/data"):
+                 ground_truth_dir: str = "data/evaluation/data"):
         """
         Initialize the benchmarker.
         
