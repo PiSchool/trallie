@@ -1,0 +1,22 @@
+{
+    "language": "primary language of the film",
+    "average rating": "average user rating (e.g., 7.8/10)",
+    "mpaa rating": "content rating classification",
+    "summary": "short plot description of the film",
+    "votes": "number of user votes contributing to the rating",
+    "title": "name of the movie",
+    "starring": "principal cast members",
+    "director": "person(s) who directed the film",
+    "writer": "person(s) who wrote the screenplay",
+    "rank": "ranking position among listed movies",
+    "genres": "genre categories assigned to the movie",
+    "year": "year the movie was released",
+    "release date": "official release date of the movie",
+    "runtime": "duration of the film",
+    "tags": "user\u2011added descriptive tags",
+    "user rating": "rating given by the current logged\u2011in user",
+    "length": "runtime duration",
+    "categories": "user-defined categories (e.g., watched, wishlist, favorite)",
+    "writers": "people who wrote the screenplay",
+    "your rating": "personal rating given by the user"
+}

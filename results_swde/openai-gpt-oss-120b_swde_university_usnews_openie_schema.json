@@ -1,0 +1,22 @@
+{
+    "academic calendar": "type of academic calendar (e.g., semester)",
+    "application fee": "fee required to apply",
+    "application deadline": "deadline for fall admissions",
+    "year founded": "year the university was founded",
+    "rank": "overall US News rank for the year",
+    "setting": "campus setting (urban, suburban, rural)",
+    "acceptance rate": "percentage of applicants accepted",
+    "religious affiliation": "religious organization the university is affiliated with",
+    "tuition and fees": "annual tuition and fees amount",
+    "college category": "category such as Regional Universities (West)",
+    "website": "official website URL",
+    "admissions email": "email address for admissions inquiries",
+    "endowment": "endowment amount",
+    "total undergraduate enrollment": "number of undergraduate students",
+    "institutional control": "public or private designation",
+    "address": "street address, city, state and zip code",
+    "selectivity": "admissions selectivity descriptor",
+    "phone": "main contact telephone number",
+    "score": "numerical score associated with the ranking",
+    "institution name": "name of the college"
+}

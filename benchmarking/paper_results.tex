@@ -1,0 +1,68 @@
+% Results section. Citation keys are defined in benchmarking/paper_references.bib.
+% Check the labels sec:limitations and app:swde-per-site against your paper.
+
+\section{Results}
+\label{sec:results}
+
+Table~\ref{tab:main-results} compares \textsc{Trallie} with the systems reported by
+\citet{arora2023evaporate} on the EVAPORATE benchmark, which comprises FDA 510(k)
+documents and the movie and university verticals of SWDE \citep{hao2011swde}.
+We report ClosedIE, where the attributes to extract are given, and OpenIE, where the
+system must also discover them. Following \citet{arora2023evaporate}, ClosedIE is
+scored with token-level Text F1 \citep{rajpurkar2016squad} and OpenIE with Pair F1.
+We run \textsc{Trallie} with gpt-oss-120b \citep{openai2025gptoss} and
+Qwen3.8-27B \citep{qwen38}.
+
+\paragraph{ClosedIE.}
+\textsc{Trallie} achieves the highest ClosedIE scores on all three settings.
+On FDA 510(k) it reaches 95.9 Text F1 with gpt-oss-120b and 97.2 with Qwen3.8-27B,
+compared with 80.1 for EVAPORATE-Code+ and 78.0 for EVAPORATE-Direct
+\citep{arora2023evaporate}.
+On SWDE, with gpt-oss-120b, it scores 93.2 on movie and 89.9 on university websites,
+8.8 and 16.2 points above the strongest prior system in each vertical.
+The gains are consistent across websites: per-website ClosedIE F1 ranges from 80.6 to
+99.2 (Appendix~\ref{app:swde-per-site}, Table~\ref{tab:swde-per-site}).
+\textsc{Trallie} extracts all attributes of a document in a single LLM call, whereas
+EVAPORATE-Direct prompts once per attribute.
+
+\paragraph{OpenIE.}
+On FDA 510(k), \textsc{Trallie} outperforms EVAPORATE-Code+ (62.8 Pair F1),
+reaching 68.6 with gpt-oss-120b and 80.2 with Qwen3.8-27B.
+On SWDE the picture is mixed. \textsc{Trallie} improves on EVAPORATE-Direct in both
+verticals (49.8 vs.\ 45.2 on movie; 56.3 vs.\ 53.8 on university) and on
+DOM-LM \citep{deng2022domlm} for university websites, but remains below
+EVAPORATE-Code+ (56.8 and 59.0) and, on movie websites, below DOM-LM (54.1).
+Per-website OpenIE F1 varies widely, from 27.7 (MatchCollege) to 80.0 (Embark).
+
+\paragraph{Where OpenIE errors come from.}
+Pair F1 counts a prediction as correct only if both the value and the attribute name
+match the gold annotation. Most of \textsc{Trallie}'s OpenIE errors on SWDE are naming
+errors rather than extraction errors: the discovered schema paraphrases a website's
+labels (for example, \emph{director} where the gold attribute is \emph{Directed by}),
+so correctly extracted values are scored as wrong.
+To separate naming from extraction, we map each gold attribute to the predicted
+attribute whose values agree with it best and score the result with Text F1.
+Under this mapping, \textsc{Trallie} scores 78.0 on movie and 66.5 on university
+websites. This is a diagnostic only and is not comparable to the published Pair F1 numbers.
+A second source of error is schema size: the discovered schema has 20 attributes,
+so on websites with more gold attributes (e.g.\ 278 on Hollywood, 66 on MatchCollege)
+the remainder cannot be matched.
+\citet{arora2023evaporate} also matched attribute names against a list of alternative
+valid names for SWDE that has not been released; our strict matching therefore likely
+understates \textsc{Trallie}'s OpenIE scores relative to the published ones.
+
+\paragraph{Effect of prompt design.}
+Table~\ref{tab:prompt-ablation} shows the effect of \textsc{Trallie}'s revised prompts
+on FDA 510(k), with the LLMs and documents held fixed.
+The changes matter most for OpenIE, where Pair F1 rises from 25.3 to 68.6
+(gpt-oss-120b) and from 22.8 to 80.2 (Qwen3.8-27B).
+The main driver is schema discovery: instructing the model to reuse the documents' own
+field labels at leaf level raises the number of gold attribute names recovered in the
+discovered schema from 6 to 13 of 16 (gpt-oss-120b) and from 5 to 14 of 16
+(Qwen3.8-27B).
+ClosedIE, where attribute names are given, changes less (91.5 to 95.9 and 97.0 to
+97.2), mostly because extraction now copies values verbatim and returns null for
+missing fields.
+Because these prompts were developed on FDA 510(k), the FDA numbers may be optimistic;
+SWDE was held out during development, and the ClosedIE gains there suggest they
+transfer.

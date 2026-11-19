@@ -1,0 +1,22 @@
+{
+    "student faculty ratio": "ratio of students to faculty members",
+    "degree type": "primary degree offered (e.g., associate, bachelor's)",
+    "address": "street address, city, state, and zip code",
+    "school type": "public, private, etc.",
+    "enrollment": "total number of enrolled students",
+    "average high school gpa": "average GPA of admitted high school students",
+    "act composite middle 50%": "ACT composite score range for middle 50% of admitted students",
+    "setting": "campus environment (e.g., urban, suburban, rural)",
+    "school name": "name of the university or college",
+    "website": "URL of the institution's website",
+    "in state tuition": "tuition cost for in-state students",
+    "out of state tuition": "tuition cost for out-of-state students",
+    "most popular majors": "list of the most commonly chosen majors",
+    "phone": "contact telephone number",
+    "average math sat": "average math SAT score of admitted students",
+    "average verbal sat": "average verbal SAT score of admitted students",
+    "regular application deadline": "deadline date for regular admission applications",
+    "undergrads receiving need based financial aid": "number or percentage of undergraduates receiving need\u2011based aid",
+    "average total freshmen need based aid": "average amount of need\u2011based aid awarded to freshmen",
+    "priority application deadline": "deadline date for priority admission applications"
+}

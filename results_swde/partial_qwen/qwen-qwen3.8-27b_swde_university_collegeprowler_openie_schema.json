@@ -1,0 +1,22 @@
+{
+    "address": "The physical street address of the school",
+    "admission difficulty": "The difficulty level of gaining admission to the school",
+    "website": "The official website URL of the school",
+    "location": "City and state where the school is located",
+    "academic calendar": "The scheduling system used by the school, such as continuous or semester",
+    "phone number": "The contact phone number for the school",
+    "control": "The ownership type of the institution, such as private for-profit or public",
+    "setting": "The type of environment the school is in, such as large city or rural",
+    "religious affiliation": "Any religious affiliation associated with the school",
+    "tuition": "The cost of tuition for the school",
+    "school name": "The official name of the institution",
+    "ft undergraduates": "The number of full-time undergraduate students",
+    "tags": "Categorical tags associated with the school, such as career or student body size",
+    "total female students": "The total number of female students enrolled",
+    "total male students": "The total number of male students enrolled",
+    "total male": "The total number of male students",
+    "total female": "The total number of female students",
+    "full time undergraduates": "The number of full-time undergraduate students enrolled",
+    "part time undergraduates": "The number of part-time undergraduate students enrolled",
+    "average student loans": "The average amount of student loans received by students"
+}

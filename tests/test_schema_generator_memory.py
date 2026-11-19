@@ -10,6 +10,8 @@ if str(REPO_ROOT) not in sys.path:
 
 from trallie.schema_generation.schema_generator import SchemaGenerator
 
+# Set GROQ_API_KEY in your environment before running.
+
 
 def main():
     # Set the Groq API key

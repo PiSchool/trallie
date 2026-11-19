@@ -1,0 +1,22 @@
+{
+    "mpaa rating": "motion picture association rating",
+    "release date": "official release date",
+    "running time": "duration of the movie",
+    "us box office": "U.S. box office gross",
+    "title": "movie title",
+    "plot summary": "brief synopsis of the film",
+    "genres": "genre categories of the movie",
+    "year": "release year",
+    "number of user ratings": "count of user ratings",
+    "producers": "list of producers",
+    "cast": "list of starring actors",
+    "user rating": "average user rating grade",
+    "starring": "list of principal cast members",
+    "director": "person who directed the film",
+    "release year": "year the movie was released",
+    "user rating count": "number of user ratings submitted",
+    "produced by": "producer(s) of the film",
+    "directed by": "director(s) of the film",
+    "genre": "genre or genres of the film",
+    "movie title": "title of the movie"
+}

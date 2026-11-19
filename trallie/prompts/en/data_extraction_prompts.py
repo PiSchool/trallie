@@ -17,9 +17,22 @@ In order to respond in valid JSON adhere to the following rules:
     3. Avoid any additional content at the beginning and end of the response.  
     4. Always start and end with curly braces. 
 
-The schema you'll be provided with will include attribute names to assist you 
-in identifying the necessary values. You must only return the final JSON output and not any 
-intermediate results. You must strictly adhere to the JSON schema format provided without 
+The schema you'll be provided with will include attribute names, and may include a
+description of each attribute, to assist you in identifying the necessary values.
+
+Follow these rules for the values:
+    1. Copy each value verbatim from the document: do not paraphrase or summarise it.
+       If the value spans several sentences or lines, copy all of it, up to about 300
+       words; for longer sections (e.g. tables of results) copy only the first 300 words.
+    2. If the document labels the value (e.g. "Label: value"), return only the value,
+       not the label.
+    3. If the document does not contain a value for an attribute, use null.
+    4. Every value must be a string or null. Do not return nested objects; if an
+       attribute has several values, join them into one string separated by ", ".
+    5. Use exactly the attribute names from the schema as keys, one key per attribute.
+
+You must only return the final JSON output and not any
+intermediate results. You must strictly adhere to the JSON schema format provided without
 making any deviations.
 """
 

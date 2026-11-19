@@ -1,0 +1,87 @@
+% Tables in the style of the ACL template (acl-org/acl-style-files, acl_latex.tex):
+% \hline rules, bold headers, caption below the tabular, default caption size.
+% No extra packages needed beyond those loaded by acl.sty.
+% Numbers: EVAPORATE metrics (ClosedIE: Text F1; OpenIE: Pair F1, top-k = #gold attributes),
+% scored with benchmarking/compare_baselines.py (matches EVAPORATE's evaluate_synthetic.py).
+
+\begin{table*}[t]
+  \centering
+  \small
+  \setlength{\tabcolsep}{5pt}
+  \begin{tabular}{l l c c c c c c}
+    \hline
+     & & \multicolumn{2}{c}{\textbf{FDA 510(k)}} & \multicolumn{2}{c}{\textbf{SWDE Movie}} & \multicolumn{2}{c}{\textbf{SWDE University}} \\
+    \textbf{System} & \textbf{LLM} & \textbf{Closed} & \textbf{Open} & \textbf{Closed} & \textbf{Open} & \textbf{Closed} & \textbf{Open} \\
+    \hline
+    DOM-LM$^{\dagger}$ & -- & -- & -- & 71.9 & 54.1 & 68.0 & 55.2 \\
+    EVAPORATE-Direct$^{\dagger}$ & text-davinci-003 & 78.0$^{a}$ & 45.5 & 84.4 & 45.2 & 72.6 & 53.8 \\
+    EVAPORATE-Code+$^{\dagger}$ & text-davinci-003 & 80.1 & 62.8 & 79.5 & \textbf{56.8} & 73.7 & \textbf{59.0} \\
+    \hline
+    \textsc{Trallie} (ours) & gpt-oss-120b & 95.9 & 68.6 & \textbf{93.2}$^{b}$ & 49.8$^{b}$ & \textbf{89.9}$^{b}$ & 56.3$^{b}$ \\
+    \textsc{Trallie} (ours) & Qwen3.8-27B & \textbf{97.2} & \textbf{80.2} & -- & -- & -- & -- \\
+    \hline
+  \end{tabular}
+  \caption{ClosedIE (Text F1) and OpenIE (Pair F1) on the EVAPORATE benchmark. SWDE scores are the mean over websites (8 movie, 5 university).
+    $^{\dagger}$Reported by \citet{arora2023evaporate}; not re-run.
+    $^{a}$Per-attribute direct prompting (their Table 6).
+    $^{b}$First 100 pages per website (EVAPORATE-Code+ is evaluated on all pages); 95\% bootstrap CIs over pages are within $\pm$0.4 of each mean.
+    \textsc{Trallie}'s prompts were developed on FDA 510(k); SWDE was not used during development.
+    Systems use different LLMs, so differences reflect both method and model.}
+  \label{tab:main-results}
+\end{table*}
+
+\begin{table}[t]
+  \centering
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{l c c c c}
+    \hline
+     & \multicolumn{2}{c}{\textbf{ClosedIE}} & \multicolumn{2}{c}{\textbf{OpenIE}} \\
+    \textbf{LLM} & \textbf{Before} & \textbf{After} & \textbf{Before} & \textbf{After} \\
+    \hline
+    gpt-oss-120b & 91.5 & 95.9 & 25.3 & 68.6 \\
+    Qwen3.8-27B  & 97.0 & 97.2 & 22.8 & 80.2 \\
+    \hline
+  \end{tabular}
+  \caption{Effect of \textsc{Trallie}'s revised prompts on FDA 510(k) (100 documents, same LLMs and documents).
+    \emph{Before}: original prompts; \emph{After}: schema discovery reuses the documents' own field labels at leaf level, and extraction copies values verbatim (capped at about 300 words) with null for missing fields.
+    Gold field names in the discovered schema rose from 6/16 to 13/16 (gpt-oss-120b) and from 5/16 to 14/16 (Qwen3.8-27B).}
+  \label{tab:prompt-ablation}
+\end{table}
+
+% Appendix: per-website SWDE breakdown for Trallie + gpt-oss-120b (results_swde/),
+% same metrics and scorer as tab:main-results.
+\begin{table}[t]
+  \centering
+  \small
+  \setlength{\tabcolsep}{3.5pt}
+  \begin{tabular}{l c c c c c}
+    \hline
+     & & \textbf{ClosedIE} & \multicolumn{3}{c}{\textbf{OpenIE}} \\
+    \textbf{Website} & \textbf{\#Attr.} & \textbf{F1} & \textbf{P} & \textbf{R} & \textbf{F1} \\
+    \hline
+    \multicolumn{6}{l}{\textit{SWDE Movie}} \\
+    AllMovie        & 59  & 94.0 & 88.0 & 60.1 & 71.5 \\
+    AMC TV          & 19  & 97.5 & 66.9 & 70.8 & 68.8 \\
+    Hollywood       & 278 & 99.2 & 42.8 & 40.7 & 41.7 \\
+    iHeartMovies    & 12  & 89.5 & 46.2 & 39.2 & 42.4 \\
+    IMDb            & 39  & 88.9 & 50.1 & 26.4 & 34.5 \\
+    Metacritic      & 20  & 86.1 & 46.1 & 45.6 & 45.9 \\
+    Rotten Tomatoes & 13  & 97.3 & 39.4 & 44.3 & 41.7 \\
+    Yahoo Movies    & 13  & 93.5 & 49.4 & 55.4 & 52.2 \\
+    \textit{Mean}   &     & 93.2 &      &      & 49.8 \\
+    \hline
+    \multicolumn{6}{l}{\textit{SWDE University}} \\
+    CollegeProwler  & 23  & 96.6 & 41.5 & 45.1 & 43.2 \\
+    eCampusTours    & 15  & 80.6 & 69.2 & 60.0 & 64.3 \\
+    Embark          & 65  & 98.8 & 84.6 & 75.9 & 80.0 \\
+    MatchCollege    & 66  & 82.7 & 47.0 & 19.6 & 27.7 \\
+    US News         & 26  & 90.7 & 73.2 & 60.2 & 66.1 \\
+    \textit{Mean}   &     & 89.9 &      &      & 56.3 \\
+    \hline
+  \end{tabular}
+  \caption{Per-website SWDE results for \textsc{Trallie} with gpt-oss-120b on the first 100 pages of each website (no failed pages).
+    \#Attr.\ is the number of gold attributes, which is also $k$ for OpenIE; the discovered schema has 20 attributes, so on websites with more gold attributes the remainder cannot be matched.
+    Means are over websites, as in Table~\ref{tab:main-results}.}
+  \label{tab:swde-per-site}
+\end{table}

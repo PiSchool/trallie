@@ -7,19 +7,12 @@ from trallie.prompts import (
     FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_FR,
     FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT_IT
 )
-from trallie.data_handlers import DataHandler
+from trallie.data_handlers import DataHandler, DataHandlerError
+from trallie.utils import backoff, normalize_attribute_name, post_process_response
 
 from collections import Counter
 import json
-import re
 from typing import List, Dict, Any, Optional
-
-# Post processing for a reasoning model 
-def post_process_response(response: str) -> str:
-    """
-    Removes <think>...</think> content from the response.
-    """
-    return re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
 
 class SchemaGenerator:
     LANGUAGE_PROMPT_MAP = {
@@ -41,6 +34,7 @@ class SchemaGenerator:
         self.language = language
         self.reasoning_mode = reasoning_mode
         self.attribute_counter = Counter()
+        self.attribute_descriptions: Dict[str, str] = {}
         self.memory = memory
         self.last_schema: Optional[Dict[str, Any]] = None
         self._last_user_prompt: Optional[str] = None
@@ -94,9 +88,7 @@ class SchemaGenerator:
                     self.system_prompt, user_prompt, self.model_name
                 )
                 # Validate if response is a valid JSON
-                if self.reasoning_mode:
-                    response = post_process_response(response)
-                schema = json.loads(response)
+                schema = json.loads(post_process_response(response))
                 # Update memory with the latest schema if enabled
                 if self.memory and isinstance(schema, dict):
                     self.last_schema = schema
@@ -105,6 +97,7 @@ class SchemaGenerator:
                 print(f"Invalid JSON response (attempt {attempt + 1}): {e}")
                 if attempt == max_retries - 1:
                     return None
+                backoff(attempt)
             except Exception as e:
                 print(f"Error: {e}")
                 return None
@@ -114,27 +107,50 @@ class SchemaGenerator:
         Updates schema collection with attributes from a single document.
         """
         schema = self.extract_schema(description, record)
-        if schema:
-            attributes = schema.keys() if isinstance(schema, dict) else []
-            self.attribute_counter.update(attributes)
+        if schema and isinstance(schema, dict):
+            self._count_attributes(schema)
 
-    def get_top_k_attributes(self, top_k=10):
+    def _count_attributes(self, schema: Dict[str, Any]) -> None:
         """
-        Returns the top k most frequent attributes across multiple documents.
+        Count each attribute once per document under its normalised name and
+        remember the first description seen for it.
         """
-        return [attr for attr, _ in self.attribute_counter.most_common(top_k)]
+        names = set()
+        for key, value in schema.items():
+            name = normalize_attribute_name(key)
+            if not name:
+                continue
+            names.add(name)
+            if name not in self.attribute_descriptions and isinstance(value, str):
+                self.attribute_descriptions[name] = value
+        self.attribute_counter.update(names)
 
-    def discover_schema(self, description, records, num_records=10, from_text=False):
+    def get_top_k_attributes(self, top_k=10, return_descriptions=False):
+        """
+        Returns the top k most frequent attributes across multiple documents,
+        as a list of names or, with return_descriptions=True, {name: description}.
+        """
+        top = [attr for attr, _ in self.attribute_counter.most_common(top_k)]
+        if return_descriptions:
+            return {attr: self.attribute_descriptions.get(attr, "") for attr in top}
+        return top
+
+    def discover_schema(self, description, records, num_records=10, from_text=False,
+                        top_k=10, return_descriptions=False):
         """
         Processes multiple documents for creation of the schema
         """
         num_records = min(num_records, len(records))
 
         for record in records[:num_records]:
-            record_content = DataHandler(record, from_text=from_text).get_text()
+            try:
+                record_content = DataHandler(record, from_text=from_text).get_text()
+            except DataHandlerError as e:
+                print(f"Skipping record for schema discovery: {e}")
+                continue
             self.update_schema_collection(description, record_content)
 
-        return self.get_top_k_attributes()
+        return self.get_top_k_attributes(top_k, return_descriptions)
 
     def discover_schema_large_document(self, 
                                      description: str, 
@@ -178,14 +194,12 @@ class SchemaGenerator:
         if isinstance(chunk_results, dict) and "error" not in chunk_results:
             # If we got a combined result, process it
             if chunk_results:
-                attributes = chunk_results.keys() if isinstance(chunk_results, dict) else []
-                self.attribute_counter.update(attributes)
+                self._count_attributes(chunk_results)
         else:
             # Process individual chunk results
             for result in chunk_results:
                 if result and isinstance(result, dict):
-                    attributes = result.keys()
-                    self.attribute_counter.update(attributes)
+                    self._count_attributes(result)
         
         return self.get_top_k_attributes(top_k)
 
@@ -217,24 +231,22 @@ class SchemaGenerator:
         num_records = min(num_records, len(records))
         
         for record in records[:num_records]:
-            if auto_detect_large_docs:
-                # Check if the document is large enough to warrant chunking
-                data_handler = DataHandler(record, from_text=from_text)
-                full_text = data_handler.get_text()
-                
-                if full_text and not full_text.startswith("Error:"):
-                    if len(full_text) > chunk_size:
-                        print(f"Document is large ({len(full_text)} chars), using chunking for schema discovery...")
-                        self.discover_schema_large_document(
-                            description, record, chunk_size, overlap_size, 5, from_text, top_k
-                        )
-                        continue
-                    else:
-                        print(f"Document is small ({len(full_text)} chars), processing normally for schema discovery...")
-            
+            try:
+                full_text = DataHandler(record, from_text=from_text).get_text()
+            except DataHandlerError as e:
+                print(f"Skipping record for schema discovery: {e}")
+                continue
+
+            if auto_detect_large_docs and len(full_text) > chunk_size:
+                # The document is large enough to warrant chunking
+                print(f"Document is large ({len(full_text)} chars), using chunking for schema discovery...")
+                self.discover_schema_large_document(
+                    description, record, chunk_size, overlap_size, 5, from_text, top_k
+                )
+                continue
+
             # Use the original method for smaller documents
-            record_content = DataHandler(record, from_text=from_text).get_text()
-            self.update_schema_collection(description, record_content)
+            self.update_schema_collection(description, full_text)
         
         return self.get_top_k_attributes(top_k)
 

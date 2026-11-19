@@ -1,0 +1,22 @@
+{
+    "510k number": "The unique identifier assigned to the 510(k) submission",
+    "regulation section": "The specific FDA regulation section governing the device",
+    "purpose for submission": "The reason for the submission, such as new device or modification",
+    "classification": "The regulatory classification of the device (e.g., Class I, II, III)",
+    "product code": "The FDA product code assigned to the device",
+    "applicant": "The name of the company or entity submitting the 510(k)",
+    "type of test": "The classification of the test, such as quantitative or qualitative",
+    "intended use": "The description of the intended use and indication for use of the device",
+    "measurand": "The specific analyte or substance being measured by the device",
+    "panel": "The clinical chemistry panel or category the device belongs to",
+    "test principle": "The scientific principle or method used by the device to perform the test",
+    "predicate device name": "The name of the predicate device used for substantial equivalence comparison",
+    "special conditions for use": "Any special conditions or restrictions for using the device",
+    "predicate 510k number": "The 510(k) number of the predicate device",
+    "proprietary and established names": "The commercial and generic names of the device or assay",
+    "conclusion": "The final decision or summary of the substantial equivalence determination",
+    "special instrument requirements": "Specific instruments required to operate the device",
+    "indication for use": "Detailed indications for use for each component of the device",
+    "measuring range": "The range of values the device can accurately measure",
+    "limit of quantitation": "The lowest concentration of the analyte that can be quantified with acceptable precision"
+}

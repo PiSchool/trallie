@@ -1,0 +1,1323 @@
+{
+    "K143467.txt": {
+        "deviceName": "FORA GD43 Blood Glucose Meter",
+        "deviceDescription": "The FORA GD43 Blood Glucose Monitoring System consists of the FORA GD43 Blood Glucose Meter, Owner\u2019s Manual, Protective Wallet, Quick Start User Guide, Daily Log Book, Warranty Card and 2 x 1.5 V AAA alkaline batteries.",
+        "intendedUse": "The FORA GD43 Blood Glucose Monitoring System is intended to be used for the quantitative measurement of glucose (sugar) in fresh capillary whole blood from the fingertip and alternative sites (palm, forearm and upper arm).",
+        "submissionType": "New device",
+        "regulatoryInformation": "Class II, 21 CFR 862.1345, Glucose test system, Product code: NBW, System, Test, Blood Glucose, Over the Counter, LFR, Glucose Dehydrogenase, Glucose",
+        "indicationsForUse": "The FORA GD43 Blood Glucose Monitoring System is intended to be used by a single person and should not be shared. Alternative site testing (AST) should only be done during steady-state times (when glucose is not changing rapidly).",
+        "predicateDevice": "FORA GD40 Blood Glucose Monitoring System",
+        "applicant": "TaiDoc Technology Corporation",
+        "performanceCharacteristics": "The reportable range for the FORA GD43 Blood Glucose Monitoring System is 20 to 600 mg/dL. The results of the study support the sponsor\u2019s claimed glucose measurement range of 20 to 600 mg/dL.",
+        "clinicalStudies": "User Performance Study: To assess the performance of the FORA GD43 Blood Glucose Monitoring System in the hands of lay users, the sponsor conducted a study with 150 lay user participants at 3 hospitals."
+    },
+    "K171742.txt": {
+        "deviceName": "N Latex FLC Kappa and N Latex FLC Lambda assays",
+        "deviceDescription": "The N Latex FLC Kappa and N Latex FLC Lambda assays are comprised of the following reagents in liquid form: N latex FLC reagents, N FLC Supplementary Reagents A and B, N FLC Standard SL, and N FLC Controls SL1 and SL2",
+        "intendedUse": "In-vitro diagnostic reagents for the quantitative determination of free light chains (FLC), type kappa or type lambda in human serum and EDTA-plasma by means of particle-enhanced immunonephelometry using the BN Systems",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": "Class II, test systems; Product codes: DFH, Kappa, antigen, antiserum, control; DEH, Lambda, antigen, antiserum, control; Panel: Immunology (82); Regulation section: 21 CFR \u00a7 866.5550 \u2013 Immunoglobulin (light chain specific) immunological test system; 21 CFR \u00a7 862.1660 \u2013 Quality Control Material (assayed and unassayed)",
+        "indicationsForUse": "Same as Intended Uses; The N Latex FLC Kappa and N Latex FLC Lambda assays are used as an aid in the diagnosis of multiple myeloma (MM) and amyloidosis (AL)",
+        "predicateDevice": "The Binding Site Freelite Human Kappa Free Kit and The Binding Site Freelite Human Lambda Free Kit for use on the Siemens BN II",
+        "applicant": "Siemens Healthcare Diagnostics Products GmbH",
+        "performanceCharacteristics": "Analytical performance: Precision/Reproducibility, Linearity/assay reportable range, Traceability, Stability, Expected values (controls, calibrators, or methods); Clinical sensitivity and specificity: 95.8% (95% CI: 89.8 \u2013 98.4%) for MM and 83.1% (95% CI: 73.7 \u2013 89.7%) for AL",
+        "clinicalStudies": "A total of 342 samples were included in the clinical validation study for the N Latex FLC Kappa and Lambda assay; A total of 259 samples were included in the clinical validation study for MM; A total of 246 samples were included in the clinical validation study for AL"
+    },
+    "K170491.txt": {
+        "deviceName": "Solana C. difficile Assay",
+        "deviceDescription": "The Solana C. difficile Assay combines sample processing and Helicase\u2010Dependent Amplification (HDA) performed in the Solana instrument for the detection of toxigenic Clostridium difficile directly from CDI\u2010suspected diarrheal specimens.",
+        "intendedUse": "The Solana C. difficile assay is an in vitro diagnostic test for the direct, qualitative detection of the Clostridium difficile Toxin A gene (tcdA) in unformed stool specimens of patients suspected of having Clostridium difficile infection (CDI).",
+        "submissionType": "510(k) substantial equivalence determination",
+        "regulatoryInformation": "21 CFR 866.3130, Clostridium difficile toxin gene amplification assay, Class II, Product code: OZN",
+        "indicationsForUse": "The Solana C. difficile Assay is intended for use as an aid in diagnosis of CDI.",
+        "predicateDevice": "Portrait Toxigenic C. difficile Assay, K113358 (DEN120013)",
+        "applicant": "Quidel Corporation",
+        "performanceCharacteristics": "The Solana C. difficile Assay has a limit of detection (LoD) of 9.13 x 10^3 CFU/mL for ATCC BAA\u20101805 and 4.90 x 10^3 CFU/mL for CCUG 20309, and a clinical sensitivity of 93.04% and clinical specificity of 99.19%.",
+        "clinicalStudies": "A prospective study was conducted from November 2016 to February 2017, with 854 specimens collected from patients suspected of having CDI, and the Solana C. difficile Assay was compared to a broth enhanced toxigenic bacterial culture and an FDA-cleared NAAT."
+    },
+    "K161220.txt": {
+        "deviceName": "ARIES Flu A/B & RSV Assay",
+        "deviceDescription": "The ARIES Flu A/B & RSV Assay is a polymerase chain reaction (PCR)-based qualitative in vitro diagnostic test system that consists of the ARIES Systems with its included software, an assay-specific cassette, and an assay-specific protocol file.",
+        "intendedUse": "The ARIES Flu A/B & RSV Assay is intended for use as an aid in the differential diagnosis of Influenza A, Influenza B, and RSV in humans and is not intended to detect Influenza C.",
+        "submissionType": "510(k) Clearance of New Device",
+        "regulatoryInformation": "Class II, 21 CFR 866.3980, Respiratory viral panel multiplex nucleic acid assay",
+        "indicationsForUse": "The ARIES Flu A/B & RSV Assay is indicated for use with the ARIES Systems.",
+        "predicateDevice": "Simplexa Flu A/B & RSV Direct",
+        "applicant": "Luminex Corporation",
+        "performanceCharacteristics": "The performance characteristics of the ARIES Flu A/B & RSV Assay include precision/reproducibility, linearity/assay reportable range, traceability, stability, detection limit, analytical reactivity, analytical specificity, interfering substances, and carry-over/cross-contamination.",
+        "clinicalStudies": "The clinical performance of the ARIES Flu A/B & RSV Assay was evaluated in a prospective study of 2,479 clinical specimens, with a positive percent agreement of 95.8% for Influenza A, 93.8% for Influenza B, and 97.1% for RSV."
+    },
+    "K172913.txt": {
+        "deviceName": "cobas Factor II and Factor V Test",
+        "deviceDescription": "The cobas Factor II and Factor V Test is a real-time polymerase chain reaction (PCR) test for the qualitative detection and genotyping of a single point mutation in the human Factor V gene and a single point mutation in the human Factor II gene",
+        "intendedUse": "The cobas Factor II and Factor V Test is an in vitro diagnostic device that uses real-time PCR for the detection and genotyping of the Factor II and Factor V mutations in genomic DNA obtained from K2EDTA whole blood specimens as an aid in diagnosis of patients with suspected thrombophilia",
+        "submissionType": "510(k) submission",
+        "regulatoryInformation": "Class II, 21 CFR 84.7280; Factor V Leiden DNA Mutation Detection Systems, Product code: NPR, NPQ",
+        "indicationsForUse": "Aid in the diagnosis of patients with suspected thrombophilia",
+        "predicateDevice": "Roche Factor II (Prothrombin) G20210A Kit, Roche Factor V Leiden Kit",
+        "applicant": "Roche Molecular Systems, Inc.",
+        "performanceCharacteristics": "The test has a limit of detection of 0.01 ng/\u03bcL and yields correct genotype results for all samples, storage conditions and time intervals tested",
+        "clinicalStudies": "The clinical studies include a method comparison study with bi-directional Sanger sequencing, a matrix comparison study, and a DNA extraction method study"
+    },
+    "K160082.txt": {
+        "deviceName": "Puritan Opti-Tranz Cary-Blair Collection and Transport System",
+        "deviceDescription": "The Puritan Opti-Tranz Cary-Blair Collection and Transport System is comprised of a peel pouch containing a rayon tipped swab applicator for collecting specimens and a polypropylene, round-bottomed, capped tube containing 5 ml of a semi-solid Cary-Blair medium.",
+        "intendedUse": "The Puritan Opti-Tranz Cary-Blair Collection and Transport System is intended for use in the collection and transport of clinical fecal and rectal swab specimens to preserve the viability of enteric bacteria during transport from the collection site to the testing laboratory for bacteriological examination and culture.",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": {
+            "regulationSection": "866.2390; Transport Culture Medium",
+            "classification": "Class I",
+            "productCode": "JSM; Culture Media, Non-Propagating Transport"
+        },
+        "indicationsForUse": "Same as intended use",
+        "predicateDevice": "Copan Venturi Transystem Cary-Blair Medium product (132C)",
+        "applicant": "Puritan Medical Products, LLC",
+        "performanceCharacteristics": "The Puritan Opti-Tranz Cary-Blair Collection and Transport System can support the viability enteric bacteria for up to 48 hours at 20-25\u00b0C and 72 hours at 2-8\u00b0C.",
+        "clinicalStudies": "Not applicable"
+    },
+    "K180886.txt": {
+        "deviceName": "Liofilchem MIC Test Strip (MTS), Delafloxacin 0.002-32 \u03bcg/mL",
+        "deviceDescription": "The Delafloxacin MIC Test Strip (MTS) consists of specialized paper impregnated with a predefined concentration gradient of Delafloxacin across 15 two-fold dilutions similar to dilutions used by conventional MIC methods.",
+        "intendedUse": "The Liofilchem MIC Test Strip (MTS) is a quantitative method intended for the in vitro determination of antimicrobial susceptibility of bacteria.",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": {
+            "regulationSection": "866.1640 Antimicrobial Susceptibility Test Powder",
+            "classification": "II",
+            "productCode": "JWY - Manual Antimicrobial Susceptibility Test Systems",
+            "panel": "83 \u2013 Microbiology"
+        },
+        "indicationsForUse": "The Liofilchem MIC Test Strip (MTS) is intended for the determination of antimicrobial susceptibility of non-fastidious Gram negative organisms",
+        "predicateDevice": "Liofilchem MTS, vancomycin (K153687)",
+        "applicant": "Liofilchem s.r.l.",
+        "performanceCharacteristics": {
+            "analyticalPerformance": {
+                "precisionReproducibility": "Reproducibility testing was conducted at three sites using ten gram negative organisms. The overall reproducibility was greater than 95%.",
+                "linearityAssayReportableRange": "Not applicable",
+                "traceabilityStabilityExpectedValues": "Quality Control (QC) Testing was performed using E. coli ATCC 25922 and P. aeruginosa ATCC 27853."
+            },
+            "comparisonStudies": {
+                "methodComparisonWithPredicateDevice": "Results obtained with Liofilchem MIC Test Strip (MTS) with Delafloxacin were compared to results obtained from frozen reference MIC panels.",
+                "clinicalStudies": "Clinical testing was performed at three US sites. A total of 360 clinical isolates were tested."
+            }
+        },
+        "clinicalStudies": "Clinical testing was performed at three US sites. A total of 360 clinical isolates were tested."
+    },
+    "K153278.txt": {
+        "deviceName": "iHealth Wireless Smart Gluco-Monitoring System (BG5)",
+        "deviceDescription": "The iHealth Wireless Smart Gluco-Monitoring System consists of the iHealth Wireless Smart blood glucose meter (BG5), AGS 1000I Test Strips, sterile lancets, lancing device and the iHealth control solutions",
+        "intendedUse": "The iHealth Wireless Gluco-Monitoring System is intended to be used for the quantitative measurement of glucose in fresh capillary whole blood samples drawn from the fingertip, palm, forearm, upper arm, calf, or thigh",
+        "submissionType": "Modified devices to add compatibility with Android mobile platforms",
+        "regulatoryInformation": "Regulation Name: Glucose test system, Class: II, Product Code: NBW, Panel: (75) Chemistry",
+        "indicationsForUse": "The iHealth Wireless Gluco-Monitoring System is intended for self-testing outside the body by people with diabetes at home as an aid to monitor the effectiveness of diabetes control",
+        "predicateDevice": "iHealth BG5 Wireless Smart Gluco-Monitoring System (k123935)",
+        "applicant": "Andon Health Co., Ltd",
+        "performanceCharacteristics": "The system measures glucose amperometrically and has a measuring range of 20-600 mg/dL, hematocrit range of 20-60%, and is calibrated to be plasma-equivalent",
+        "clinicalStudies": "The sponsor performed a user performance study to demonstrate the accuracy of the system in the hand of the intended users, and the results showed that the system is accurate and reliable"
+    },
+    "K181525.txt": {
+        "deviceName": "INNOVANCE Free PS Ag",
+        "deviceDescription": "The INNOVANCE Free PS Ag assay is an immunoturbidimetric assay. The reagent kit consists of two components\u2014 INNOVANCE Free PS Ag Reagent and INNOVANCE Free PS Ag Buffer.",
+        "intendedUse": "For the quantitative determination of free protein S antigen in human plasma collected from venous blood samples in 3.2% sodium citrate tubes on the Sysmex CS-5100 analyzer. As an aid in the diagnosis of protein S deficiency in patients who are suspected of free protein S deficiency.",
+        "submissionType": "New Device",
+        "regulatoryInformation": "21 CFR 864.7290, Factor deficiency test, Class II, Product code: GGP, Test, qualitative and quantitative factor deficiency",
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "STA-Liatest Free Protein S",
+        "applicant": "Siemens Healthcare Diagnostics Product GmbH",
+        "performanceCharacteristics": "The INNOVANCE Free PS Ag assay has precision, linearity, and stability, with a limit of detection (LoD) of 1.746% and a limit of quantitation (LoQ) of 10%.",
+        "clinicalStudies": "Method comparison studies were performed at three clinical laboratory sites to compare the performance of the INNOVANCE Free PS Ag reagent on the Sysmex CS-5100 to the predicate device, and clinical supportive data demonstrated no cross-reactivity with protein S bound to C4b-binding protein (C4BP)."
+    },
+    "K190223.txt": {
+        "deviceName": "Cepheid Xpert CT/NG Control Panel",
+        "deviceDescription": "The Cepheid Xpert CT/NG Control Panel is a quality control material provided to the customer as six individually packaged positive and negative swabs. Each positive swab consists of inactivated Chlamydia trachomatis (CT) and Neisseria gonorrhoeae (NG) microorganisms. Each negative swab consists of human epithelial cells.",
+        "intendedUse": "The Cepheid Xpert CT/NG Control Panel is intended for use as an external assayed positive and negative quality control to monitor the performance of in vitro laboratory nucleic acid testing procedures for the qualitative detection of Chlamydia trachomatis (CT) and Neisseria gonorrhoeae (NG) performed with the Cepheid Xpert CT/NG assay on the GeneXpert Instrument System.",
+        "submissionType": "510(k) SUBSTANTIAL EQUIVALENCE DETERMINATION",
+        "regulatoryInformation": {
+            "regulationSection": "21 CFR 866.3920",
+            "classification": "Class II (Special Controls)",
+            "productCode": "PMN  Assayed external control material for microbiology nucleic acid amplification assays",
+            "panel": "(83) Microbiology"
+        },
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "Cepheid Xpert GBS LB Control Panel",
+        "applicant": "Microbiologics, Inc.",
+        "performanceCharacteristics": {
+            "reproducibility": "The Cepheid Xpert CT/NG Control Panel was evaluated at three testing sites with two operators at each site (total of six operators). Three lots of the control material were tested with the Cepheid Xpert CT/NG assay on the Cepheid Xpert Instrument, over five days.",
+            "linearity/assayReportableRange": "Not applicable",
+            "traceability": "Not applicable",
+            "stability": {
+                "shelfLifeStability": "The Cepheid Xpert CT/NG Control Panel was initially evaluated through an accelerated study with three lots of the controls.",
+                "realTimeShelfStability": "The product was tested in 4 replicates prior to placing the product in the controlled temperature chambers (T=0). After 5 months (T=1), Positive and Negative Controls were tested with the Cepheid Xpert CT/NG Assay.",
+                "inUseStability": "The controls were tested in three replicates immediately after hydration (t=0), and then again at 4 hours, and at 6 hours."
+            }
+        },
+        "clinicalStudies": "Not applicable"
+    },
+    "K162042.txt": {
+        "deviceName": "OptiScanner 5000 Glucose Monitoring System",
+        "deviceDescription": "The OptiScanner 5000 Glucose Monitoring System is an automated, bedside glucose monitoring device",
+        "intendedUse": "for detecting trends and tracking patterns in persons (age 18 and older) in the surgical intensive care unit",
+        "submissionType": "New device",
+        "regulatoryInformation": "Product Code: LZF, Classification: II, Regulation: 21 CFR \u00a7880.5725, Panel: General Hospital",
+        "indicationsForUse": "The OptiScanner 5000 Glucose Monitoring System is indicated for use in determining dysglycemia",
+        "predicateDevice": "VIA Medical Corp Pump/Blood Chemistry Monitor",
+        "applicant": "OptiScan Biomedical Corporation",
+        "performanceCharacteristics": "The OptiScanner 5000 Glucose Monitoring System samples and measures blood glucose levels every 15 minutes",
+        "clinicalStudies": "A non-randomized, observational clinical study conducted on 160 SICU patients"
+    },
+    "K171770.txt": {
+        "deviceName": "cobas Liat System",
+        "deviceDescription": "The cobas Liat System is a rapid, automated in vitro diagnostic test for the qualitative detection of C. difficile DNA in human stool specimens.",
+        "intendedUse": "The cobas Cdiff Nucleic acid test for use on the cobas Liat System is an automated, qualitative in vitro diagnostic test, that utilizes real-time polymerase chain reaction (PCR), for the detection of the toxin B (tcdB) gene of toxigenic Clostridium difficile in unformed (liquid or soft) stool specimens obtained from patients suspected of having C. difficile infection (CDI).",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": "21 CFR 866.3130, Clostridium difficile toxin gene amplification assay, Classification: II, Product code: OZN, OOI",
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "cobas Cdiff Test for use on the cobas 4800 System, K142422",
+        "applicant": "Roche Molecular Systems, Inc.",
+        "performanceCharacteristics": "The cobas Liat Cdiff test uses silica magnetic particle-based nucleic acid extraction and TaqMan probe-based real-time PCR amplification and detection. The analytical sensitivity of the test was determined to have a Limit of Detection (LoD) with 100% hit rate.",
+        "clinicalStudies": "A prospective, multi-site investigation in comparison to the combined results of direct and broth enriched toxigenic culture using leftover, de-identified, unformed stool samples from patients suspected of having C. difficile infection."
+    },
+    "K171641.txt": {
+        "deviceName": "Accula Flu A/Flu B Test",
+        "deviceDescription": "The Accula Flu A/Flu B Test is a semi-automated, colorimetric, multiplex reverse-transcription polymerase chain reaction (RT-PCR) nucleic acid amplification test to qualitatively detect influenza A and B viral RNA from unprocessed nasal swabs that have not undergone prior nucleic acid extraction.",
+        "intendedUse": "The Accula Flu A/Flu B Test performed on the Accula Dock is a molecular in vitro diagnostic test utilizing polymerase chain reaction (PCR) and lateral flow technologies for the qualitative, visual detection and differentiation of influenza A and influenza B viral RNA.",
+        "submissionType": "New 510(k) application for the determination of Substantial Equivalence",
+        "regulatoryInformation": "Class II, Product code: OZE - Influenza A and Influenza B Multiplex Nucleic Acid Assay, Regulation section: 21 CRF 866.3980, Respiratory viral panel multiplex nucleic acid assay",
+        "indicationsForUse": "The Accula Flu A/Flu B assay is intended as an aid in the diagnosis of influenza infection in conjunction with clinical and epidemiological risk factors.",
+        "predicateDevice": "Alere i Influenza A&B",
+        "applicant": "Mesa Biotech, Inc.",
+        "performanceCharacteristics": "The Accula Flu A/Flu B Test has been evaluated for its performance characteristics, including analytical sensitivity, analytical specificity, precision/reproducibility, and clinical performance.",
+        "clinicalStudies": "The clinical performance of the Accula Flu A/Flu B Test was evaluated in a multi-site study in the U.S. during the 2016-2017 influenza season, which included 1258 nasal swab specimens from children and adults with suspected respiratory infection."
+    },
+    "K180559.txt": {
+        "deviceName": "HSV 1&2 ELITe MGB Assay",
+        "deviceDescription": "A multiplexed qualitative in vitro diagnostic Real-Time PCR Assay that uses unique primer sets and single uniquely labeled probes to amplify and detect HSV-1 and HSV-2 DNA",
+        "intendedUse": "For the direct detection and differentiation of Herpes Simplex Virus 1 and 2 (HSV-1 and HSV-2) DNA in cutaneous or mucocutaneous lesion swab specimens from patients with signs and symptoms of HSV-1 or HSV-2 infection",
+        "submissionType": "New Device Clearance",
+        "regulatoryInformation": "Class II, 21CFR 866.3309, Product code: PGI, Panel: 83 - Microbiology",
+        "indicationsForUse": "Aid in the differential diagnosis of HSV-1 and HSV-2 infections",
+        "predicateDevice": "ARIES HSV 1&2 Assay, K151906",
+        "applicant": "ELITechGroup Inc. Molecular Diagnostics",
+        "performanceCharacteristics": "Precision/Reproducibility: 100%, Limit of Detection (LoD): 59.0 TCID50/mL for HSV-1 and 5.4 TCID50/mL for HSV-2",
+        "clinicalStudies": "Clinical performance was compared to a composite reference method, 1172 samples were analyzed, PPA for HSV-1: 98.7% and 99.2%, PPA for HSV-2: 96.2% and 97.6%"
+    },
+    "K160538.txt": {
+        "deviceName": "Sysmex XN-L Automated Hematology Analyzer",
+        "deviceDescription": "The Sysmex XN-L analyzer is a quantitative multi-parameter automated hematology analyzer intended for in vitro diagnostic use in screening patient populations found in clinical laboratories.",
+        "intendedUse": "The XN-L analyzer is intended for in vitro diagnostic use in screening patient populations found in clinical laboratories.",
+        "submissionType": "510(k) Clearance of a new device",
+        "regulationInformation": "21 CFR 864.5220, Automated differential cell counter",
+        "indicationsForUse": "The XN-L analyzer is intended for use in classifying and enumerating parameters in venous and capillary whole blood, as well as in body fluids.",
+        "predicateDevice": "Sysmex XN-Series (XN-10, XN-20) Automated Hematology Analyzer, K112605",
+        "applicant": "Sysmex America Inc.",
+        "performanceCharacteristics": "Performance characteristics include analytical performance, precision/reproducibility, linearity, carryover, and interfering substances studies.",
+        "clinicalStudies": "The device has undergone method comparison, precision/reproducibility, and linearity studies, as well as interfering substances and carryover studies."
+    },
+    "K151923.txt": {
+        "deviceName": "VITEK 2 AST-Yeast Micafungin",
+        "deviceDescription": "The VITEK 2 AST card is a miniaturized, abbreviated and automated version of the doubling dilution technique for determining the minimum inhibitory concentration (MIC)",
+        "intendedUse": "The VITEK 2 Antimicrobial Susceptibility Test (AST) is intended to be used with the VITEK 2 Systems for the automated quantitative or qualitative susceptibility testing of isolated colonies",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": "21 CFR 866.1640, Antimicrobial Susceptibility Test Powder, Classification: II, Product code: NGZ \u2013 Susceptibility Test Plate, Antifungal",
+        "indicationsForUse": "VITEK 2 Yeast Micafungin is designed for antifungal susceptibility testing of Candida species",
+        "predicateDevice": "VITEK 2 AST-YS Flucytosine, 510(k) number: K133952",
+        "applicant": "bioM\u00e9rieux, Inc.",
+        "performanceCharacteristics": "Essential agreement was calculated for when the VITEK 2 system results were within +/- two doubling dilutions of the reference method results, Category agreement was calculated for when the VITEK 2 system result interpretations agreed exactly with the reference method result interpretations",
+        "clinicalStudies": "A total of 727 clinical isolates were evaluated at four sites, the combined essential agreement and category agreement met acceptance criteria of greater than or equal to 90%"
+    },
+    "K182472.txt": {
+        "deviceName": "Cepheid Xpert GBS LB Control Panel",
+        "deviceDescription": "The Cepheid Xpert GBS LB Control Panel is used to monitor DNA extraction, amplification and detection by the Cepheid Xpert GBS LB Assay on the GeneXpert Instrument System.",
+        "intendedUse": "The Cepheid Xpert GBS LB Control Panel is intended for use as external assayed positive and negative quality control materials to monitor the performance of in vitro laboratory nucleic acid testing procedures for the qualitative detection of Group B Streptococcus (GBS) performed with the Cepheid Xpert GBS LB Assay on the GeneXpert Instrument System.",
+        "submissionType": "510(k) SUBSTANTIAL EQUIVALENCE DETERMINATION",
+        "regulatoryInformation": {
+            "regulationSection": "21 CFR 866.3920",
+            "classification": "Class II (Special Controls)",
+            "productCode": "PMN: Assayed external control material for microbiology nucleic acid amplification assays",
+            "panel": "83 - Microbiology"
+        },
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "Bio-Rad Amplichek II",
+        "applicant": "Microbiologics, Inc.",
+        "performanceCharacteristics": {
+            "analyticalPerformance": {
+                "precisionReproducibility": "Studies to determine precision and reproducibility of the Cepheid Xpert GBS LB Control Panel were performed on the GeneXpert Instrument using the Cepheid Xpert GBS LB assay.",
+                "linearityAssayReportableRange": "Not applicable",
+                "traceabilityStabilityExpectedValues": {
+                    "traceability": "Not applicable",
+                    "stability": "Shelf-life stability was established through an Accelerated Stability Study",
+                    "expectedValues": "The Cepheid Xpert GBS LB Control Panel is a qualitative control expected to produce positive results with the Positive Control (Streptococcus agalactiae) and negative results with the Negative Control (Lactobacillus acidophilus)"
+                }
+            }
+        },
+        "clinicalStudies": "Not applicable"
+    },
+    "K162688.txt": {
+        "deviceName": "Sysmex CS-2100i Automated Blood Coagulation Analyzer",
+        "deviceDescription": "The Sysmex CS-2100i is a standalone automated blood coagulation analyzer which analyzes venous plasma samples collected in 3.2% sodium citrate using clotting, chromogenic and immunoassay methods.",
+        "intendedUse": "The Sysmex CS-2100i is intended for in vitro diagnostic use using plasma collected from venous blood samples in 3.2% sodium citrate tubes to analyze clotting, chromogenic and immunoassay methods in the clinical laboratory.",
+        "submissionType": "510(k) substantial equivalence determination",
+        "regulatoryInformation": "Class II, 21 CFR 864.5425",
+        "indicationsForUse": "For determination of Prothrombin Time (PT) seconds and PT INR with Dade Innovin, Activated Partial Thromboplastin Time (APTT) with Dade Actin FSL, Fibrinogen (Fbg) with Dade Thrombin Reagent, Coagulation Factor V with Dade Innovin, Coagulation Factor VII with Dade Innovin, Protein C with Protein C Reagent, Antithrombin (AT) with INNOVANCE Antithrombin, Protein C with Berichrom Protein C, and D-dimer with INNOVANCE D-Dimer",
+        "predicateDevice": "Sysmex Automated Coagulation Analyzer CA-1500",
+        "applicant": "Siemens Healthcare Diagnostics Product GmbH",
+        "performanceCharacteristics": "Precision, Reproducibility, Linearity, Traceability, Stability, Detection Limit, Analytical Specificity, and Assay Cut-off",
+        "clinicalStudies": "Method comparison studies, Matrix comparison study, and Reference interval studies"
+    },
+    "K190332.txt": {
+        "deviceName": "Aperio AT2 DX System",
+        "deviceDescription": "The Aperio AT2 DX System is an automated digital slide creation and viewing system",
+        "intendedUse": "The Aperio AT2 DX System is intended for in vitro diagnostic use as an aid to the pathologist to review and interpret digital images of surgical pathology slides prepared from formalin-fixed paraffin embedded (FFPE) tissue",
+        "submissionType": "New Whole Slide Imaging (WSI) system",
+        "regulatoryInformation": "Class II (special controls), Product code: PSY, 21 CFR 864.3700",
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "Philips IntelliSite Pathology Solution (PIPS), DEN160056",
+        "applicant": "Leica Biosystems Imaging, Inc.",
+        "performanceCharacteristics": "Precision/Reproducibility, Linearity/Assay reportable range, Traceability, Stability, Expected values, Detection limit, Analytical specificity, Assay cut-off",
+        "clinicalStudies": "A multi-center study was conducted to demonstrate that viewing, reviewing, and diagnosing digital images of surgical pathology FFPE tissue slides using the Aperio AT2 DX System is non-inferior to using optical (light) microscopy"
+    },
+    "K151046.txt": null,
+    "K172333.txt": {
+        "deviceName": "Sysmex Automated Blood Coagulation Analyzer CS-5100",
+        "deviceDescription": "The Sysmex Automated Blood Coagulation Analyzer CS-5100 is an automated blood coagulation instrument which analyzes venous plasma samples collected in 3.2% sodium citrate using clotting, chromogenic and immunoassay methods.",
+        "intendedUse": "The Sysmex CS-5100 is intended for in vitro diagnostic use using plasma collected from venous blood samples in 3.2% sodium citrate tubes to analyze clotting, chromogenic and immunoassay methods in the clinical laboratory.",
+        "submissionType": "510(k) SUBSTANTIAL EQUIVALENCE DETERMINATION",
+        "regulatoryInformation": "The Sysmex CS-5100 is classified as Class II for Factor V Leiden Assay, Coagulation Factor VIII Deficient Plasma, Coagulation Factor IX Deficient Plasma and Class I for LA 1 Screening Reagent, LA 2 Confirmation Reagent, and LA Ratio",
+        "indicationsForUse": "The intended use of the Sysmex CS-5100 is for the determination of various coagulation factors and parameters in human plasma, including Prothrombin Time, Activated Partial Thromboplastin Time, Fibrinogen, Coagulation Factor V, Coagulation Factor VII, Coagulation Factor VIII, Coagulation Factor IX, Lupus Anticoagulant, Factor V Leiden, Protein C, Antithrombin, and D-dimer.",
+        "predicateDevice": "Sysmex CA-1500",
+        "applicant": "Siemens Healthcare Diagnostics Product GmbH",
+        "performanceCharacteristics": "The performance characteristics of the Sysmex CS-5100 include precision, reproducibility, linearity, and analytical specificity for various coagulation assays.",
+        "clinicalStudies": "Clinical studies were conducted to evaluate the performance of the Sysmex CS-5100, including method comparison studies, clinical sensitivity and specificity studies, and clinical cut-off validation studies."
+    },
+    "K152614.txt": {
+        "deviceName": "Xpert Carba-R Assay",
+        "deviceDescription": "The Xpert Carba-R Assay is an automated real-time polymerase chain reaction (PCR) in vitro diagnostic test for qualitative detection of the blaKPC, blaNDM, blaVIM, blaOXA-48, and blaIMP gene sequences from pure colonies of carbapenem non-susceptible Enterobacteriaceae, Pseudomonas aeruginosa, and Acinetobacter baumannii.",
+        "intendedUse": "The Xpert Carba-R Assay is intended as an aid for infection control in detecting and differentiating genetic markers of resistance to monitor the spread of carbapenem-non-susceptible organisms in healthcare settings.",
+        "submissionType": "510(k) Number: K152614",
+        "regulatoryInformation": "Class II, 21 CFR 866.1640 (Antimicrobial susceptibility test powder), Product code: PMY- System, nucleic acid amplification test, DNA, carbapenem non-susceptible gram negative organism, colony, OOI-Real-time nucleic acid amplification system",
+        "indicationsForUse": "The Xpert Carba-R Assay is intended for the detection and differentiation of the blaKPC, blaNDM, blaVIM, blaOXA-48, and blaIMP gene sequences associated with carbapenem-non-susceptible pure colonies of Enterobacteriaceae, Acinetobacter baumannii, or Pseudomonas aeruginosa grown on blood agar or MacConkey agar.",
+        "predicateDevice": "Xpert vanA Assay, 510(k) number: K092953",
+        "applicant": "Cepheid",
+        "performanceCharacteristics": "The Xpert Carba-R Assay demonstrated an overall sensitivity and specificity of 100% (95% CI: 99.0-100) and 98.1% (95% CI: 93.2-99.5) for blood agar, and 100% (95% CI: 99.0-100) and 97.1% (95% CI: 91.8-99.0) for MacConkey agar, relative to the reference method.",
+        "clinicalStudies": "A multi-center study with 467 compliant samples, demonstrating an overall sensitivity and specificity of 100% and 98.1% for blood agar, and 100% and 97.1% for MacConkey agar."
+    },
+    "K143736.txt": null,
+    "K162705.txt": {
+        "deviceName": "VALIDATE D-Dimer Calibration Verification/Linearity Test Kit",
+        "deviceDescription": "The VALIDATE D-Dimer Calibration Verification/Linearity Test Kit consists of assayed quality control materials used to verify the relationship between the theoretical and actual quantitative performance of D-Dimer.",
+        "intendedUse": "For in vitro diagnostic use in the quantitative determination of linearity, calibration verification and verification of reportable range for the following analyte: D-Dimer in a clinical laboratory setting by laboratory personnel.",
+        "submissionType": "510(k) Number: K162705",
+        "regulatoryInformation": "21 CFR 864.5425, Multipurpose system for in vitro coagulation studies, Class II, Product code: GGN, Plasma, Coagulation Control, Panel: Hematology (81)",
+        "indicationsForUse": "Same as Intended use",
+        "predicateDevice": "VALIDATE D-Dimer Calibration Verification/Linearity Test Kit, Predicate 510(k) number: K152961",
+        "applicant": "Maine Standards Company LLC",
+        "performanceCharacteristics": "Precision/Reproducibility, Linearity/assay reportable range, Traceability, Stability, Expected values (controls, calibrators, or methods)",
+        "clinicalStudies": "Not applicable"
+    },
+    "K192815.txt": {
+        "deviceName": "Elecsys BRAHMS PCT",
+        "deviceDescription": "a two-step sandwich immunoassay with streptavidin microparticles and an electrochemiluminescence detection system",
+        "intendedUse": "for use as an aid in the risk assessment of critically ill patients on their first day of ICU admission for progression to severe sepsis and septic shock",
+        "submissionType": "Traditional 510(k) Premarket Notification",
+        "regulatoryInformation": "Class II, 21 CFR 866.3215 - Device to detect and measure non-microbial analyte(s) in human clinical specimens to aid in assessment of patients with suspected sepsis",
+        "indicationsForUse": "Immunoassay for the in vitro quantitative determination of PCT (procalcitonin) in human serum and plasma (K2 \u2013EDTA, K3-EDTA and Li-Heparin)",
+        "predicateDevice": "Elecsys BRAHMS PCT (K173927)",
+        "applicant": "Roche Diagnostics",
+        "performanceCharacteristics": "Precision, Reproducibility, Linearity, Analytical Specificity, Interference, Limit of Detection, Limit of Quantitation, Hook Effect",
+        "clinicalStudies": "Not Applicable"
+    },
+    "K183324.txt": {
+        "deviceName": "Sensititre 20 - 24 hour Haemophilus influenzae/Streptococcus pneumoniae MIC or Breakpoint Susceptibility System with Omadacycline",
+        "deviceDescription": "Sensititre MIC Susceptibility MIC panels are multi-well microtiter plates, dosed with dried, stabilized antimicrobials. It is a miniaturized version of the classic broth dilution method and can provide both qualitative and quantitative susceptibility results.",
+        "intendedUse": "The Sensititre Haemophilus influenzae/Streptococcus pneumoniae plates are in vitro diagnostic products for clinical susceptibility testing of Haemophilus influenzae, Streptococcus pneumoniae, and Streptococcus species.",
+        "submissionType": "510(k) SUBSTANTIAL EQUIVALENCE DETERMINATION",
+        "regulatoryInformation": "Class II, Product code: JWY \u2013 Manual Antimicrobial Susceptibility Test System, LRG \u2013 Instrument for Auto Reader and Instrumentation of Overnight Susceptibility Systems, LTT \u2013 Panels, Test, Susceptibility, Antimicrobial, Regulation section: 866.1640 Antimicrobial Susceptibility Test Powder",
+        "indicationsForUse": "The Sensititre 20 - 24 hour Haemophilus influenzae/Streptococcus pneumoniae MIC or Breakpoint Susceptibility System is an in vitro diagnostic product for clinical susceptibility testing of fastidious isolates.",
+        "predicateDevice": "Sensititre Haemophilus/Streptococcus pneumoniae (HP) MIC Plates, 510(k) number: K040846",
+        "applicant": "ThermoFisher Scientific",
+        "performanceCharacteristics": "The device has demonstrated a high level of essential agreement and category agreement with the reference method for the tested organisms.",
+        "clinicalStudies": "Clinical studies were conducted to evaluate the performance of the device, including a reproducibility study and a comparison study with the predicate device."
+    },
+    "K172745.txt": {
+        "deviceName": "ImmuGlo HEp-2 Elite IFA",
+        "deviceDescription": "an indirect immunofluorescence assay (IFA) to detect IgG anti-nuclear antibodies (ANA) against proteins presented in HEp-2 cell lines",
+        "intendedUse": "The ImmuGlo HEp-2 Elite IFA is an indirect immunofluorescence antibody test for the qualitative or semi-quantitative detection of anti-nuclear antibodies (ANA) of the IgG isotype in human serum utilizing standard HEp-2 cells and engineered HEp-2 cells as a substrate",
+        "submissionType": "New device",
+        "regulatoryInformation": "21 CFR \u00a7866.5100 \u2012 Antinuclear antibody immunological test system, Class II, Product code: DHN \u2012 Antinuclear Antibody, Indirect Immunofluorescent, Antigen, Control",
+        "indicationsForUse": "The ImmuGlo HEp-2 Elite IFA is intended for use as an aid in the diagnosis of systemic rheumatic diseases in conjunction with other clinical and laboratory findings",
+        "predicateDevice": "ImmuGlo ANTINUCLEAR ANTIBODY (ANA) TEST (HEP-2) CELLS, K883883",
+        "applicant": "IMMCO Diagnostics, Inc.",
+        "performanceCharacteristics": "Analytical performance: Precision, Linearity, Traceability, Stability, Expected values (controls, calibrators, or methods), Detection limit, Analytical specificity",
+        "clinicalStudies": "Clinical Sensitivity and Specificity: 78.1% (72.7 \u2012 82.8%), 75.1% (71.1 \u2012 78.7%); Clinical studies for individual diseases: Sj\u00f6gren's syndrome, Systemic lupus erythematosus, Systemic sclerosis, Autoimmune disease controls, Inflammatory disease controls, Cancer, Infectious disease controls"
+    },
+    "K161510.txt": {
+        "deviceName": "VITEK 2 AST-GN Ceftolozane/Tazobactam",
+        "deviceDescription": "The VITEK 2 AST card is a miniaturized, abbreviated and automated version of the doubling dilution technique for determining the minimum inhibitory concentration (MIC).",
+        "intendedUse": "The VITEK 2 Antimicrobial Susceptibility Test (AST) is intended to be used with the VITEK 2 Systems for the automated quantitative or qualitative susceptibility testing of isolated colonies for the most clinically significant aerobic gram-negative bacilli, Staphylococcus spp., Enterococcus spp., Streptococcus spp. and clinically significant yeast.",
+        "submissionType": "510(k) SUBSTANTIAL EQUIVALENCE DETERMINATION",
+        "regulatoryInformation": "Class II, 21 CFR 866.1645, Product code(s): LON, LTW, LTT",
+        "indicationsForUse": "VITEK 2 Gram Negative Ceftolozane/Tazobactam is designed for antimicrobial susceptibility testing of Gram negative bacilli and is intended for use with the VITEK 2 and VITEK 2 Compact Systems as a laboratory aid in the determination of in vitro susceptibility to antimicrobial agents.",
+        "predicateDevice": "VITEK 2 AST-GN Doxycycline, K121546",
+        "applicant": "bioM\u00e9rieux, Inc.",
+        "performanceCharacteristics": "Essential Agreement (EA) of 94.8%, Category Agreement (CA) of 98.4%, minor discrepancy rate of 1%, major error discrepancy rate of 0.4%, and very major error discrepancy rate of 1.4%",
+        "clinicalStudies": "A total of 1064 clinical and challenge isolates were evaluated, with an overall performance of EA of 94.8% and CA of 98.4%"
+    },
+    "K181915.txt": {
+        "deviceName": "PixoTest POCT System",
+        "deviceDescription": "The iXensor PixoTest POCT System consists of the following components: PixoTest POCT Analyzer and PixoTest A1c Test Kit",
+        "intendedUse": "for the quantitative measurement of glycated hemoglobin (%HbA1c) in venous whole blood samples",
+        "submissionType": "New device",
+        "regulatoryInformation": "Classification Name: Assay, Glycosylated Hemoglobin, Regulation: 21 CFR 864.7470, Device Class: II",
+        "indicationsForUse": "to monitor long term glycemic control in individuals previously diagnosed with diabetes mellitus",
+        "predicateDevice": "SD A1cCare System",
+        "applicant": "iXensor Co., LTD.",
+        "performanceCharacteristics": "The PixoTest POCT System has a precision CV of < 3.8% at 5.3% HbA1c, < 3.3% at 6.2% HbA1c, < 3.7% at 6.8% HbA1c, < 3.1% at 7.8% HbA1c, and < 2.6% at 12.0% HbA1c",
+        "clinicalStudies": "Not applicable"
+    },
+    "K182389.txt": {
+        "deviceName": "Sysmex XN-L Automated Hematology Analyzer",
+        "deviceDescription": "The XN-L analyzer is a quantitative multi-parameter automated differential cell counter that classifies and enumerates whole blood and body fluid parameters by means of electrical impedance, laser light scattering, and fluorescent labeling.",
+        "intendedUse": "The Sysmex XN-L analyzer is intended for in vitro diagnostic use in screening patient populations found in clinical laboratories.",
+        "submissionType": "Expand Intended Use to include pediatric subjects under the age of 2 years old.",
+        "regulatoryInformation": "Class II, 21 CFR 864.5220, Automated differential cell counter, Product code: GKZ, Counter, Differential Cell",
+        "indicationsForUse": "The XN-L analyzer classifies and enumerates the following parameters in venous and capillary whole blood: WBC, RBC, HGB, HCT, MCV, MCH, MCHC, PLT, NEUT%/#, LYMPH%/#, MONO%/#, EO%/#, BASO%/#, IG%/#, RDW-CV, RDW-SD, MPV, RET%/#, IRF, RET-He and has a Body Fluid mode for body fluids.",
+        "predicateDevice": "Sysmex XN-Series (XN-10, XN-20) Automated Hematology Analyzer, K112605",
+        "applicant": "Sysmex America Inc.",
+        "performanceCharacteristics": "Analytical Performance: Method comparison, Precision/Reproducibility, Linearity, Carryover, Interfering Substances",
+        "clinicalStudies": "A total of 52 pediatric samples under the age of 2 years old were collected across three clinical pediatric sites."
+    },
+    "K183415.txt": {
+        "deviceName": "VITEK 2 AST-Gram Negative Imipenem",
+        "deviceDescription": "The VITEK 2 AST card is a miniaturized, abbreviated and automated version of the doubling dilution technique for determining the minimum inhibitory concentration (MIC).",
+        "intendedUse": "The VITEK 2 Gram-negative Susceptibility Card is intended for use with the VITEK 2 Systems in clinical laboratories as an in vitro test to determine the susceptibility of clinically significant aerobic Gram-negative bacilli to antimicrobial agents when used as instructed.",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": "Class II, 21 CFR 866.1645 Fully Automated Short-Term Incubation Cycle Antimicrobial Susceptibility System",
+        "indicationsForUse": "Antimicrobial susceptibility testing of Gram negative bacilli",
+        "predicateDevice": "VITEK 2 AST-GN Amikacin",
+        "applicant": "bioM\u00e9rieux, Inc.",
+        "performanceCharacteristics": "Essential Agreement (EA) of 95.9% and Category Agreement (CA) of 95.4% for all organism groups combined",
+        "clinicalStudies": "Clinical studies were conducted at three external sites and one internal site, testing 385 clinical isolates and 218 challenge isolates"
+    },
+    "K173927.txt": {
+        "deviceName": "Elecsys BRAHMS PCT",
+        "deviceDescription": "The Elecsys BRAHMS PCT assay is a two-step sandwich immunoassay with streptavidin microparticles and an electrochemiluminescence detection system.",
+        "intendedUse": "Immunoassay for the in vitro quantitative determination of PCT (procalcitonin) in human serum and plasma (K2-EDTA, K3-EDTA and Li-Heparin).",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": "Class II (Special Controls), 21 CFR 866.3215, Product codes: PMT, Panel: 83 - (Microbiology)",
+        "indicationsForUse": "To aid in the risk assessment of critically ill patients on their first day of ICU admission for progression to severe sepsis and septic shock, to determine the change in PCT level over time as an aid in assessing the cumulative 28-day risk of all-cause mortality for patients diagnosed with severe sepsis or septic shock, to aid in decision making on antibiotic therapy, for inpatients or patients in the emergency department with suspected or confirmed lower respiratory tract infections (LRTI), to aid in decision making on antibiotic discontinuation for patients with suspected or confirmed sepsis.",
+        "predicateDevice": "BRAHMS PCT sensitive KRYPTOR",
+        "applicant": "Roche Diagnostics",
+        "performanceCharacteristics": "Reproducibility/Precision: The repeatability and intermediate precision studies of the Elecsys BRAHMS PCT assay were conducted using the cobas e 411 analyzer. Linearity: Linearity was confirmed in the range of 0.02 ng/mL to 100 ng/mL.",
+        "clinicalStudies": "The clinical performance of the Elecsys BRAHMS PCT assay was establishing with multicenter testing of retrospective specimens available as frozen samples from adult patients diagnosed with severe sepsis or septic shock."
+    },
+    "K172109.txt": {
+        "deviceName": "Liofilchem MIC Test Strip (MTS)",
+        "deviceDescription": "The Erythromycin MIC Test Strip (MTS) consists of specialized paper impregnated with a predefined concentration gradient of Erythromycin across 15 two-fold dilutions like those of a conventional MIC method.",
+        "intendedUse": "The Liofilchem MIC Test Strip (MTS) is a quantitative method intended for the in vitro determination of antimicrobial susceptibility of bacteria.",
+        "submissionType": "510(k) SUBSTANTIAL EQUIVALENCE DETERMINATION",
+        "regulatoryInformation": "Regulation section: 866.1640 Antimicrobial Susceptibility Test Powder, Classification: II, Product code: JWY - Manual Antimicrobial Test Systems",
+        "indicationsForUse": "Staphylococcus aureus",
+        "predicateDevice": "Liofilchem MTS, vancomycin",
+        "applicant": "Liofilchem s.r.l.",
+        "performanceCharacteristics": "Precision/Reproducibility: greater than 95%, Linearity/assay reportable range: Not applicable, Traceability, Stability, Expected values: within the expected range greater than 95% of the time",
+        "clinicalStudies": "Clinical testing was conducted at three sites, 428 clinical and challenge isolates were tested, with 94.9% Essential Agreement and 97.2% Category Agreement"
+    },
+    "K150617.txt": {
+        "deviceName": "cobas HSV 1 and 2 Test",
+        "deviceDescription": "An in vitro molecular diagnostic test for the qualitative detection and differentiation of HSV-1 and HSV-2 DNA in clinician-collected, external anogenital lesion specimens from symptomatic male and female patients",
+        "intendedUse": "The cobas HSV 1 and 2 Test is intended for use as an aid in diagnosis of anogenital HSV-1 and HSV-2 infections in symptomatic patients",
+        "submissionType": "Clearance of New Device",
+        "regulatoryInformation": "21 CFR 866.3305, Class II, Product code: OQO",
+        "indicationsForUse": "The cobas HSV 1 and 2 Test is intended for use as an aid in diagnosis of anogenital HSV-1 and HSV-2 infections in symptomatic patients",
+        "predicateDevice": "BD ProbeTec Herpes Simplex Viruses (HSV 1 & 2) Qx Amplified DNA Assays",
+        "applicant": "Roche Molecular Systems, Inc.",
+        "performanceCharacteristics": "The performance characteristics of the cobas HSV 1 and 2 Test include analytical sensitivity, specificity, and clinical performance",
+        "clinicalStudies": "The clinical performance of the cobas HSV 1 and 2 Test was established in a prospective, multi-site, investigation using the combined results of culture and PCR followed by bi-directional Sanger sequencing as the reference method"
+    },
+    "K151767.txt": {
+        "deviceName": "Trinidad CH system",
+        "deviceDescription": "a floor model, fully automated, microprocessor-controlled, integrated instrument system that uses prepackaged reagent packs to measure a variety of analytes in human body fluids",
+        "intendedUse": "for in vitro diagnostic use in the quantitative determination of sodium, potassium, chloride, and albumin in human serum, plasma, and urine",
+        "submissionType": "New devices",
+        "regulatoryInformation": "Class II, 21 CFR 862.1665 Sodium Test System, 21 CFR 862.1600 Potassium Test System, 21 CFR 862.1170 Chloride Test System, 21 CFR 862.1035 Albumin Test System",
+        "indicationsForUse": "diagnosis and treatment of diseases involving electrolyte imbalance, such as aldosteronism, diabetes insipidus, adrenal hypertension, Addison\u2019s disease, dehydration, and inappropriate antidiuretic hormone secretion",
+        "predicateDevice": "Siemens ADVIA 1800 Chemistry System including ISE and Albumin BCP Assays",
+        "applicant": "Siemens Healthcare Diagnostics Inc.",
+        "performanceCharacteristics": "precision, linearity, traceability, stability, and analytical specificity",
+        "clinicalStudies": "Not Applicable"
+    },
+    "K150144.txt": {
+        "deviceName": "VisuCon-F Low Fibrinogen Control Plasma",
+        "deviceDescription": "The VisuCon-F Low Fibrinogen Control Plasma is a pool of de-fibrinated citrated human plasma collected from a minimum of 10 donors, buffered with 0.02 M HEPES buffer.",
+        "intendedUse": "The VisuCon-F Low Fibrinogen Control Plasma is an assayed control plasma prepared from de-fibrinated human plasma intended for use in the quality control of quantitative fibrinogen assays in the low abnormal range.",
+        "submissionType": "Clearance of a new device",
+        "regulatoryInformation": "21 CFR \u00a7864.5425, Multipurpose system for in vitro coagulation studies, Class II, Product code: GGN, Plasma, Coagulation Control",
+        "indicationsForUse": "Same as intended use",
+        "predicateDevice": "Precision Biologic Inc., Cryocheck Low Fibrinogen Control",
+        "applicant": "Affinity Biologicals Inc.",
+        "performanceCharacteristics": "The VisuCon-F Low Fibrinogen control is to be utilized to monitor the performance of fibrinogen assays in the low abnormal range using the Clauss clotting method in mechanical instruments.",
+        "clinicalStudies": "Not applicable"
+    },
+    "K153137.txt": null,
+    "K170127.txt": {
+        "deviceName": "HardyDisk Ceftolozane/Tazobactam, (30/10\u00b5g) - C/T40",
+        "deviceDescription": "The HardyDisk AST Disks utilize 6-mm diameter white filter paper disks. The disks are prepared by impregnating absorbent paper with a known concentration of 30\u00b5g Ceftolozane and 10\u00b5g of Tazobactam.",
+        "intendedUse": "Use of HardyDisk Ceftolozane/Tazobactam, (30/10\u00b5g) - C/T40, for in vitro agar diffusion susceptibility testing is indicated when there is a need to determine the susceptibility of bacteria to Ceftolozane/Tazobactam.",
+        "submissionType": "510(k) SUBSTANTIAL EQUIVALENCE DETERMINATION",
+        "regulatoryInformation": "21 CFR 866.1620 Antimicrobial Susceptibility Test Disc, Class II, Product code: JTN \u2013 Susceptibility Test Disc, Antimicrobial",
+        "indicationsForUse": "The concentration of Ceftolozane/Tazobactam, (30/10\u00b5g) - C/T40, has been shown to be active against susceptible isolates of the following microorganisms with in vitro use: Citrobacter koseri, Morganella morganii, Proteus vulgaris, Providencia rettgeri, Providencia stuartii, Serratia liquefacians, and Serratia marcescens.",
+        "predicateDevice": "HardyDisk Tigecycline 15\u00b5g, K062245",
+        "applicant": "Hardy Diagnostics",
+        "performanceCharacteristics": "Descriptive characteristics were sufficient for this Ceftolozane/Tazobactam disk. The studies evaluated by FDA/CDER at the time of Ceftolozane/Tazobactam approval were used for this review.",
+        "clinicalStudies": "Not applicable"
+    },
+    "K143548.txt": {
+        "deviceName": "TRUE METRIX GO Blood Glucose Meter",
+        "deviceDescription": "The TRUE METRIX GO Self Monitoring Blood Glucose System contains a blood glucose meter and TRUE METRIXTM Blood Glucose Test Strips",
+        "intendedUse": "The TRUE METRIX GO Self Monitoring Blood Glucose System is intended for the quantitative measurement of glucose in fresh capillary whole blood samples drawn from the fingertip",
+        "submissionType": "New device",
+        "regulatoryInformation": "21 CFR 862.1345, Glucose test system, Class II, Product code: NBW, System, Test, Blood Glucose, Over the Counter, LFR, Glucose Dehydrogenase, Glucose",
+        "indicationsForUse": "The TRUE METRIX GO Self Monitoring Blood Glucose System is intended to be used by a single person and not shared, for self-testing outside the body by people with diabetes at home as an aid to monitor the effectiveness of diabetes control",
+        "predicateDevice": "Bayer Ascensia Contour Blood Glucose Monitoring System",
+        "applicant": "Trividia Health, Inc.",
+        "performanceCharacteristics": "The system quantitatively measures blood glucose levels using an amperometric method, employs flavin adenine dinucleotide-glucose dehydrogenase enzyme chemistry, and has a claimed measurement range of 20-600 mg/dL",
+        "clinicalStudies": "User performance study, method comparison study with YSI reference method, and other clinical supportive data"
+    },
+    "K163517.txt": {
+        "deviceName": "Liofilchem MIC Test Strip (MTS)",
+        "deviceDescription": "The Telavancin MIC Test Strip (MTS) is made of special high quality paper impregnated with a predefined concentration of gradient Telavancin, across 15 two-fold dilutions like those of a conventional MIC method.",
+        "intendedUse": "The Liofilchem MIC Test Strip (MTS) is a quantitative method intended for the in vitro determination of antimicrobial susceptibility of non-fastidious Gram negative and Gram positive aerobic bacteria and fastidious bacteria",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": {
+            "regulationSection": "866.1640 Antimicrobial Susceptibility Test Powder",
+            "classification": "II",
+            "productCode": "JWY \u2013 Manual Antimicrobial Test Systems",
+            "panel": "83 \u2013 Microbiology"
+        },
+        "indicationsForUse": "Staphylococcus aureus (including methicillin-resistant isolates) and Enterococcus faecalis (vancomycin-susceptible isolates only)",
+        "predicateDevice": "Liofilchem MIC Test Strip (MTS) \u2013 Vancomycin 0.016 \u2013 256 \u03bcg/mL",
+        "applicant": "Liofilchem s.r.l.",
+        "performanceCharacteristics": {
+            "precisionReproducibility": "Reproducibility testing was performed using three methicillin-sensitive Staphylococcus aureus isolates, two methicillin-resistant Staphylococcus aureus isolate, one vancomycin-resistant Staphylococcus aureus isolate, one vancomycin-intermediate Staphylococcus aureus isolate, and three Enterococcus faecalis (vancomycin-sensitive) isolates.",
+            "linearityAssayReportableRange": "Not applicable"
+        },
+        "clinicalStudies": "Not applicable"
+    },
+    "K152495.txt": {
+        "deviceName": "Wondfo Propoxyphene Urine Test",
+        "deviceDescription": "The Wondfo Propoxyphene Urine Test is a rapid test for the qualitative detection of Propoxyphene in urine samples.",
+        "intendedUse": "The test is intended for prescription use and over the counter use.",
+        "submissionType": "Addition of an over-the-counter (OTC) claim",
+        "regulatoryInformation": "21 CFR \u00a7862.3700, Class II, Product code: JXN",
+        "indicationsForUse": "The Wondfo Propoxyphene Urine Test is an immunochromatographic assay for the qualitative determination of d-Propoxyphene in human urine at a cutoff concentration of 300 ng/mL.",
+        "predicateDevice": "Wondfo Propoxyphene Urine Test, k121557",
+        "applicant": "Guangzhou Wondfo Biotech Co., Ltd.",
+        "performanceCharacteristics": "See k121557 for performance characteristics such as precision, linearity, and analytical specificity.",
+        "clinicalStudies": "A lay user study was conducted with 280 participants to test the ease of use of the device, with results showing that all lay users indicated that the device instructions can be easily followed."
+    },
+    "K181324.txt": null,
+    "K162840.txt": {
+        "deviceName": "Elecsys Vitamin D total II",
+        "deviceDescription": "A quantitative electrochemiluminescence immunoassay for the determination of total 25-hydroxyvitamin D in human serum and plasma",
+        "intendedUse": "The Elecsys Vitamin D total II assay is intended for the quantitative determination of total 25-hydroxyvitamin D in human serum and plasma. This assay is to be used as an aid in the assessment of vitamin D sufficiency in adults",
+        "submissionType": "New Device",
+        "regulatoryInformation": "Class II, 21 CFR 862.1825, Vitamin D Test System, 21 CFR 862.1150, Calibrator, 21 CFR 862.1660, Quality Control Material (assayed and unassayed)",
+        "indicationsForUse": "The Elecsys Vitamin D total II assay is intended for the quantitative determination of total 25-hydroxyvitamin D in human serum and plasma. This assay is to be used as an aid in the assessment of vitamin D sufficiency in adults",
+        "predicateDevice": "Elecsys Vitamin D Assay",
+        "applicant": "Roche Diagnostics",
+        "performanceCharacteristics": "The assay has a measuring range of 5.0-100 ng/mL, a Limit of Blank (LoB) of 2 ng/mL, a Limit of Detection (LoD) of 3 ng/mL, and a Limit of Quantitation (LoQ) of 5 ng/mL. The assay also has a precision of 1.6-8.7% CV and a linearity of 5.0-100 ng/mL",
+        "clinicalStudies": "Not applicable"
+    },
+    "K173887.txt": {
+        "deviceName": "cobas CT/NG",
+        "deviceDescription": "cobas CT/NG assay for use on the cobas 6800/8800 Systems",
+        "intendedUse": "The cobas CT/NG assay is an automated, qualitative in vitro nucleic acid diagnostic test, that utilizes real-time polymerase chain reaction (PCR), for the direct detection of Chlamydia trachomatis (CT) and/or Neisseria gonorrhoeae (NG) DNA in male and female urine, clinician-instructed self-collected vaginal swab specimens (collected in a clinical setting), clinician-collected vaginal swab specimens, and endocervical swab specimens, all collected in cobas PCR Media (Roche Molecular Systems, Inc.), and cervical specimens collected in PreservCyt solution.",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": "Regulation section: 21 CFR 866.3390 - Neisseria spp. direct serological test reagents, Classification: Class II, Product code: LSL - DNA-Reagents, Neisseria, MKZ - DNA Probe, Nucleic Acid Amplification, Chlamydia, OOI - Real Time Nucleic Acid Amplification System",
+        "indicationsForUse": "For prescription use only",
+        "predicateDevice": "cobas CT/NG v2.0 Test",
+        "applicant": "Roche Molecular Systems, Inc.",
+        "performanceCharacteristics": "Precision/Reproducibility: The precision of the cobas CT/NG assay was examined in-house using a panel composed of CT and NG cultures diluted into the following backgrounds: 1. negative endocervical swab specimen matrix collected in cobas PCR Media, 2. negative urine matrix mixed with cobas PCR Media, and 3. negative cervical specimen matrix collected in PreservCyt Solution.",
+        "clinicalStudies": "The clinical performance of cobas CT/NG was established in a multi-site, prospective collection study by comparing the results to a Patient Infected Status (PIS) that used a combination of FDA-cleared NAATs for urogenital specimens in each patient."
+    },
+    "K162895.txt": {
+        "deviceName": "Elecsys Troponin T Gen 5 STAT Immunoassay",
+        "deviceDescription": "The reagents are: Streptavidin-coated microparticles, Anti-troponin T-Ab~biotin, Anti-troponin T-Ab~Ru(bpy)",
+        "intendedUse": "For the in vitro quantitative determination of cardiac troponin T (cTnT) in lithium heparin plasma to aid in the diagnosis of myocardial infarction",
+        "submissionType": "New device",
+        "regulatoryInformation": "Class II, 21 CFR 862.1215 - Creatine phosphokinase/creatine kinase or isoenzymes test system",
+        "indicationsForUse": "For prescription use, for in vitro diagnostic use",
+        "predicateDevice": "Elecsys Troponin T STAT Assay, Elecsys Troponin T CalSet, Elecsys PreciControl Troponin, Elecsys CA 15-3 CalCheck 5",
+        "applicant": "Roche Diagnostics",
+        "performanceCharacteristics": "The device has a precision of 2.3-10.3% CV, and a linearity of 6-10000 ng/L",
+        "clinicalStudies": "The device was studied in 718 subjects with symptoms of chest pain, and had a sensitivity of 93.5% and a specificity of 86.4% at the 19 ng/L cut-off"
+    },
+    "K180264.txt": {
+        "deviceName": "Gold Standard Diagnostics Borrelia burgdorferi IgG/IgM ELISA Test Kit",
+        "deviceDescription": "The Gold Standard Diagnostics Borrelia burgdorferi IgG/IgM test consists of antigenic proteins specific for B. burgdorferi (sensu stricto) which are either purified or cloned and expressed in the surrogate host E.coli.",
+        "intendedUse": "The Gold Standard Diagnostics Borrelia burgdorferi IgG/IgM ELISA Test Kit is intended as a qualitative presumptive (first-step) test for the detection of IgG and IgM antibodies to B. burgdorferi sensu stricto in human serum from symptomatic patients or people suspected of infection.",
+        "submissionType": "510(k) submission for a new device",
+        "regulatoryInformation": {
+            "regulationSection": "21 CFR 866.3830",
+            "classification": "Class II",
+            "productCode": "LSR"
+        },
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "Trinity Biotech Captia Borrelia burgdorferi IgG/IgM ELISA Test Kit",
+        "applicant": "Gold Standard Diagnostics",
+        "performanceCharacteristics": {
+            "precision": "Within-Run CV: 4.2-11.9%, Between-Run CV: 7.3-12.8%, Between-Days CV: 6.8-11.1%, Between-Sites CV: 1.8-3.7%",
+            "analyticalSpecificity": "97.3% (endemic region), 98.0% (non-endemic region)",
+            "detectionLimit": "Not provided",
+            "assayCutOff": "Determined by testing 200 normal sera, mean + 2 standard deviations"
+        },
+        "clinicalStudies": {
+            "sensitivity": "76.3-100% (early, disseminated, late stages of Lyme disease)",
+            "specificity": "Not provided"
+        }
+    },
+    "K160682.txt": {
+        "deviceName": "CONTOUR NEXT ONE Blood Glucose Meter",
+        "deviceDescription": "The Contour NEXT One Blood Glucose Monitoring System consists of the Contour Next One blood glucose meter, the Contour Next test strips, two levels of the Contour Next control solutions, lancing device, lancets, clear endcap, and user manual",
+        "intendedUse": "The Contour Next ONE blood glucose monitoring system is intended to be used for the quantitative measurement of glucose in fresh capillary whole blood drawn from the fingertips or palm as an aid in monitoring the effectiveness of a diabetes control program",
+        "submissionType": "New device",
+        "regulatoryInformation": {
+            "regulationSection": "21 CFR 862.1345",
+            "classification": "Class II",
+            "productCode": [
+                "NBW",
+                "LFR"
+            ]
+        },
+        "indicationsForUse": "The Contour Next ONE blood glucose monitoring system is intended to be used by a single person and should not be shared. The Contour Next ONE blood glucose monitoring system is intended for self-testing outside the body (in vitro diagnostic use) by people with diabetes at home as an aid in monitoring the effectiveness of a diabetes control program",
+        "predicateDevice": "CONTOUR NEXT USB Blood Glucose Meter",
+        "applicant": "Ascensia Diabetes Care",
+        "performanceCharacteristics": {
+            "analyticalPerformance": {
+                "precisionReproducibility": "Within run precision was performed using five venous whole blood samples spiked with glucose to five levels",
+                "linearityAssayReportableRange": "The claimed measuring range for this device is 20-600 mg/dL",
+                "traceabilityStabilityExpectedValues": "Contour Next Test strip stability protocols and acceptance criteria were reviewed and for to be acceptable in k111268"
+            }
+        },
+        "clinicalStudies": {
+            "clinicalSensitivity": "Not applicable",
+            "clinicalSpecificity": "Not applicable",
+            "otherClinicalSupportiveData": "To assess the performance of the Contour Next One Blood Glucose Monitoring System in the hands of lay users the sponsor performed a study with 372 lay user participants"
+        }
+    },
+    "K181092.txt": {
+        "deviceName": "CHROMID CARBA agar",
+        "deviceDescription": "A selective and differential chromogenic medium for the qualitative detection and presumptive identification of carbapenemase-producing Escherichia coli and Klebsiella pneumoniae in rectal swab specimens from patients at risk of colonization.",
+        "intendedUse": "For the qualitative detection and presumptive identification of carbapenemase-producing Escherichia coli and Klebsiella pneumoniae in rectal swab specimens from patients at risk of colonization.",
+        "submissionType": "510(k) Submission",
+        "regulatoryInformation": "Class II, 21 CFR 866.1700: Culture medium for antimicrobial susceptibility tests, Product code: JSO",
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "bioM\u00e9rieux CHROMID VRE agar, 510(k) number: K091025",
+        "applicant": "bioM\u00e9rieux SA",
+        "performanceCharacteristics": "Analytical sensitivity: 1.5 x 10^3 CFU/mL, Analytical specificity: evaluated with 59 organisms, Clinical sensitivity: evaluated in a prospective clinical study",
+        "clinicalStudies": "Prospective Clinical Study, Contrived Specimen Study, Challenge Study"
+    },
+    "K170464.txt": {
+        "deviceName": "StatStrip Xpress Blood Glucose Monitoring System",
+        "deviceDescription": "The modified StatStrip Xpress Blood Glucose Monitoring System, which includes StatStrip Xpress Blood Glucose Monitor, StatStrip Xpress Glucose Test Strips, and StatStrip Xpress Glucose Control Solutions (Levels 1, 2, and 3, sold separately), is identical to the device cleared in k160156.  Only labeling changes have been made to the outer box labeling and test strips package insert.",
+        "intendedUse": "The StatStrip Xpress Blood Glucose Monitoring System is intended to be used for the quantitative measurement of glucose in fresh capillary whole blood obtained from the fingertip.  It is intended for single-patient home use and should not be shared.  It is intended for self-testing outside the body by people with diabetes mellitus as an aid to monitor the effectiveness of diabetes control.",
+        "submissionType": "This submission seeks changes in labeling for the previously cleared StatStrip Xpress Blood Glucose Monitoring System (k160156).",
+        "regulatoryInformation": "21 CFR 862.1345, Glucose test system, Class II, Product code: NBW, System, Test, Blood Glucose, Over The Counter",
+        "indicationsForUse": "The StatStrip Xpress Blood Glucose Monitoring System is intended for use outside the body (in vitro diagnostic use).",
+        "predicateDevice": "StatStrip Xpress Blood Glucose Monitoring System, k160156",
+        "applicant": "Nova Biomedical Corporation",
+        "performanceCharacteristics": "The StatStrip Xpress Blood Glucose Monitoring System measures glucose levels using disposable test strips and a handheld meter. The reportable range for the StatStrip Xpress Blood Glucose Monitoring System is 20 to 600 mg/dL.",
+        "clinicalStudies": "Accuracy in the hands of the intended users was established in k160156. A human factors study was performed using the accuracy labeling design selected in the initial accuracy design phase assessment."
+    },
+    "K150041.txt": {
+        "deviceName": "CORA System",
+        "deviceDescription": "The CORA System consists of a four-channel diagnostic analyzer with integrated computer module, system reagents, and Abnormal Quality Control material and microfluidic test cartridges.",
+        "intendedUse": "The CORA System is intended for in vitro diagnostic use to provide semi-quantitative indications of the hemostasis state of a blood sample.",
+        "submissionType": "New device clearance",
+        "regulatoryInformation": "Class II, 21 CFR 864.5425, 21 CFR 864.5700",
+        "indicationsForUse": "The indication for CORA System use is with adult patients where an evaluation of their blood hemostasis properties is desired.",
+        "predicateDevice": "Thromboelastograph Coagulation Analyzer (TEG)-5000 Series, Haemoscope Corporation",
+        "applicant": "Coramed Technologies, LLC",
+        "performanceCharacteristics": "The CORA System provides semi-quantitative indications of the hemostasis state of a blood sample, with parameters R, K, Angle, MA, and FLEV.",
+        "clinicalStudies": "Method comparison testing with the predicate device, TEG5000, was conducted at three clinical sites on patient samples."
+    },
+    "K181043.txt": {
+        "deviceName": "StatStrip Glucose Hospital Meter System",
+        "deviceDescription": "A hand held StatStrip Glucose Hospital meter, StatStrip Test Strips, Nova StatStrip Control Solutions, Nova StatStrip Linearity Test Kit solutions, docking station, Quick Reference Guide, and User Manual",
+        "intendedUse": "For point-of-care, in vitro diagnostic, multiple-patient use for the quantitative determination of glucose in capillary finger stick, venous whole blood, arterial whole blood, neonate arterial whole blood and neonate heel stick specimens throughout all hospital and all professional healthcare settings",
+        "submissionType": "Dual 510(k) and CLIA Waiver by Application",
+        "regulatoryInformation": "Product Code: PZI, Regulation Name: Glucose Test System, Regulation Section: 21 CFR 862.1345, Panel: Clinical Chemistry",
+        "indicationsForUse": "The StatStrip Glucose Hospital Meter System is intended for point-of-care, in vitro diagnostic, multiple-patient use for the quantitative determination of glucose in capillary finger stick, venous whole blood, arterial whole blood, neonate arterial whole blood and neonate heel stick specimens throughout all hospital and all professional healthcare settings",
+        "predicateDevice": "Nova StatStrip Glucose Hospital Meter System, k150281",
+        "applicant": "Nova Biomedical Corporation",
+        "performanceCharacteristics": "The system has a measuring range of 10-600 mg/dL, a measuring time of 6 seconds, and a sample volume of 1.2 \u03bcL. The system also has Wi-Fi network connectivity and stores patient test data, quality control test data, and other information relating to the patient, patient sample, operator, reagents, and meter",
+        "clinicalStudies": "Two studies were performed to compare the performance of the StatStrip Glucose Hospital Meter System with a comparator method, the Roche Cobas Modular P800 Hexokinase System. The results showed that the StatStrip Glucose Hospital Meter System was accurate and reliable for measuring glucose levels in capillary whole blood specimens"
+    },
+    "K161714.txt": {
+        "deviceName": "Immunalysis Barbiturates Urine Enzyme Immunoassay",
+        "deviceDescription": "The Immunalysis Barbiturates Urine Enzyme Immunoassay Kit reagents are provided as ready to use liquids and consist of the following reagents: The Antibody/ Substrate Reagent and The Enzyme Conjugate Reagent",
+        "intendedUse": "The Immunalysis Barbiturates Urine Enzyme Immunoassay is intended for use in laboratories for the qualitative and semi-quantitative analysis of Barbiturates in human urine with automated clinical chemistry analyzers",
+        "submissionType": "New device",
+        "regulatoryInformation": "Class II, 21 CFR 862.3150 Barbiturate test system, 21 CFR 862.3200 Clinical toxicology calibrator, Product code: DIS, DKB",
+        "indicationsForUse": "For the qualitative and semi-quantitative determination of the presence of Barbiturates in human urine",
+        "predicateDevice": "DRI Barbiturates EIA Assay, k955928",
+        "applicant": "Immunalysis Corporation",
+        "performanceCharacteristics": "The device has a cutoff of 200 ng/mL, and the assay is calibrated against Secobarbital. The precision/cutoff characterization study showed that the device performs analytically around the claimed cutoff concentration of 200 ng/mL",
+        "clinicalStudies": "Not applicable"
+    },
+    "K142965.txt": {
+        "deviceName": "Virtuoso System for IHC PR (1E2) Using the VENTANA iScan HT",
+        "deviceDescription": "The Virtuoso System for IHC PR (1E2) Using the VENTANA iScan HT is an instrument-plus-software system designed to assist the qualified pathologist in the assessment of protein expression in IHC stained histologic sections from formalin-fixed, paraffin-embedded (FFPE) breast tissues.",
+        "intendedUse": "The Virtuoso System for IHC PR (1E2) using the VENTANA iScan HT is for the digital read application. This particular Virtuoso system is intended for use as an aid to the pathologist in the qualitative detection of progesterone receptor (PR) protein in formalin-fixed, paraffin-embedded normal and neoplastic tissue.",
+        "submissionType": "New device",
+        "regulatoryInformation": "Class II, 21 CFR \u00a7864.1860, Immunohistochemistry reagents and kits, Product code: OEO - Automated Digital Image Manual Interpretation Microscope",
+        "indicationsForUse": "The CONFIRM anti-Progesterone Receptor (PR) (1E2) Rabbit Monoclonal Primary Antibody assay is indicated for use as an aid in the assessment of breast cancer patients for whom endocrine treatment is being considered (but is not the sole basis for treatment).",
+        "predicateDevice": "Virtuoso System for IHC PR (1E2), k111869",
+        "applicant": "Ventana Medical Systems, Inc.",
+        "performanceCharacteristics": "The accuracy of the Virtuoso System for IHC PR (1E2) using the VENTANA iScan HT was evaluated by comparing the IHC PR score agreement between the reference manual method (MR) using a traditional microscope and the DR application of the Virtuoso system.",
+        "clinicalStudies": "The study utilized 163 cases of de-identified, archived invasive breast carcinoma slides stained for the identification of PR using the CONFIRM anti-Progesterone Receptor (PR) (1E2) Rabbit Monoclonal Primary Antibody (Ventana)."
+    },
+    "K181889.txt": {
+        "deviceName": "MTS Penicillin 0.002-32 \u03bcg/mL",
+        "deviceDescription": "The Penicillin MIC Test Strip (MTS) consists of specialized paper impregnated with a predefined concentration gradient of Penicillin across 15 two-fold dilutions similar to dilutions used by conventional MIC methods.",
+        "intendedUse": "The Liofilchem MTS (MIC Test Strip) Penicillin 0.002-32 \u03bcg/mL is a quantitative method intended for the in vitro determination of antimicrobial susceptibility of bacteria.",
+        "submissionType": "510(k) Substantial Equivalence Determinations",
+        "regulatoryInformation": "Regulation section: 866.1640 Antimicrobial Susceptibility Test Powder, Classification: II, Product code: JWY - Manual Antimicrobial Susceptibility Test Systems, Panel: 83 \u2013 Microbiology",
+        "indicationsForUse": "The MTS Penicillin can be used to determine the MIC of penicillin against the following bacteria: Streptococcus pneumoniae, Streptococcus pyogenes (Group A), Streptococcus dysgalactiae (Group C & G), Streptococcus anginosus (Group C & G), Streptococcus constellatus (Group C & G), Streptococcus intermedius (Group C & G)",
+        "predicateDevice": "Liofilchem MTS, vancomycin (K153687)",
+        "applicant": "Liofilchem s.r.l.",
+        "performanceCharacteristics": "The overall performance for \u03b2-hemolytic Streptococcus spp. was acceptable with 100% Essential Agreement (EA) and 100% Category Agreement (CA). The overall performance for Viridans Streptococcus spp. was acceptable with 95.2% EA and 100% CA.",
+        "clinicalStudies": "Not Applicable"
+    },
+    "K181288.txt": {
+        "deviceName": "Athelas One",
+        "deviceDescription": "The Athelas One is an automated cell counter system which consists of: the Athelas One analyzer and the Athelas One Test Strips.",
+        "intendedUse": "Athelas One is indicated for use for quantitative determination of white blood cells (WBC) and Neutrophil percentages (NEUT%) in capillary or K2EDTA venous whole blood.",
+        "submissionType": "Clearance of a new device",
+        "regulatoryInformation": "21 CFR 864.5220, Automated differential cell counter, Class II, Product code: GKZ, Counter, differential cell",
+        "indicationsForUse": "Same as intended use",
+        "predicateDevice": "Sysmex XE-5000 Automated Hematology Analyzer",
+        "applicant": "Athelas Inc.",
+        "performanceCharacteristics": "Precision/Reproducibility, Linearity/assay reportable range, Traceability, Stability, Expected values, Detection limit, Analytical specificity",
+        "clinicalStudies": "Method comparison with predicate device, Matrix comparison"
+    },
+    "K183462.txt": {
+        "deviceName": "Applied Biosystems Bacillus anthracis Detection Kit",
+        "deviceDescription": "A real-time polymerase chain reaction (PCR) test kit intended for the qualitative in vitro diagnostic (IVD) detection of target DNA sequences for Bacillus anthracis (B. anthracis, or BA).",
+        "intendedUse": "The Applied Biosystems Bacillus anthracis Detection Kit is intended for use as an aid in the diagnosis of anthrax infection and results are for the presumptive identification of Bacillus anthracis.",
+        "submissionType": "510(k) SUBSTANTIAL EQUIVALENCE DETERMINATION",
+        "regulatoryInformation": "Regulation section: CFR 866.4000, Classification: Class II",
+        "indicationsForUse": "For use in CLIA-certified high-complexity laboratories in response to a confirmed Bacillus anthracis event only in accordance with the guidelines provided by public health authorities prior to or during a public health emergency.",
+        "predicateDevice": "FilmArray NGDS Warrior Panel",
+        "applicant": "MRIGlobal",
+        "performanceCharacteristics": "Real-time PCR",
+        "clinicalStudies": "Clinical studies were conducted to demonstrate the performance characteristics of the device"
+    },
+    "K180936.txt": {
+        "deviceName": "ETEST Telavancin (TLA)",
+        "deviceDescription": "ETEST consists of a thin, inert, nonporous plastic strip that is used to determine the antimicrobial susceptibility of bacteria",
+        "intendedUse": "ETEST is a quantitative technique for determination of antimicrobial susceptibility of non-fastidious Gram-negative and Gram-positive aerobic bacteria",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": {
+            "regulationSection": "866.1640 Antimicrobial Susceptibility Test Powder",
+            "classification": "II",
+            "productCode": "JWY \u2013 Manual Antimicrobial Test Systems",
+            "panel": "83 \u2013 Microbiology"
+        },
+        "indicationsForUse": "Same as the Intended Use",
+        "predicateDevice": "ETEST Ceftaroline",
+        "applicant": "bioM\u00e9rieux, Inc.",
+        "performanceCharacteristics": {
+            "analyticalPerformance": {
+                "precisionReproducibility": "100.0%",
+                "linearityAssayReportableRange": "Not applicable"
+            },
+            "comparisonStudies": {
+                "methodComparisonWithPredicateDevice": {
+                    "essentialAgreement": "98.4% for S. aureus and 91.6% for E. faecalis",
+                    "categoryAgreement": "97.9% for S. aureus and 97.6% for E. faecalis"
+                }
+            }
+        },
+        "clinicalStudies": "Not applicable"
+    },
+    "K143329.txt": {
+        "deviceName": "AmpliVue Trichomonas Assay",
+        "deviceDescription": "The AmpliVue Trichomonas Assay is a self-contained disposable amplicon detection device that uses an isothermal amplification technology named Helicase-Dependent Amplification (HDA) for the detection of Trichomonas vaginalis in clinician-collected vaginal swabs from symptomatic and asymptomatic women.",
+        "intendedUse": "The AmpliVue Trichomonas Assay is an in vitro diagnostic test, uses isothermal amplification technology (helicase-dependent amplification, HDA) for the qualitative detection of Trichomonas vaginalis nucleic acids isolated from clinician-collected vaginal swab specimens obtained from symptomatic or asymptomatic females to aid in the diagnosis of trichomoniasis.",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": "Class II, 21 CFR 866.3860, Product code: OUY - Trichomonas vaginalis nucleic acid amplification test system, Panel: 83 - Microbiology",
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "APTIMA Trichomonas vaginalis Assay (PANTHER System)",
+        "applicant": "Quidel Corporation",
+        "performanceCharacteristics": "The assay has a limit of detection (LoD) of 307 trophozoites/mL for T. vaginalis strain G3 and 921 trophozoites/mL for strain CDC888. The assay is highly sensitive and specific, with a clinical sensitivity of 100% and a clinical specificity of 98.2%.",
+        "clinicalStudies": "A multi-center study was conducted to evaluate the AmpliVue Trichomonas Assay, with a total of 992 clinician-collected vaginal swab specimens obtained from symptomatic or asymptomatic patients. The study demonstrated high sensitivity and specificity of the assay."
+    },
+    "K181379.txt": {
+        "deviceName": "H. PYLORI QUIK CHEK",
+        "deviceDescription": "a rapid membrane enzyme immunoassay for the qualitative detection of Helicobacter pylori specific antigen in a single use cassette",
+        "intendedUse": "The TECHLAB H. PYLORI QUIK CHEK test is a rapid membrane enzyme immunoassay for the qualitative detection of Helicobacter pylori specific antigen in a single use cassette.  It is intended for use with human fecal specimens to aid in the diagnosis of H. pylori infection and to demonstrate loss of H. pylori antigen following treatment.",
+        "submissionType": "510(k) SUBSTANTIAL EQUIVALENCE DETERMINATION",
+        "regulatoryInformation": {
+            "regulationSection": "21 CFR 866.3110",
+            "classification": "Class I",
+            "productCode": "LYR",
+            "panel": "2 83-Microbiology"
+        },
+        "indicationsForUse": "The TECHLAB H. PYLORI QUIK CHEK test is indicated for use with human fecal specimens to aid in the diagnosis of H. pylori infection and to demonstrate loss of H. pylori antigen following treatment.",
+        "predicateDevice": "ImmunoCard STAT! HpSA",
+        "applicant": "TechLab Inc.",
+        "performanceCharacteristics": {
+            "precisionReproducibility": "100% reproducibility for all test panels",
+            "detectionLimit": {
+                "fecalMatrix": "16.1 ng/mL",
+                "caryBlair": "13.0 ng/mL",
+                "cAndS": "20.0 ng/mL"
+            },
+            "analyticalSpecificity": "No cross-reactivity with the listed bacteria, fungi, and viruses"
+        },
+        "clinicalStudies": {
+            "clinicalSensitivity": "97.0%",
+            "clinicalSpecificity": "100%",
+            "positivePercentAgreement": "98.9%",
+            "negativePercentAgreement": "97.2%"
+        }
+    },
+    "K190219.txt": {
+        "deviceName": "Simplexa VZV Direct",
+        "deviceDescription": "A real-time polymerase chain reaction (PCR) system that enables the direct amplification and detection of VZV DNA from unprocessed cerebral spinal fluid (CSF) specimens without nucleic acid extraction",
+        "intendedUse": "For the qualitative detection of varicella-zoster virus (VZV) DNA in cerebrospinal fluid (CSF) from patients with signs and/or symptoms of meningitis and/or encephalitis",
+        "submissionType": "510(k) Number: K190219",
+        "regulatoryInformation": "Class II, 21 CFR 866.3970 - Device to detect and identify microbial pathogen nucleic acids in cerebrospinal fluid",
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "FilmArray Meningitis/Encephalitis (ME) Panel for use with FilmArray and FilmArray 2.0 systems",
+        "applicant": "DiaSorin",
+        "performanceCharacteristics": "The Limit of Detection (LoD) was determined to be the lowest concentration that could be detected positive > 95% of the time",
+        "clinicalStudies": "A total of 724 remnant cerebrospinal fluid (CSF) samples from patients suspected of VZV infection of the central nervous system (CNS) were obtained from prospective and prospectively banked collections from eight collection sites"
+    },
+    "K151265.txt": {
+        "deviceName": "SD GlucoNFC Blood Glucose Meter, SD GlucoNFC Multi Blood Glucose Meter",
+        "deviceDescription": "The SD GlucoNFC and SD GlucoNFC Multi Blood Glucose Monitoring Systems are over-the-counter and prescription blood glucose monitoring systems, respectively.",
+        "intendedUse": "The SD GlucoNFC Blood Glucose Monitoring System is intended to be used for the quantitative measurement of glucose in fresh capillary whole blood from fingertip, palm, forearm, or upper arm. The SD GlucoNFC Multi Blood Glucose Monitoring System is intended for the quantitative measurement of glucose in fresh capillary whole blood from fingertip, palm, forearm, or upper arm and venous whole blood.",
+        "submissionType": "New Submission",
+        "regulatoryInformation": "Class II, 510(k) Number: K151265, Regulation section: 862.1345, 862.1660",
+        "indicationsForUse": "The SD GlucoNFC Blood Glucose Monitoring System is intended for use by people with diabetes at home as an aid to monitor the effectiveness of diabetes control. The SD GlucoNFC Multi Blood Glucose Monitoring System is intended for use in professional healthcare settings as an aid to monitor the effectiveness of diabetes control program.",
+        "predicateDevice": "SD GlucoMentor BGMS, SD GlucoMentor Multi BGMS",
+        "applicant": "SD Biosensor Inc.",
+        "performanceCharacteristics": "Analytical performance, precision, repeatability, intermediate precision, linearity, assay reportable range, detection limit, analytical specificity",
+        "clinicalStudies": "System Accuracy, method comparison, lay user study"
+    },
+    "K181700.txt": {
+        "deviceName": "HardyDisk AST Plazomicin 30\u00b5g (PLZ30)",
+        "deviceDescription": "HardyDisk AST Disks utilize 6-mm diameter white filter paper disks. The disks are prepared by impregnating absorbent paper with a known concentration of 30\u00b5g Plazomicin.",
+        "intendedUse": "Use of HardyDisk AST Plazomicin 30\u00b5g (PLZ30) for in vitro agar diffusion susceptibility testing is indicated when there is need to determine the susceptibility of bacteria to Plazomicin.",
+        "submissionType": "510(k) Number: K181700",
+        "regulatoryInformation": "21 CFR 866.1620 Antimicrobial Susceptibility Test Disc, Class II, Product code: JTN, Panel: 83, Microbiology",
+        "indicationsForUse": "Enterobacteriaceae, Escherichia coli, Klebsiella pneumoniae, Proteus mirabilis, Enterobacter cloacae, Citrobacter freundii, Citrobacter koseri, Enterobacter aerogenes, Klebsiella oxytoca, Morganella morganii, Proteus vulgaris, Providencia stuartii, Serratia marcenscens",
+        "predicateDevice": "HardyDisk Tigecycline 15\u00b5g, 510(k) number: K062245",
+        "applicant": "Hardy Diagnostics",
+        "performanceCharacteristics": "Descriptive characteristics were sufficient for the HardyDisk Plazomicin 30\u00b5g (PLZ30) disk based on extensive data from several microbiology disk studies evaluated by CDER",
+        "clinicalStudies": "Not applicable"
+    },
+    "K171971.txt": {
+        "deviceName": "skyla Clinical Chemistry Analyzer, Minicare C300 Clinical Chemistry Analyzer",
+        "deviceDescription": "The Comprehensive Metabolic Panel contains a set of dried reagents that are used in the quantitative testing of various substances in the blood sample.",
+        "intendedUse": "The Comprehensive Metabolic Panel is intended to be used for the quantitative determination of Alkaline Phosphate (ALP), Alanine Aminotransferase (ALP/GPT), Aspartate Aminotransferase (AST/GOT), Blood Urea Nitrogen (BUN) and Creatinine (CREA) in concentrations in lithium-heparinized venous whole blood, heparinized plasma, or serum in a clinical laboratory setting or point-of-care location.",
+        "submissionType": "New Device",
+        "regulatoryInformation": "Class II, 862.1050, 862.1770, 862.1225, 862.1100, 862.1030, 862.2160",
+        "indicationsForUse": "The device is used in the diagnosis and treatment of liver, bone, parathyroid, and intestinal diseases, certain liver diseases, heart diseases, renal and metabolic diseases.",
+        "predicateDevice": "Abaxis Piccolo, Abaxis Piccolo Primary Health Panel Reagent Rotor",
+        "applicant": "Lite-On Technology Corp.",
+        "performanceCharacteristics": "Analytical performance was established using the skyla Clinical Chemistry Analyzer; performance is also representative of the Minicare C300 Clinical Chemistry Analyzer.",
+        "clinicalStudies": "Not applicable."
+    },
+    "K173829.txt": {
+        "deviceName": "NeoLSD MSMS kit",
+        "deviceDescription": "The NeoLSD MSMS kit consists of substrates, internal standards, and controls. The kit contains sufficient reagents and consumables to perform 960 assays (10 x 96-well plates).",
+        "intendedUse": "The NeoLSD MSMS Kit is intended for the quantitative measurement of the activity of the enzymes acid-\u03b2-glucocerebrosidase (ABG), acid-sphingomyelinase (ASM), acid-\u03b1-glucosidase (GAA), \u03b2-galactocerebrosidase (GALC), \u03b1-galactosidase A (GLA), and \u03b1-L-iduronidase (IDUA) in dried blood spots (DBS) from newborn babies.",
+        "submissionType": "New device",
+        "regulatoryInformation": "Regulation section: 862.1488 Lysosomal storage disorder newborn screening test system, Classification: II, Product code: PQW, PQT, PQU, PQV, QCL, QCM",
+        "indicationsForUse": "The analysis of the enzymatic activity is intended as an aid in screening newborns for the following lysosomal storage disorders (LSD) respectively; Gaucher Disease, Niemann-Pick A/B Disease, Pompe Disease, Krabbe Disease, Fabry Disease, and mucopolysaccharidosis Type I (MPS I) Disease.",
+        "predicateDevice": "SEEKER System, DEN150035",
+        "applicant": "Wallac Oy, a subsidiary of PerkinElmer",
+        "performanceCharacteristics": "The precision protocols were designed and executed in accordance with CLSI EP05-A3. A five-day precision study was performed to determine lot-to-lot precision.",
+        "clinicalStudies": "The screening performance of the NeoLSD MSMS kit was determined in a prospective clinical study of four-year-old retrospective routine samples at the Danish Section for Neonatal Screening, Department of Clinical Biochemistry and Immunology, Statens Serum Institute (SSI). 4041 newborn samples were tested."
+    },
+    "K150168.txt": {
+        "deviceName": "Dimension Tacrolimus Flex Reagent Cartridge (TAC)",
+        "deviceDescription": "The automated Dimension TAC method is performed using a method specific Flex Reagent Cartridge",
+        "intendedUse": "For the quantitative measurement of tacrolimus in human whole blood as an aid in the management of tacrolimus therapy in renal and hepatic transplant patients",
+        "submissionType": "New Device",
+        "regulatoryInformation": "21 CFR \u00a7862.1678, Tacrolimus Test System, 21 CFR \u00a7862.1150, Calibrator, Class II, Product code: MLM, JIT",
+        "indicationsForUse": "The Dimension Tacrolimus Flex Reagent Cartridge (TAC) is an in vitro diagnostic test for the quantitative measurement of tacrolimus in human whole blood on the Dimension clinical chemistry system",
+        "predicateDevice": "ARCHITECT Tacrolimus Assay (k070820)",
+        "applicant": "Siemens Healthcare Diagnostics, Inc.",
+        "performanceCharacteristics": "Precision, Linearity, Analytical sensitivity, Detection limit, Analytical specificity",
+        "clinicalStudies": "NA"
+    },
+    "K173817.txt": {
+        "deviceName": "Liofilchem MIC Test Strip (MTS)",
+        "deviceDescription": "A quantitative method intended for the in vitro determination of antimicrobial susceptibility of bacteria",
+        "intendedUse": "The Liofilchem MIC Test Strip (MTS) is a quantitative method intended for the in vitro determination of antimicrobial susceptibility of bacteria",
+        "submissionType": "510(k) Number: K173817",
+        "regulatoryInformation": "21 CFR 866.1640 Antimicrobial Susceptibility Test Powder, Class II, Product code(s): JWY \u2013 Manual Antimicrobial Test Systems",
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "Liofilchem MTS, Vancomycin (K153687)",
+        "applicant": "Liofilchem s.r.l.",
+        "performanceCharacteristics": "Analytical performance: Precision/Reproducibility, Linearity/assay reportable range, Traceability, Stability, Expected values (controls, calibrators, or methods), Detection limit, Analytical Specificity, Assay cut-off",
+        "clinicalStudies": "Not applicable"
+    },
+    "K150588.txt": {
+        "deviceName": "OVA1 Next Generation",
+        "deviceDescription": "The OVA1 Next Generation test consists of software, instruments, assays and reagents. The software incorporates the results of five serum biomarker concentrations from immunoassays run separately to calculate a single, unitless numeric result indicating a low or high risk of ovarian malignancy.",
+        "intendedUse": "The OVA1 Next Generation test is an aid to further assess the likelihood that malignancy is present when the physician\u2019s independent clinical and radiological evaluation does not indicate malignancy.",
+        "submissionType": "New device",
+        "regulatoryInformation": "Class II, 21 CFR \u00a7866.6050, Ovarian adnexal mass assessment score test system",
+        "indicationsForUse": "Same as Intended use",
+        "predicateDevice": "Vermillion OVA1, K081754",
+        "applicant": "Vermillion, Inc.",
+        "performanceCharacteristics": "The OVA1 Next Generation test demonstrated a sensitivity of 91.3%, specificity of 69.1%, positive predictive value (PPV) of 40.4%, and negative predictive value (NPV) of 97.2% in a clinical study.",
+        "clinicalStudies": "Two clinical studies were conducted to evaluate the performance of the OVA1 Next Generation test, one using archived serum specimens and another using freshly collected serum specimens."
+    },
+    "K193024.txt": {
+        "deviceName": "Sensititre 20-24 hour Haemophilus influenzae/Streptococcus pneumoniae MIC or Breakpoint Susceptibility System with Lefamulin",
+        "deviceDescription": "The Sensititre MIC Susceptibility MIC panels are multi-well microtiter plates, dosed with dried, stabilized antimicrobials. It is a miniaturized version of the classic broth dilution method and can provide both qualitative and quantitative susceptibility results.",
+        "intendedUse": "The Sensititre Haemophilus influenzae/Streptococcus pneumoniae plates are in vitro diagnostic products for clinical susceptibility testing of Haemophilus influenzae, Streptococcus pneumoniae, and Streptococcus species.",
+        "submissionType": "510(k) SUBSTANTIAL EQUIVALENCE DETERMINATION",
+        "regulatoryInformation": "Class II, 21 CFR 866.1640 - Antimicrobial Susceptibility Test Powder, JWY, LRG, LTT, MI - Microbiology",
+        "indicationsForUse": "The Sensititre 20 - 24 hour Haemophilus influenzae/Streptococcus pneumoniae MIC or Breakpoint Susceptibility System is an in vitro diagnostic product for clinical susceptibility testing of H. influenzae, Streptococcus pneumoniae, and Streptococcus spp.",
+        "predicateDevice": "Sensititre 20-24 hour Haemophilus influenzae/Streptococcus pneumoniae MIC or Breakpoint Susceptibility System with Omadacycline",
+        "applicant": "Thermo Fisher Scientific",
+        "performanceCharacteristics": "Essential Agreement (EA) is when the Sensititre results agree exactly or within one doubling dilution of the reference broth microdilution results. Category Agreement (CA) is when the Sensititre result interpretation agrees exactly with the reference broth microdilution result interpretation.",
+        "clinicalStudies": "A total of 200 clinical S. pneumoniae isolates were tested and read by both VIZION and OptiRead. In addition, a total of 393 H. influenzae isolates were tested of which results were read using the digital viewing device (VIZION) only."
+    },
+    "K141114.txt": {
+        "deviceName": "BioPlex 2200 25-OH Vitamin D Kit",
+        "deviceDescription": "The BioPlex 2200 25-OH Vitamin D Kit consists of the following: One 10mL vial of Bead Set containing dyed beads coated with anti-25-OH D antibody, an Internal Standard bead (ISB), and a Serum Verification bead (SVB) in buffer with protein stabilizers, One 10mL vial of Release Buffer containing 25-OH Vitamin D releasing reagents in citrate and trisodium citrate acid buffer at pH 4.1, One 5mL vial of Conjugate 1 containing biotinylated 25-OH Vitamin D conjugate and biotinylated anti-human FXIII antibody conjugate, One 5mL vial of Conjugate 2 containing phycoerythrin conjugated streptavidin",
+        "intendedUse": "For the quantitative determination of 25-hydroxyvitamin D in human serum",
+        "submissionType": "New Device",
+        "regulatoryInformation": "Product Code: MRG, Classification: II, Regulation Section: 862.1825 Vitamin D Test System, Chemistry (75), Panel: JIT",
+        "indicationsForUse": "The BioPlex 2200 25-OH Vitamin D kit is intended for the quantitative determination of 25-hydroxyvitamin D in human serum to aid in the assessment of vitamin D sufficiency",
+        "predicateDevice": "EUROIMMUN 25-OH Vitamin D ELISA (k123660)",
+        "applicant": "Bio-Rad Laboratories",
+        "performanceCharacteristics": "Precision/Reproducibility: 1.19-3.60% CV, Linearity/assay reportable range: 6.5 to 125 ng/mL, Detection limit: 2.5 ng/mL, Analytical specificity: Interference study and cross-reactivity study were performed",
+        "clinicalStudies": "Not Applicable"
+    },
+    "K153683.txt": {
+        "deviceName": "Trak Male Fertility Testing System",
+        "deviceDescription": "The Trak Male Fertility Testing System includes a small instrument, disposable units, and consumables, and is intended for semi-quantitative assessment of sperm concentration",
+        "intendedUse": "The Trak Male Fertility Testing System is intended for semi-quantitative assessment of sperm concentration at 15 million sperm per milliliter or below, between 15 and 55 M/mL, and above 55 M/mL",
+        "submissionType": "Clearance of a new device",
+        "regulatoryInformation": "21 CFR 864.5220, Automated differential cell counter, Class II, Product code: GKZ \u2013 Counter, Differential Cell",
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "SpermCheck Fertility, K100341",
+        "applicant": "Sandstone Diagnostics, Inc.",
+        "performanceCharacteristics": "Precision/Reproducibility, Linearity/assay reportable range, Traceability, Stability, Expected values, Detection limit, Analytical specificity, Assay cut-off",
+        "clinicalStudies": "Consumer Use Study, Clinical study to determine test performance when used by unassisted lay users"
+    },
+    "K161217.txt": {
+        "deviceName": "VITEK 2 AST-Gram Negative Ceftriaxone",
+        "deviceDescription": "The VITEK 2 AST card is a miniaturized, abbreviated and automated version of the doubling dilution technique for determining the minimum inhibitory concentration (MIC).",
+        "intendedUse": "The VITEK 2 Antimicrobial Susceptibility Test (AST) is intended to be used with the VITEK 2 Systems for the automated quantitative or qualitative susceptibility testing of isolated colonies for the most clinically significant aerobic gram-negative bacilli, Staphylococcus spp., Enterococcus spp., Streptococcus spp., S. pneumoniae and clinically significant yeast.",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": "21 CFR 866.1645 Fully Automated Short-Term Incubation Cycle Antimicrobial Susceptibility System, Class II",
+        "indicationsForUse": "Antimicrobial susceptibility testing of Gram negative bacilli",
+        "predicateDevice": "VITEK 2 AST-GN Doxycycline (K121546)",
+        "applicant": "bioM\u00e9rieux, Inc.",
+        "performanceCharacteristics": "The VITEK 2 System monitors the growth of each well in the card over a defined period of time. An interpretive call is made between 4 and 16 hours for a \u201crapid\u201d read but may be extended to 18 hours in some instances.",
+        "clinicalStudies": "A total of 410 clinical isolates were evaluated at four sites with VITEK 2 AST \u2013 Gram Negative cards inoculated by automatic dilution and interpreted using the VITEK 2 instrument."
+    },
+    "K182353.txt": {
+        "deviceName": "EliA CENP Immunoassay, EliA U1RNP Immunoassay, El RNP70 Immunoassay",
+        "deviceDescription": "EliA uses a modular reagent system. The assay-specific, method-specific and general reagents are packaged and purchased as separate units.",
+        "intendedUse": "The EliA CENP is intended for the in vitro semi-quantitative measurement of IgG antibodies directed to CENP in human serum and plasma (Li-heparin, EDTA) as an aid in the clinical diagnosis of scleroderma (CREST Syndrome) in conjunction with other laboratory and clinical findings.",
+        "submissionType": "510(k) SUBSTANTIAL EQUIVALENCE DETERMINATION",
+        "regulatoryInformation": "21 CFR 866.5100, Antinuclear antibody immunological test system, Class II",
+        "indicationsForUse": "Same as Intended Uses",
+        "predicateDevice": "EliA CENP on Phadia 250, EliA U1RNP on Phadia 250, EliA RNP70 on Phadia 250",
+        "applicant": "Phadia AB",
+        "performanceCharacteristics": "The reportable range (Limit of Detection to upper limit) for EliA CENP is from 0.4 to 240 EliA U/mL. The measuring range (Limit of Quantitation to upper limit) is from 0.7 to 240 EliA U/mL.",
+        "clinicalStudies": "Clinical performance values were reviewed in K082759 and K083117."
+    },
+    "K162333.txt": {
+        "deviceName": "Wondfo One Step Fecal Occult Blood Test",
+        "deviceDescription": "Wondfo One Step Fecal Occult Blood (FOB) Test kit consists of the following components: a. Test cassette individually wrapped in a single pouch b. Collection tubes with 1.5 mL extraction buffer solution c. Clean collection papers d. Instructions for use",
+        "intendedUse": "Wondfo One Step Fecal Occult Blood Test is a rapid test for the qualitative detection of human occult blood in feces. It is used as an aid in the diagnosis of gastrointestinal (GI) bleeding.",
+        "submissionType": "Clearance of a new device",
+        "regulatoryInformation": "21 CFR 864.6550, Occult blood test, Class II, Product code: KHE, Reagent, Occult Blood",
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "FOB One Step Rapid Test (Orient Gene Biotech), K110309",
+        "applicant": "Guangzhou Wondfo Biotech Co., Ltd.",
+        "performanceCharacteristics": "The test has been evaluated for precision/reproducibility, linearity/assay reportable range, traceability, stability, expected values, detection limit, analytical specificity, and assay cut-off",
+        "clinicalStudies": "Not applicable"
+    },
+    "K180607.txt": {
+        "deviceName": "KRONUS Steroid 21-Hydroxylase Autoantibody (21-OHAb) ELISA Kit",
+        "deviceDescription": "The KRONUS Steroid 21-Hydroxylase Autoantibody (21-OHAb) ELISA Kit consists of the following components: Recombinant human 21-OHAb-coated ELISA strip wells, Reference Preparation, Kit Negative Control, Kit Positive Control 1 and 2, 21-OH Reaction Enhancer, 21-OH Biotin, 21-OH Biotin Reconstitution Buffer, Streptavidin Peroxidase, Streptavidin-Peroxidase Diluent, Tetramethylbenzidine Peroxidase Substrate, Stop solution, and Concentrated Wash Solution",
+        "intendedUse": "The KRONUS Steroid 21-Hydroxylase Autoantibody (21-OHAb) ELISA Kit is for the qualitative determination of antibodies to steroid 21-hydroxylase (21-OH) in human serum. The Steroid 21-Hydroxylase Autoantibody (21-OHAb) ELISA Kit is useful as an aid in the diagnosis of autoimmune adrenal disease",
+        "submissionType": "New device",
+        "regulatoryInformation": "21 CFR \u00a7 866.5660, Multiple autoantibody immunological test system, Class II",
+        "indicationsForUse": "The KRONUS Steroid 21-Hydroxylase Autoantibody (21-OHAb) ELISA Kit is useful as an aid in the diagnosis of autoimmune adrenal disease, whether expressed as autoimmune Addison's disease (isolated) or Addison's disease as part of the more complex autoimmune polyglandular syndrome (APS), type I or II",
+        "predicateDevice": "KRONUS 21-OHAb RIA Assay Kit (K121046)",
+        "applicant": "KRONUS Market Development Associates, INC.",
+        "performanceCharacteristics": "The precision data for all samples was analyzed to generate a summary of the qualitative agreement, with 100% agreement for intra-assay and 88.9-100% agreement for inter-assay",
+        "clinicalStudies": "Clinical sensitivity: 87.0% (94/108), Clinical specificity: 99.3% (289/291)"
+    },
+    "K173202.txt": {
+        "deviceName": "CP3000 Coagulation Analyzer",
+        "deviceDescription": "The CP3000 is a fully automated, random-access in vitro blood coagulation analyzer",
+        "intendedUse": "The CP3000 is intended for use by healthcare professionals in the clinical laboratory",
+        "submissionType": "New device",
+        "regulatoryInformation": "Class II, 21 CFR 864.5425",
+        "indicationsForUse": "For in vitro diagnostic use",
+        "predicateDevice": "ACL TOP 700 LAS, HemosIL Liquid Antithrombin",
+        "applicant": "Sekisui Medical Co., LTD",
+        "performanceCharacteristics": "The Coagpia AT reagent has a reportable range of 14\u2013150%, with a precision of 0.7\u20132.9% and a linearity of 14\u2013140%",
+        "clinicalStudies": "Method comparison studies were conducted to compare the performance of the Coagpia AT reagent to the predicate device"
+    },
+    "K163260.txt": {
+        "deviceName": "SeptiCyte LAB",
+        "deviceDescription": "The SeptiCyte LAB is an in vitro diagnostic test for simultaneous amplification and detection of four RNA transcripts (LAMP1, CEACAM4, PLA2G7, PLAC8) using total RNA extracted from human blood.",
+        "intendedUse": "The SeptiCyte LAB is intended for in-vitro diagnostic use to aid in the differentiation of infection-positive (sepsis) from infection-negative systemic inflammation in patients suspected of sepsis on their first day of ICU admission.",
+        "submissionType": "510(k) Number: K163260",
+        "regulatoryInformation": "Class II (Special Controls), 21 CFR 866.3215; Device to detect and measure non-microbial analyte(s) in human clinical specimens to aid in assessment of patients with suspected sepsis",
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "B\u00b7R\u00b7A\u00b7H\u00b7M\u00b7S PCT Sensitive KRYPTOR (DEN150009)",
+        "applicant": "Immunexpress, Inc.",
+        "performanceCharacteristics": "The SeptiCyte LAB uses reverse transcription quantitative PCR (RT-qPCR) to measure relative expression levels of four host response genes (CEACAM4, LAMP1, PLA2G7, and PLAC8) from RNA extracted from the patient whole blood collected in the PAXgene Blood RNA collection tube.",
+        "clinicalStudies": "The clinical study results show a relationship between SeptiSCORE and the increasing likelihood of sepsis across each SeptiSCORE Interpretation Band."
+    },
+    "K141689.txt": {
+        "deviceName": "FastPack High Sensitivity C-Reactive Protein Immunoassay",
+        "deviceDescription": "The FastPack High Sensitivity C-Reactive Protein Immunoassay is a paramagnetic particle, chemiluminescent immunoassay employing specific murine monoclonal antibodies.",
+        "intendedUse": "For in-vitro diagnostic use in evaluating conditions thought to be associated with inflammation, in otherwise healthy individuals.",
+        "submissionType": "New assay",
+        "regulatoryInformation": "Class II, 21 CFR 866.5270, 21 CFR 862.1150, 21 CFR 862.1660",
+        "indicationsForUse": "For evaluation of conditions thought to be associated with inflammation, in otherwise healthy individuals.",
+        "predicateDevice": "Olympus CRP Latex Reagent, Bio-Rad Laboratories Liquichek Cardiac Markers Plus Control, Ortho-Clinical Diagnostics, Inc. VITRO Chemistry Products hsCRP Performance Verifier, I, II, and III",
+        "applicant": "Qualigen, Inc.",
+        "performanceCharacteristics": "Precision: Within-run: \u2264 1.0%, Between-run: \u2264 5.2%, Total: \u22649.0%, Linearity: Assay linear from 0.2 mg/L to 15 mg/L, Analytical sensitivity: Limit of detection (LOD) 0.032 mg/L, Limit of quantitation (LOQ) 0.063 mg/L",
+        "clinicalStudies": "Not applicable"
+    },
+    "K182513.txt": {
+        "deviceName": "FluChip-8G Influenza A+B Assay",
+        "deviceDescription": "The FluChip-8G Influenza A+B Assay system is a molecular assay system for the detection and differentiation of influenza viruses",
+        "intendedUse": "For prescription use only",
+        "submissionType": "New device 510(k) clearance",
+        "regulatoryInformation": "Class II",
+        "indicationsForUse": "Same as Intended Use(s)",
+        "predicateDevice": "CDC Human Influenza Virus Real-Time PCR Diagnostic Panel",
+        "applicant": "InDevR, Inc.",
+        "performanceCharacteristics": "Analytical performance: Precision/Reproducibility",
+        "clinicalStudies": "The FluChip-8G Influenza A+B Assay is comprised of the following workflow"
+    },
+    "K161258.txt": {
+        "deviceName": "NOVA Lite DAPI ANCA (Ethanol) Kit",
+        "deviceDescription": "The NOVA Lite DAPI ANCA (Ethanol) and DAPI ANCA (Formalin) Kits are indirect immunofluorescence assays for the qualitative detection and semi-quantitative determination of anti-neutrophil cytoplasmic antibodies of IgG isotypes in human serum",
+        "intendedUse": "The presence of ANCA, in conjunction with other serological tests and clinical findings aids in the assessment of ANCA associated vasculitides",
+        "submissionType": "510(k) Number: K161258",
+        "regulatoryInformation": "21 CFR 866.5660, Multiple autoantibodies immunological test system",
+        "indicationsForUse": "Qualitative and semi-quantitative indirect immunofluorescence (IIF) assays for the detection and semi-quantitative determination of anti-neutrophil cytoplasmic antibodies (ANCA) of IgG isotypes in human serum",
+        "predicateDevice": "NOVA Lite ANCA",
+        "applicant": "Inova Diagnostics, Inc.",
+        "performanceCharacteristics": "The performance of the device was evaluated in precision, linearity, detection limit, and interference testing",
+        "clinicalStudies": "Clinical studies show sensitivity and specificity rates for AAV and other diseases"
+    },
+    "K161619.txt": {
+        "deviceName": "Xpert TV Assay",
+        "deviceDescription": "an automated real-time polymerase chain reaction (PCR) in vitro diagnostic test for the qualitative detection of genomic DNA from Trichomonas vaginalis",
+        "intendedUse": "to aid in the diagnosis of trichomoniasis in symptomatic or asymptomatic individuals",
+        "submissionType": "510(k)",
+        "regulatoryInformation": "Class II, 21 CFR 866.3860, Trichomonas vaginalis nucleic acid assay",
+        "indicationsForUse": "same as intended use",
+        "predicateDevice": "Cepheid Xpert TV Assay (K151565)",
+        "applicant": "Cepheid",
+        "performanceCharacteristics": "sensitivity: 89.6%, specificity: 99.3%, Limit of Detection: previously reviewed and described in K151565",
+        "clinicalStudies": "a multi-center prospective study was performed to collect urine specimens from asymptomatic males and males presenting with symptoms potentially associated with TV infection"
+    },
+    "K150526.txt": {
+        "deviceName": "Optilite IgG4 Kit",
+        "deviceDescription": "The device consists of the following: polyclonal monospecific sheep anti-IgG4 antisera coated onto polystyrene latex in liquid form in the presence of preservatives; IgG4 calibrator and Controls (Low, High and Elevated levels) in stabilized liquid form with preservatives; and Reaction Buffer (with 0.099% sodium azide as preservative).",
+        "intendedUse": "The Optilite IgG4 kit is intended for the quantitative in vitro measurement of IgG4 in serum using the Binding Site Optilite analyser.",
+        "submissionType": "New Device",
+        "regulatoryInformation": {
+            "regulationSection": "21 CFR \u00a7866.5510 - Immunoglobulins A, G, M, D, E Immunological Test System",
+            "classification": "Class II",
+            "productCode": "CFN - Method, Nephelometric, Immunoglobulins (G, A, M)",
+            "panel": "Immunology (82)"
+        },
+        "indicationsForUse": "The test result should be used in conjunction with other laboratory and clinical findings.",
+        "predicateDevice": "Binding Site Human IgG and IgG subclass (IgG1, IgG2, IgG3, IgG4) liquid reagent kits for use on the SPAplus",
+        "applicant": "The Binding Site Group, Ltd.",
+        "performanceCharacteristics": {
+            "precision": "The within-run, between-run, between-day, between-lot and between-instrument precision were determined by testing ten serum samples over 21 days with two runs per day and two replicates per run on three different reagent lots on four analysers.",
+            "linearity": "The linearity of this assay has been confirmed using serially diluted serum samples to cover the range 2.8\u2013240.8 mg/L for Optilite analyzer dilution 1+1.",
+            "traceability": "An Internal Reference standard (IR) was assigned by comparison with the European Reference Material ERM-DA470k.",
+            "stability": "A real-time stability study of unopened kits was performed on three lots of Optilite IgG4 kit with testing time intervals at day 0, 3 months and 6.5 months.",
+            "detectionLimit": "The Limit of Detection (LoD) was calculated according to the equation: the LoB + 1.645(SDs) where SDs, the standard deviation, was based on 12 determinations of 5 samples with analyte level near the lower limit of the reportable range."
+        },
+        "clinicalStudies": "Not applicable"
+    },
+    "K171974.txt": {
+        "deviceName": "Solana RSV+hMPV Assay",
+        "deviceDescription": "A qualitative in vitro diagnostic test for the detection and differentiation of RSV and hMPV viral RNA in nasal and nasopharyngeal swabs from patients with signs and symptoms of respiratory infection",
+        "intendedUse": "As a diagnostic aid in patients with signs and symptoms of respiratory infection",
+        "submissionType": "New device; to obtain market clearance for the Solana RSV+hMPV Assay when performed on the Solana instrument",
+        "regulatoryInformation": {
+            "regulationSection": "21 CFR 866.3980 Respiratory viral panel multiplex nucleic acid assay",
+            "classification": "Class II",
+            "productCode": {
+                "primary": "OCC Respiratory Viral Panel Multiplex Nucleic Acid Assay",
+                "secondary": "OEM Human Metapneumovirus (hMPV) RNA Assay System"
+            }
+        },
+        "indicationsForUse": "As a diagnostic aid in patients with signs and symptoms of respiratory infection",
+        "predicateDevice": {
+            "name": "Lyra RSV+hMPV Assay",
+            "number": "K131813"
+        },
+        "applicant": {
+            "name": "Quidel Corporation",
+            "address": "2005 East State Street, Suite 100, Athens, OH 45701 USA"
+        },
+        "performanceCharacteristics": {
+            "analyticalSensitivity": {
+                "limitOfDetection": {
+                    "rsv": "7.9x10^3",
+                    "hmpv": "3.7x10^2"
+                }
+            },
+            "analyticalReactivity": {
+                "inclusivity": "100% homology with the majority of viral sequences found in the NCBI database"
+            },
+            "analyticalSpecificity": {
+                "crossReactivity": "No cross-reactivity observed with 46 microorganisms at concentrations \u22651x10^5 TCID50/mL for viruses or \u22651x10^6 CFU/mL for bacteria and yeast"
+            }
+        },
+        "clinicalStudies": {
+            "methodComparison": {
+                "predicateDevice": "Lyra RSV+hMPV Assay",
+                "results": {
+                    "positivePercentAgreement": {
+                        "rsv": "95.5%",
+                        "hmpv": "95.6%"
+                    },
+                    "negativePercentAgreement": {
+                        "rsv": "99.9%",
+                        "hmpv": "99.8%"
+                    }
+                }
+            }
+        }
+    },
+    "K160585.txt": {
+        "deviceName": "XN CAL",
+        "deviceDescription": "XN CAL is an in-vitro diagnostic product that contains the following: stabilized red blood cell component(s), stabilized white blood cell component(s), stabilized platelet component(s), and stabilized nucleated red blood cell component(s) in a preservative medium.",
+        "intendedUse": "XN CAL is used for the calibration and calibration verification of Sysmex XN series (XN-10, XN-11, XN-20, XN-21, XN-L) analyzers. Assayed parameters include: WBC (103/\u03bcL), RBC (106/\u03bcL), HGB (g/dL), HCT (%), PLT (103/\u03bcL), and RET (%).",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": {
+            "regulationSection": "21 CFR \u00a7 864.8150, Calibrator for cell indices",
+            "classification": "Class II",
+            "productCode": "KRX, Calibrator for cell indices"
+        },
+        "indicationsForUse": "Same as intended use",
+        "predicateDevice": "XN CAL (K141962)",
+        "applicant": "Streck, Inc.",
+        "performanceCharacteristics": {
+            "precisionReproducibility": "Data was collected from Sysmex XN-L model analyzers at three sites",
+            "linearityAssayReportableRange": "Not applicable",
+            "traceabilityStabilityExpectedValues": "Value assignment for the three lots of XN CAL evaluated in this submission was based on data collected across three XN-L instruments at three sites"
+        },
+        "clinicalStudies": "Not applicable"
+    },
+    "K180209.txt": {
+        "deviceName": "Diazyme 1,5-AG Assay",
+        "deviceDescription": "Diazyme\u2019s 1,5-AG Assay is an enzymatic method consisting of a two-reagent test kit (Reagent 1 and Reagent 2) and is to be used with a fully automated chemistry analyzer.",
+        "intendedUse": "The 1,5-AG Assay is for the intermediate term (preceding 1-2 weeks) monitoring of glycemic control in people with diabetes.",
+        "submissionType": "New Device",
+        "regulatoryInformation": "21 CFR 864.7470; Glycosylated hemoglobin assay, Class II, Product code: NOZ; Assay, 1,5-Anhydroglucitol",
+        "indicationsForUse": "For in vitro diagnostic use only, Prescription use only",
+        "predicateDevice": "GlycoMark",
+        "applicant": "Diazyme Laboratories Inc.",
+        "performanceCharacteristics": "Precision/Reproducibility, Linearity/assay reportable range, Traceability, Stability, Expected values, Detection limit, Analytical specificity",
+        "clinicalStudies": "Not applicable"
+    },
+    "K143502.txt": {
+        "deviceName": "Immunalysis Opiates Urine Enzyme Immunoassay",
+        "deviceDescription": "The Immunalysis Opiates Urine Enzyme Immunoassay Kit contains two reagents, which are provided as ready-to-use: Antibody/Substrate Reagent (RA) and Enzyme Conjugate Reagent (RE)",
+        "intendedUse": "For the qualitative and semi-quantitative analysis of opiates in human urine with automated clinical chemistry analyzers",
+        "submissionType": "New device",
+        "regulatoryInformation": "Product Code: DJG, Classification: II, Regulation Section: 862.3650, Panel: 91 \u2013 Toxicology",
+        "indicationsForUse": "The Immunalysis Opiates Urine Enzyme Immunoassay is intended for use in laboratories for the qualitative and semi-quantitative analysis of opiates in human urine",
+        "predicateDevice": "DRI DAU Opiate Assay, LZI Multiple Analyte Urine Drugs of Abuse Calibrators and Controls",
+        "applicant": "Immunalysis Corporation",
+        "performanceCharacteristics": "The assay is based on the competition of opiates labeled enzyme glucose-6-phosphate dehydrogenase (G6PDH) and the free drug in the urine sample for the fixed amount of antibody binding sites",
+        "clinicalStudies": "Not applicable"
+    },
+    "K163626.txt": null,
+    "K173505.txt": {
+        "deviceName": "FORA GTel Blood Glucose Monitoring System",
+        "deviceDescription": "The FORA GTel Blood Glucose Monitoring System consists of the FORA GTel Blood Glucose Meter, Owner\u2019s Manual, Protective Wallet, Quick Start User Guide, Daily Log Book, Warranty Card and 1 x Li-ion rechargeable batteries. The FORA GTel Test Strips were previously cleared under k143467 as the FORA GD34 Test Strips and are for use with the FORA GTel Blood Glucose Meters to quantitatively measure glucose (sugar) in fresh capillary whole blood from the fingertip.",
+        "intendedUse": "The FORA GTel Blood Glucose Monitoring System is intended for use in the quantitative measurement of glucose in fresh capillary whole blood drawn from the fingertip. It is intended for in vitro diagnostic use by people with diabetes mellitus at home as an aid in monitoring the effectiveness of diabetes control program.",
+        "submissionType": "New Device",
+        "regulatoryInformation": "21 CFR 862.1345, Glucose test system, Class II, Product code: NBW, System Test, Blood Glucose, Over the Counter",
+        "indicationsForUse": "The FORA GTel Blood Glucose Monitoring System is intended for use in the quantitative measurement of glucose in fresh capillary whole blood drawn from the fingertip. It is intended for in vitro diagnostic use by people with diabetes mellitus at home as an aid in monitoring the effectiveness of diabetes control program.",
+        "predicateDevice": "FORA GD43 Blood Glucose Monitoring System",
+        "applicant": "ForaCare Inc.",
+        "performanceCharacteristics": "The system measures the amount of sugar (glucose) in whole blood. The glucose testing is based on the measurement of electrical current generated by the reaction of glucose with the reagent of the strip. The meter measures the current, calculates the blood glucose level, and displays the result.",
+        "clinicalStudies": "A user performance study was conducted with 350 lay user participants who collected and tested their own fingertip capillary blood samples. Results were analyzed by comparing blood glucose results obtained from the FORA GTel Blood meter by the lay user against the YSI 2300 laboratory reference value obtained by healthcare professionals."
+    },
+    "K182357.txt": {
+        "deviceName": "HardyDisk AST Eravacycline 20\u00b5g (ERV20)",
+        "deviceDescription": "HardyDisk AST Disks utilize 6-mm diameter white filter paper disks. The disks are prepared by impregnating absorbent paper with a known concentration of 20\u00b5g Eravacycline.",
+        "intendedUse": "HardyDisk AST Disks are used for semi-quantitative in vitro susceptibility testing by the agar diffusion test procedure (Kirby-Bauer) of rapidly growing and certain fastidious bacterial pathogens.",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": "Class II, 21 CFR 866.1620 Antimicrobial Susceptibility Test Disc, Product code: JTN, Panel: 83, Microbiology",
+        "indicationsForUse": "Use of HardyDisk AST Eravacycline 20\u00b5g (ERV20) for in vitro agar diffusion susceptibility testing is indicated when there is need to determine the susceptibility of bacteria among the Enterobacteriaceae to Eravacyline.",
+        "predicateDevice": "HardyDisk Tigecycline 15\u00b5g, K062245",
+        "applicant": "Hardy Diagnostics",
+        "performanceCharacteristics": "Descriptive characteristics were sufficient for the HardyDisk Eravacycline 20\u00b5g (ERV20) disk based on extensive data from several microbiology disk studies evaluated by CDER",
+        "clinicalStudies": "Not applicable"
+    },
+    "K143075.txt": {
+        "deviceName": "ST AIA-PACK SHBG",
+        "deviceDescription": "The ST AIA-PACK SHBG consists of 5 trays of 20 test cups which contain twelve lyophilized magnetic beads coated with anti-SHBG mouse monoclonal antibody and 100 \u00b5L of anti-SHBG mouse monoclonal antibody conjugated to bovine alkaline phosphatase with sodium azide as a preservative.",
+        "intendedUse": "For the quantitative measurement of sex hormone binding globulin (SHBG) in human serum or Na heparinized plasma on Tosoh AIA System Analyzers. The ST AIA-PACK SHBG assay is intended for use as an aid in the diagnosis of androgen disorders.",
+        "submissionType": "New Device",
+        "regulatoryInformation": "Class I, reserved, 21 CFR 862.1680, Clinical Chemistry (75), and Class II, 21 CFR 862.1150",
+        "indicationsForUse": "The ST AIA-PACK SHBG is designed for In Vitro Diagnostic Use Only for the quantitative measurement of sex hormone binding globulin (SHBG) in human serum or Na heparinized plasma on Tosoh AIA System Analyzers. The ST AIA-PACK SHBG assay is intended for use as an aid in the diagnosis of androgen disorders.",
+        "predicateDevice": "Architect SHBG Reagent Kit, k060818",
+        "applicant": "Tosoh Bioscience",
+        "performanceCharacteristics": "Precision, Linearity, Traceability, Stability, Limit of Detection, Limit of Quantitation, Analytical Specificity",
+        "clinicalStudies": "Not applicable"
+    },
+    "K150815.txt": null,
+    "K152386.txt": null,
+    "K170293.txt": {
+        "deviceName": "Emit II Plus Cocaine Metabolite Assay",
+        "deviceDescription": "The Emit II Plus Cocaine Metabolite Assay consists of two ready-to-use reagents: Antibody/Substrate Reagent 1 and Enzyme Reagent 2",
+        "intendedUse": "For use in the qualitative and semiquantitative analyses of benzoylecgonine (cocaine metabolite) in human urine",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": "Class II, 21 CFR 862.3250, Product Code: DIO",
+        "indicationsForUse": "The Emit II Plus Cocaine Metabolite Assay is intended for use in the qualitative and semiquantitative analyses of benzoylecgonine (cocaine metabolite) in human urine",
+        "predicateDevice": "Emit II Plus Cocaine Metabolite Assay, 510(k) number: k993988",
+        "applicant": "Siemens Healthcare Diagnostics, Inc.",
+        "performanceCharacteristics": "Precision, Linearity, Analytical Specificity, Assay Cut-off",
+        "clinicalStudies": "Not Applicable"
+    },
+    "K182922.txt": {
+        "deviceName": "Liofilchem MTS Omadacycline 0.002-32 \u03bcg/mL",
+        "deviceDescription": "The Omadacycline MIC Test Strip (MTS) consists of specialized paper impregnated with a predefined concentration gradient of omadacycline across 15 two-fold dilutions similar to dilutions used by conventional MIC methods.",
+        "intendedUse": "The Liofilchem MTS (MIC Test Strip) Omadacycline 0.002-32 \u03bcg/mL is a quantitative method intended for the in vitro determination of antimicrobial susceptibility of bacteria.",
+        "submissionType": "510(k) Substantial Equivalence Determination",
+        "regulatoryInformation": "Regulation section: 866.1640 Antimicrobial Susceptibility Test Powder, Classification: II, Product code: JWY - Manual Antimicrobial Susceptibility Test Systems",
+        "indicationsForUse": "Same as Intended Use",
+        "predicateDevice": "Liofilchem MTS, vancomycin",
+        "applicant": "Liofilchem s.r.l.",
+        "performanceCharacteristics": "The overall performance of the device is acceptable with 98.9% EA and 96.0% CA for S. aureus (both MRSA and MSSA) isolates when evaluated with ABSSSI breakpoints.",
+        "clinicalStudies": "Not Applicable"
+    },
+    "K150281.txt": {
+        "deviceName": "Nova StatStrip Glucose Hospital Meter System",
+        "deviceDescription": "The StatStrip Glucose Hospital Meter System is a modified device that adds wireless (Wi-Fi) connectivity, modifies the meter layout, and revises the accompanying docking/charging station.",
+        "intendedUse": "The StatStrip Glucose Hospital Meter System is intended for point-of-care, in vitro diagnostic, multiple-patient use for the quantitative determination of glucose in capillary finger stick, venous whole blood, arterial whole blood, neonate arterial whole blood, and neonate heel stick specimens.",
+        "submissionType": "Modified device to add wireless (Wi-Fi) connectivity, modify the meter layout, and revise the accompanying docking/charging station.",
+        "regulatoryInformation": {
+            "regulationSection": "21 CFR 862.1345, Glucose test system",
+            "classification": "Class II",
+            "productCode": "CGA, Glucose Oxidase, Glucose",
+            "panel": "Clinical Chemistry (75)"
+        },
+        "indicationsForUse": "The StatStrip Glucose Hospital Meter System is intended for use in the quantitative determination of glucose in venous whole blood, arterial whole blood, neonatal heel stick, and neonatal arterial whole blood samples throughout all hospital and all professional healthcare settings.",
+        "predicateDevice": "Nova StatStrip Glucose Hospital Meter System",
+        "applicant": "Nova Biomedical Corporation",
+        "performanceCharacteristics": {
+            "analyticalPerformance": {
+                "precisionReproducibility": "As established in k060345",
+                "linearityAssayReportableRange": "As established in k063821",
+                "traceabilityStabilityExpectedValues": "Traceability was established in k060345"
+            }
+        },
+        "clinicalStudies": "Not Applicable"
+    },
+    "K161831.txt": {
+        "deviceName": "IDS-iSYS 25VitDS",
+        "deviceDescription": "The IDS-iSYS 25VitDS assay consists of a reagent cartridge and one set of calibrators",
+        "intendedUse": "For the quantitative determination of 25-hydroxyvitamin D in human serum or plasma",
+        "submissionType": "New device",
+        "regulatoryInformation": "Class II, 21 CFR 862.1825, Vitamin D Test System, 21 CFR 862.1660, Quality Control Material",
+        "indicationsForUse": "To assist the clinician in the assessment of vitamin D sufficiency in an adult population",
+        "predicateDevice": "IDS-iSYS 25-Hydroxy Vitamin DS Assay",
+        "applicant": "Immunodiagnostic Systems Limited",
+        "performanceCharacteristics": "The assay is based on chemiluminescence technology, with a reportable range of 4 to 110 ng/mL, and is traceable to the Ghent University isotope dilution-liquid chromatography/tandem mass spectrometry (ID-LCMS/MS) 25(OH)D Reference Method Procedure (RMP)",
+        "clinicalStudies": "A method comparison study was performed to compare the candidate device to the predicate device, and a matrix comparison study was performed to evaluate the difference between serum and plasma"
+    },
+    "K172287.txt": {
+        "deviceName": "QIAGEN ipsogen JAK2 RGQ PCR Kit",
+        "deviceDescription": "The ipsogen JAK2 RGQ PCR Kit employs allele-specific, quantitative, polymerase chain reaction (PCR) using an amplification refractory mutation system (ARMS).",
+        "intendedUse": "The ipsogen JAK2 RGQ PCR Kit is a qualitative in vitro diagnostic test for the detection of the JAK2 V617F/G1849T allele in genomic DNA extracted from EDTA whole blood.",
+        "submissionType": "Expansion of the Indications for Use",
+        "regulatoryInformation": {
+            "regulationSection": "21 CFR 866.6070",
+            "classification": "Class II",
+            "productCode": "PSU",
+            "panel": "88 \u2013 Pathology"
+        },
+        "indicationsForUse": "The test is intended for use as an adjunct to evaluation of suspected myeloproliferative neoplasms, in conjunction with other clinicopathological factors.",
+        "predicateDevice": "ipsogen JAK2 RGQ PCR Kit",
+        "applicant": "QIAGEN",
+        "performanceCharacteristics": {
+            "analyticalPerformance": "The overall analytical performance of the QIAGEN ipsogen JAK2 RGQ PCR Kit was previously demonstrated using specimens from patients with suspected polycythemia vera (PV).",
+            "accuracy": "The overall accuracy of the test in MPN specimens was assessed by combining the data obtained from each specimen cohort.",
+            "clinicalCutOff": "Specimens < 1% are considered negative and no value is generated. Specimens \u22651% are considered positive."
+        },
+        "clinicalStudies": "A clinical study was conducted in which 276 PV samples were evaluated with the ipsogen JAK2 RGQ PCR Kit and the results were compared to results obtained with bi-directional Sanger sequencing."
+    },
+    "K170974.txt": {
+        "deviceName": "BD FACSLyric Flow Cytometer",
+        "deviceDescription": "The BD FACSLyric flow cytometer systems consist of a flow cytometer, sheath tank, waste tank, and a computer workstation",
+        "intendedUse": "The BD FACSLyric flow cytometer is intended for use as an in vitro diagnostic device for immunophenotyping using up to six fluorescence detection channels and two light scatter channels",
+        "submissionType": "New device",
+        "regulatoryInformation": "Class II, 21 CFR \u00a7864.5220, Automated Differential Cell Counter, Product code: OYE, flow cytometric reagents and accessories, Panel: Hematology (81)",
+        "indicationsForUse": "For immunophenotyping using up to six fluorescence detection channels and two light scatter channels using a blue (488-nm) and a red (640-nm) laser",
+        "predicateDevice": "BD FACSCanto II",
+        "applicant": "BD Biosciences",
+        "performanceCharacteristics": "The device has been evaluated for analytical performance, including accuracy, precision, linearity, and carryover, and the results demonstrate substantial equivalence to the predicate device",
+        "clinicalStudies": "The device has been evaluated in several clinical studies, including a study to evaluate the accuracy and precision of the device, and the results demonstrate substantial equivalence to the predicate device"
+    },
+    "K151917.txt": {
+        "deviceName": "Luminex ARIES System",
+        "deviceDescription": "The ARIES System is a clinical multiplex test system that automates and integrates extraction of nucleic acid from a clinical sample, performs real-time PCR, and measuring and sorting multiple signals generated in an in vitro diagnostic assay",
+        "intendedUse": "The Luminex ARIES System is an in vitro diagnostic (IVD) platform that performs nucleic acid based tests in clinical laboratories",
+        "submissionType": "New instrument for use with the ARIES HSV 1&2 Assay cleared under k151906",
+        "regulatoryInformation": "21 CFR 862.2570 Instrumentation for clinical multiplex test systems, Class II (special controls), Product code: OOI \u2013 Real-time nucleic acid amplification",
+        "indicationsForUse": "For prescription use only",
+        "predicateDevice": "BD Diagnostics (Becton, Dickinson and Company), BD MAX System, K111860",
+        "applicant": "Luminex Corporation",
+        "performanceCharacteristics": "The performance for the ARIES System was established in the clearance of the assay, the ARIES HSV1&2 Assay (k151906)",
+        "clinicalStudies": "Not applicable"
+    },
+    "K162526.txt": {
+        "deviceName": "Creatine Kinase-MB",
+        "deviceDescription": "The Creatine Kinase-MB assay consists of two reagents: R1 Imidazole buffer and R2 CAPSO buffer.",
+        "intendedUse": "The Creatine Kinase-MB assay is an in vitro test for the quantitative determination of the catalytic activity of creatine kinase MB subunit (CK-MB) in human serum and plasma on Roche/Hitachi cobas c systems.",
+        "submissionType": "New device",
+        "regulatoryInformation": "21 CFR 862.1215, Creatine phosphokinase/creatine kinase or isoenzymes test system, Class II, Product code: JHW, U.V. Method, Cpk Isoenzymes",
+        "indicationsForUse": "Measurements of creatine phosphokinase and its isoenzymes are used in the diagnosis and treatment of myocardial infarction and muscle diseases such as progressive, Duchenne-type muscular dystrophy.",
+        "predicateDevice": "Roche CK-MB",
+        "applicant": "Roche Diagnostics",
+        "performanceCharacteristics": "Precision, linearity, traceability, stability, detection limits, and analytical specificity",
+        "clinicalStudies": "Not applicable"
+    },
+    "K193393.txt": {
+        "deviceName": "BOND Ready-to-Use Primary Antibody Progesterone Receptor (16), Novocastra Liquid Mouse Monoclonal Antibody Progesterone Receptor Clone 16",
+        "deviceDescription": "A mouse anti-human monoclonal antibody produced as a tissue culture supernatant and supplied in Tris buffered saline with carrier protein containing 0.35% ProClin 950 as preservative",
+        "intendedUse": "For in vitro diagnostic use, for the qualitative identification by light microscopy of human progesterone receptor in formalin-fixed, paraffin-embedded tissue by immunohistochemical staining",
+        "submissionType": "Traditional 510(k) notification",
+        "regulatoryInformation": "Class II, 21 CFR 864.1860 - Immunohistochemistry Reagents and Kits",
+        "indicationsForUse": "As an aid in the management, prognosis and prediction of therapy outcome of breast cancer",
+        "predicateDevice": "BOND Ready-to-Use Primary Antibody Progesterone Receptor (16), Novocastra Liquid Mouse Monoclonal Antibody Progesterone Receptor Clone 16, K171753",
+        "applicant": "Leica Biosystems Newcastle Ltd.",
+        "performanceCharacteristics": "Precision (Repeatability): 96.2%, Between-day Repeatability: 98.8%, Between-instrument Repeatability: 98.8%, Between-lot Repeatability: 98.8%",
+        "clinicalStudies": "Not applicable"
+    }
+}

@@ -86,9 +86,19 @@ FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT = """
     Step 1: You must identify a set of keywords that contain relevant terms in each 
     document. Combine these terms across all the records in a set. Generate a set of 
     maximum 100 keywords per document. 
-    Step 2: Transform the keywords into a set of generic topics to avoid niche attribute 
-    names that are specific to a record. 
-    Step 3: Identify a set of 10-20 attributes for the schema.
+    Step 2: Name the attributes. If the documents label their own fields (section 
+    headings, form fields, "Label: value" lines, table headers), reuse those labels 
+    verbatim as attribute names, in lowercase with spaces between words. Only invent a 
+    name when the document has no label for that information, and then prefer generic 
+    names that would apply to other records in the collection. 
+    Step 3: Keep attributes at the leaf level. A heading that groups several labelled 
+    values (e.g. "Regulatory Information" containing "Classification" and "Product 
+    code") is not an attribute itself; use each labelled value inside it instead. 
+    Never merge several labelled fields into one attribute.
+    Step 4: Prefer attributes whose value is concise (a name, number, date, short phrase
+    or paragraph). Skip sections that are long tables or multi-page narratives, such as
+    detailed study results.
+    Step 5: Identify a set of 10-20 attributes for the schema.
 
     You must provide the schema in JSON format as below.
 
@@ -112,13 +122,14 @@ FEW_SHOT_GENERATION_LONG_DOCUMENT_SYSTEM_PROMPT = """
     Asking $1.7 Million"
 
     {
-    “projectname”: “name of the project”
-    “industry”: “industry or vertical of the project”
-    “projectlocation” : “location of the project”
-    “projecttype” : “type of the project”
-    “productionstatus” : “status of the project”
-    “dealtype” : “type of deal”
-    “amount” : “amount for the deal”
+    "project name": "name of the project",
+    "current production": "current production rate of the project",
+    "location": "location of the project",
+    "acreage": "land area of the project",
+    "number of wells": "number of producing wells",
+    "formation": "geological formations the project produces from",
+    "nri": "net revenue interest",
+    "asking": "asking price for the deal"
     }
 
     In order to respond in valid JSON adhere to the following rules:

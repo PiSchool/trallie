@@ -8,17 +8,10 @@ from trallie.prompts import (
     FEW_SHOT_EXTRACTION_SYSTEM_PROMPT_IT
 )
 from trallie.data_handlers import DataHandler
+from trallie.utils import backoff, format_schema, post_process_response
 
 import json
-import re
 from typing import Dict, Any, Optional
-
-# Post processing for a reasoning model 
-def post_process_response(response: str) -> str:
-    """
-    Removes <think>...</think> content from the response.
-    """
-    return re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
 
 class DataExtractor:
     LANGUAGE_PROMPT_MAP = {
@@ -62,9 +55,11 @@ class DataExtractor:
     def extract_attributes(self, schema, record, max_retries=3):
         """
         Extracts attributes for a given record and schema.
+
+        `schema` can be a list of attribute names or a {name: description} dict.
         """
         user_prompt = f"""
-            Following is the record: {record} and the attribute schema for extraction: {schema}
+            Following is the record: {record} and the attribute schema for extraction: {format_schema(schema)}
             Provide the extracted attributes. Avoid any words at the beginning and end.
         """
         for attempt in range(max_retries):
@@ -73,15 +68,12 @@ class DataExtractor:
                     self.system_prompt, user_prompt, self.model_name
                 )
                 # Validate if response is a valid JSON
-                # print(response)
-                if self.reasoning_mode:
-                    response = post_process_response(response)
-                response = json.loads(response)
-                return response
+                return json.loads(post_process_response(response))
             except (json.JSONDecodeError, TypeError) as e:
                 print(f"Invalid JSON response (attempt {attempt + 1}): {e}")
                 if attempt == max_retries - 1:
                     return None
+                backoff(attempt)
             except Exception as e:
                 print(f"Error: {e}")
                 return None
@@ -161,7 +153,7 @@ class DataExtractor:
             data_handler = DataHandler(record, from_text=from_text)
             full_text = data_handler.get_text()
             
-            if full_text and not full_text.startswith("Error:"):
+            if full_text:
                 if len(full_text) > chunk_size:
                     print(f"Document is large ({len(full_text)} chars), using chunking...")
                     return self.extract_data_large_document(

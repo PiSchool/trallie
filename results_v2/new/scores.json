@@ -1,0 +1,181 @@
+{
+  "rows": [
+    {
+      "system": "openai-gpt-oss-120b",
+      "mode": "closedie",
+      "docs": 100,
+      "failed_docs": 0,
+      "f1": 95.94355700634483
+    },
+    {
+      "system": "openai-gpt-oss-120b",
+      "mode": "openie",
+      "docs": 100,
+      "failed_docs": 0,
+      "f1": 68.63373957665169,
+      "precision": 69.98037933289731,
+      "recall": 67.33794839521711,
+      "value_mapped_f1": 81.39514692273204
+    },
+    {
+      "system": "qwen-qwen3.8-27b",
+      "mode": "closedie",
+      "docs": 100,
+      "failed_docs": 1,
+      "f1": 97.1505559203594
+    },
+    {
+      "system": "qwen-qwen3.8-27b",
+      "mode": "openie",
+      "docs": 100,
+      "failed_docs": 0,
+      "f1": 80.16321406151914,
+      "precision": 79.9624295554164,
+      "recall": 80.36500943989931,
+      "value_mapped_f1": 92.40177440742468
+    },
+    {
+      "system": "EVAPORATE-Code+ [paper]",
+      "mode": "closedie",
+      "f1": 80.1
+    },
+    {
+      "system": "EVAPORATE-Code+ [paper]",
+      "mode": "openie",
+      "f1": 62.8
+    },
+    {
+      "system": "EVAPORATE-Direct [paper]",
+      "mode": "closedie",
+      "f1": 78.0
+    },
+    {
+      "system": "EVAPORATE-Direct [paper]",
+      "mode": "openie",
+      "f1": 45.5
+    },
+    {
+      "system": "DeBERTaV3-L (SQuAD2) [paper]",
+      "mode": "closedie",
+      "f1": 56.5
+    }
+  ],
+  "details": {
+    "openai-gpt-oss-120b/closedie": {
+      "per_attribute_f1": {
+        "510k number": 100.0,
+        "applicant": 99.0,
+        "classification": 90.58845598845599,
+        "conclusion": 98.01640872645909,
+        "indications for use": 90.27961010862089,
+        "intended use": 91.76195278574514,
+        "measurand": 98.23224850735092,
+        "panel": 91.4121351766513,
+        "predicate 510k number": 99.03030303030305,
+        "predicate device name": 99.37313286315843,
+        "product code": 87.55666661103847,
+        "proposed labeling": 99.0,
+        "proprietary and established names": 97.92380952380952,
+        "purpose for submission": 100.0,
+        "regulation section": 94.4936173513531,
+        "type of test": 98.42857142857143
+      }
+    },
+    "openai-gpt-oss-120b/openie": {
+      "per_attribute_value_mapped_f1": {
+        "510k number": 100.0,
+        "applicant": 99.0,
+        "classification": 89.86190476190477,
+        "conclusion": 9.65285895808469,
+        "indications for use": 83.98007493877883,
+        "intended use": 60.30349620138076,
+        "measurand": 95.2286545116131,
+        "panel": 90.51587301587301,
+        "predicate 510k number": 98.77777777777777,
+        "predicate device name": 98.65222816399287,
+        "product code": 81.6855020992218,
+        "proposed labeling": 13.337846255314886,
+        "proprietary and established names": 95.50132148553202,
+        "purpose for submission": 100.0,
+        "regulation section": 87.02835241724694,
+        "type of test": 98.79646017699115
+      },
+      "mapping": {
+        "510k number": "510(k) number",
+        "applicant": "applicant",
+        "classification": "classification",
+        "conclusion": "purpose for submission",
+        "indications for use": "indication for use",
+        "intended use": "intended use",
+        "measurand": "measurand",
+        "panel": "panel",
+        "predicate 510k number": "predicate 510(k) number",
+        "predicate device name": "predicate device name",
+        "product code": "product code",
+        "proposed labeling": "regulation section",
+        "proprietary and established names": "proprietary names",
+        "purpose for submission": "purpose for submission",
+        "regulation section": "regulation section",
+        "type of test": "type of test"
+      }
+    },
+    "qwen-qwen3.8-27b/closedie": {
+      "per_attribute_f1": {
+        "510k number": 99.0,
+        "applicant": 98.0,
+        "classification": 93.26464646464646,
+        "conclusion": 95.29091853038064,
+        "indications for use": 97.3011250917219,
+        "intended use": 99.92146376106228,
+        "measurand": 97.55503459148156,
+        "panel": 94.97254901960783,
+        "predicate 510k number": 97.14141414141415,
+        "predicate device name": 98.7885918003565,
+        "product code": 95.5238267063427,
+        "proposed labeling": 98.0,
+        "proprietary and established names": 96.38085901027075,
+        "purpose for submission": 99.0,
+        "regulation section": 96.4684656084656,
+        "type of test": 97.8
+      }
+    },
+    "qwen-qwen3.8-27b/openie": {
+      "per_attribute_value_mapped_f1": {
+        "510k number": 100.0,
+        "applicant": 99.0,
+        "classification": 94.0979797979798,
+        "conclusion": 96.71533345764186,
+        "indications for use": 97.81836606515489,
+        "intended use": 92.5864478779061,
+        "measurand": 94.54152107796804,
+        "panel": 95.66666666666667,
+        "predicate 510k number": 98.14141414141415,
+        "predicate device name": 99.7885918003565,
+        "product code": 97.21635544197488,
+        "proposed labeling": 22.73876104220932,
+        "proprietary and established names": 96.23800186741363,
+        "purpose for submission": 99.52631578947368,
+        "regulation section": 97.4684656084656,
+        "type of test": 96.88416988416988
+      },
+      "mapping": {
+        "510k number": "510k number",
+        "applicant": "applicant",
+        "classification": "classification",
+        "conclusion": "conclusion",
+        "indications for use": "indication for use",
+        "intended use": "intended use",
+        "measurand": "measurand",
+        "panel": "panel",
+        "predicate 510k number": "predicate 510k number",
+        "predicate device name": "predicate device name",
+        "product code": "product code",
+        "proposed labeling": "conclusion",
+        "proprietary and established names": "proprietary and established names",
+        "purpose for submission": "purpose for submission",
+        "regulation section": "regulation section",
+        "type of test": "type of test"
+      }
+    }
+  }
+}

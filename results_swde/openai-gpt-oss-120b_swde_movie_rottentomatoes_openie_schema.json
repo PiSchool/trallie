@@ -1,0 +1,22 @@
+{
+    "synopsis": "brief plot summary of the movie",
+    "cast": "list of principal cast members",
+    "director": "person who directed the movie",
+    "audience score": "percentage audience approval rating",
+    "genre": "movie genres listed",
+    "title": "name of the movie",
+    "tomatometer score": "percentage score from critics on Rotten Tomatoes",
+    "year": "release year of the movie",
+    "writer": "person who wrote the screenplay",
+    "audience average rating": "average audience rating (e.g., 3.6/5)",
+    "rating": "MPAA rating (e.g., PG)",
+    "running time": "duration of the movie",
+    "distributor": "company that distributed the movie",
+    "theatrical release date": "date the movie opened in theaters",
+    "tomatometer average rating": "average critic rating (e.g., 7.7/10)",
+    "audience user ratings count": "total number of audience user ratings",
+    "critic reviews count": "total number of critic reviews counted",
+    "critic rotten count": "number of rotten (negative) critic reviews",
+    "runtime": "duration of the movie (e.g., 2 hr. 5 min.)",
+    "critic fresh count": "number of fresh (positive) critic reviews"
+}

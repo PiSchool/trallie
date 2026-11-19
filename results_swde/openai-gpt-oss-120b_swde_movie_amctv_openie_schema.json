@@ -1,0 +1,22 @@
+{
+    "mpaa rating": "motion picture association rating",
+    "director": "name of the director",
+    "total ratings": "number of ratings submitted",
+    "language": "primary language of the film",
+    "key cast": "list of principal actors",
+    "country": "country of origin",
+    "category": "type of film (e.g., feature)",
+    "keywords": "list of keyword tags associated with the film",
+    "genre": "genre or type of the film",
+    "themes": "list of thematic categories",
+    "year": "release year of the film",
+    "overall rating": "average rating score",
+    "title": "title of the movie",
+    "similar movies": "list of movies suggested as similar",
+    "filmed in": "color or format of filming",
+    "run time": "duration of the film in minutes",
+    "producer": "company or entity that produced the film",
+    "release date": "official release date (YYYY-MM-DD)",
+    "movie title": "title of the movie",
+    "runtime": "duration of the movie"
+}
