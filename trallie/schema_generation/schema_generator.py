@@ -129,7 +129,7 @@ class SchemaGenerator:
                 self.attribute_descriptions[name] = value
         self.attribute_counter.update(names)
 
-    def get_top_k_attributes(self, top_k=10, return_descriptions=False):
+    def get_top_k_attributes(self, top_k=20, return_descriptions=False):
         """
         Returns the top k most frequent attributes across multiple documents,
         as a list of names or, with return_descriptions=True, {name: description}.
@@ -140,7 +140,7 @@ class SchemaGenerator:
         return top
 
     def discover_schema(self, description, records, num_records=10, from_text=False,
-                        top_k=10, return_descriptions=False):
+                        top_k=20, return_descriptions=False):
         """
         Processes multiple documents for creation of the schema
         """
@@ -167,7 +167,7 @@ class SchemaGenerator:
                                      overlap_size: int = 10000,
                                      max_retries: int = 5, 
                                      from_text: bool = False,
-                                     top_k: int = 10) -> List[str]:
+                                     top_k: int = 20) -> List[str]:
         """
         Discover schema from a large document by processing it in chunks.
         
@@ -223,7 +223,7 @@ class SchemaGenerator:
                                     chunk_size: int = 100000, 
                                     overlap_size: int = 10000,
                                     auto_detect_large_docs: bool = True,
-                                    top_k: int = 10) -> List[str]:
+                                    top_k: int = 20) -> List[str]:
         """
         Discover schema with automatic chunking for large documents.
         
